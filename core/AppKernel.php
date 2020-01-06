@@ -11,7 +11,7 @@ class AppKernel
     private $di;
     public $router;
 
-    public function __construct($di)
+    public function __construct(DI $di)
     {
         $this->di = $di;
         $this->router = $this->di->get('router');
