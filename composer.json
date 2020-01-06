@@ -1,0 +1,16 @@
+{
+    "name": "maikl/dzion_cms",
+    "authors": [
+        {
+            "name": "Maikl Abasov",
+            "email": "dzion67@mail.ru"
+        }
+    ],
+    "require": {},
+	"autoload": {
+		"psr-4": {
+		  "Core\\": "core/",
+		  "App\\": "app/"
+		}
+	}
+}
