@@ -1,5 +1,9 @@
 <?php
 
+const ROUTE_CLASS_NAME    = 'class';
+const ROUTE_CLASS_METHODS = 'public';
+const ROUTE_METHOD_NAME   = 'name';
+
 // require_once __DIR__ . '/../vendor/autoload.php';
 
 //use Core\AppKernel;

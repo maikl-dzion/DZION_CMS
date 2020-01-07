@@ -10,6 +10,14 @@ require_once ROOT_DIR . '/vendor/autoload.php';
 
 require_once ROOT_DIR . '/core/bootstrap.php';
 
+$routes = require_once ROOT_DIR . '/config/routes.php';
+
+$className  = 'user';
+$methodName = 'get_users';
+
+$result = Router($routes, $className, $methodName);
+print_r($result);
+
 
 try {
 
@@ -22,3 +30,20 @@ try {
 
 }
 
+function Router($routes, $className, $methodName) {
+    $response = array();
+    if(isset($routes[$className])) {
+        $route = $routes[$className];
+        if(isset($route[ROUTE_CLASS_METHODS][$methodName])) {
+
+            $class    = $route[ROUTE_CLASS_NAME];
+            $method   = $route[ROUTE_CLASS_METHODS][$methodName];
+            $funcName = $method[ROUTE_METHOD_NAME];
+
+            $controller = new $class();
+            $response = $controller->$funcName();
+        }
+    }
+
+    return $response;
+}
