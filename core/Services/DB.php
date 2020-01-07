@@ -1,11 +1,11 @@
 <?php
 
-namespace Engine\Core\Database;
+namespace Core\Services\DB;
 
 use \PDO;
-use Engine\Core\Config\Config;
+// use Engine\Core\Config\Config;
 
-class Connection
+class DB
 {
     private $link;
 

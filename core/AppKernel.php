@@ -31,6 +31,7 @@ class AppKernel
             print_r($this); die;
 
             echo 'ok';
+
 //            require_once __DIR__ . '/../' . mb_strtolower(ENV) . '/Route.php';
 //
 //            $routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
