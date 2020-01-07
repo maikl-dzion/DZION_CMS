@@ -4,6 +4,7 @@ namespace Core;
 
 //use Engine\Core\Router\DispatchedRoute;
 //use Engine\Helper\Common;
+use Core\DI;
 
 class AppKernel
 {
@@ -11,18 +12,21 @@ class AppKernel
     private $di;
     public $router;
 
-    public function __construct(DI $di)
-    {
-        $this->di = $di;
-        $this->router = $this->di->get('router');
+    public function __construct(){
+
+        $this->di = new DI();
+
+        $this->run();
+
+        // $this->router = $this->di->get('router');
     }
 
-    /**
-     * Run cms
-     */
-    public function run() :void
-    {
-        try {
+    private function init() {
+
+    }
+
+    public function run() :void {
+
 
             print_r($this); die;
 
@@ -41,11 +45,6 @@ class AppKernel
 //            $parameters = $routerDispatch->getParameters();
 //            call_user_func_array([new $controller($this->di), $action], $parameters);
             // return true;
-        } catch(\Exception $e){
 
-            echo $e->getMessage();
-            exit;
-
-        }
     }
 }
