@@ -2,20 +2,19 @@
 
 namespace App\Controllers;
 
-//use Engine\DI\DI;
+use Core\App\Controller;
 
-class UserController {
+class UserController extends Controller{
 
     // public function __construct(){}
 
-    public function getUsers()
-    {
+    public function getUsers(){
         return 'get users f1';
     }
 
 
-    public function getUser()
-    {
-        return 'get user f2';
+    public function getUser(...$params) {
+        print_r($params); die;
+        return $params;
     }
 }

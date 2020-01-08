@@ -1,62 +1,52 @@
 <?php
 
-namespace Engine\Core\Router;
+namespace Core;
+
+use Core\Services\Request;
 
 class Router
 {
     private $routes = [];
-    private $dispatcher;
-    private $host;
+    private $route;
+    private $method;
 
-    /**
-     * Router constructor.
-     * @param $host
-     */
-    public function __construct($host)
-    {
-        $this->host = $host;
+    public function __construct(array $routes){
+        $this->routes = $routes;
     }
 
-    /**
-     * @param $key
-     * @param $pattern
-     * @param $controller
-     * @param string $method
-     */
-    public function add($key, $pattern, $controller, $method = 'GET')
-    {
-        $this->routes[$key] = [
-            'pattern'    => $pattern,
-            'controller' => $controller,
-            'method'     => $method
-        ];
+    public function getRoute() {
+        $this->route = Request::getRouteParam(REQUEST_URL_NAME);
+        $class   = $this->route->class;
+        if(isset($this->routes[$class])) {
+            return $this->routes[$class];
+        } else {
+            $message = 'Не найден маршрут';
+            throw new \Exception($message);
+        }
     }
 
-    /**
-     * @param $method
-     * @param $uri
-     * @return DispatchedRoute
-     */
-    public function dispatch($method, $uri)
-    {
-        return $this->getDispatcher()->dispatch($method, $uri);
-    }
+    public function run(DI $di) {
 
-    /**
-     * @return UrlDispatcher
-     */
-    public function getDispatcher()
-    {
-        if($this->dispatcher == null)
-        {
-            $this->dispatcher = new UrlDispatcher();
+        $currentRoute = $this->getRoute();
+        $class  = $this->route->class;
+        $action = $this->route->action;
+        $parameters = $this->route->parameters;
 
-            foreach($this->routes as $route)
-            {
-                $this->dispatcher->register($route['method'], $route['pattern'], $route['controller']);
-            }
+        if(isset($currentRoute[ROUTE_CLASS_METHODS][$action])) {
+
+            $className = $currentRoute[ROUTE_CLASS_NAME];
+            $methodParam = $currentRoute[ROUTE_CLASS_METHODS][$action];
+            $actionName  = $methodParam[ROUTE_METHOD_FIELD];
+
+            $controller = new $className($di, $parameters);
+            $response   = $controller->$actionName($parameters);
+
+        } else {
+            $message = 'Не найден метод класса';
+            throw new \Exception($message);
         }
 
-        return $this->dispatcher;
+        return $response;
     }
+
 }

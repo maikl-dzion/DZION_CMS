@@ -2,7 +2,9 @@
 
 const ROUTE_CLASS_NAME    = 'class';
 const ROUTE_CLASS_METHODS = 'public';
-const ROUTE_METHOD_NAME   = 'name';
+const ROUTE_METHOD_FIELD  = 'name';
+
+const REQUEST_URL_NAME    = 'PATH_INFO';
 
 // require_once __DIR__ . '/../vendor/autoload.php';
 
