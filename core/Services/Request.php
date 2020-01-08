@@ -45,8 +45,9 @@ class Request
             case 'PATH_INFO'  :
                   $routeObject = self::pathInfo($url, $type);
                   break;
-
-            case 'REQUEST_URI' : break;
+            case 'REQUEST_URI' :
+                  $routeObject = self::requestUri($url, $type);
+                  break;
         }
 
         return $routeObject;
@@ -76,5 +77,10 @@ class Request
         $resp->parameters  = $parameters;
 
         return $resp;
+    }
+
+
+    public static function requestUri($url, $type = '') {
+        print_r($url); die;
     }
 }

@@ -10,5 +10,4 @@ abstract class Core
     protected function post() {
 
     }
-
 }

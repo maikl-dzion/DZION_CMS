@@ -20,7 +20,9 @@ $routes = require_once ROOT_DIR . '/config/routes.php';
 
 try {
 
-    new AppKernel($routes);
+    $app = new AppKernel($routes);
+    $response = $app->run();
+    print_r($response);
 
 } catch(\Exception $e){
 

@@ -16,6 +16,7 @@ class Router
 
     public function getRoute() {
         $this->route = Request::getRouteParam(REQUEST_URL_NAME);
+        // $this->route = Request::getRouteParam('REQUEST_URI');
         $class   = $this->route->class;
         if(isset($this->routes[$class])) {
             return $this->routes[$class];
@@ -25,28 +26,37 @@ class Router
         }
     }
 
-    public function run(DI $di) {
+    public function init() {
 
         $currentRoute = $this->getRoute();
-        $class  = $this->route->class;
+        // $class  = $this->route->class;
         $action = $this->route->action;
         $parameters = $this->route->parameters;
 
-        if(isset($currentRoute[ROUTE_CLASS_METHODS][$action])) {
+        $className  = null;
+        $actionName = null;
+        $methodParam = null;
 
-            $className = $currentRoute[ROUTE_CLASS_NAME];
+        if(isset($currentRoute[ROUTE_CLASS_METHODS][$action])) {
+            $className   = $currentRoute[ROUTE_CLASS_NAME];
             $methodParam = $currentRoute[ROUTE_CLASS_METHODS][$action];
             $actionName  = $methodParam[ROUTE_METHOD_FIELD];
 
-            $controller = new $className($di, $parameters);
-            $response   = $controller->$actionName($parameters);
+            //$controller = new $className($di, $parameters);
+            //$response   = $controller->$actionName($parameters);
 
         } else {
             $message = 'Не найден метод класса';
             throw new \Exception($message);
         }
 
-        return $response;
+        $resp = new \stdClass();
+        $resp->class  = $className;
+        $resp->action = $actionName;
+        $resp->parameters  = $parameters;
+        $resp->route  = $currentRoute;
+        $resp->actionParam = $methodParam;
+        return $resp;
     }
 
 }

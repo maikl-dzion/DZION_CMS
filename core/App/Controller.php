@@ -3,16 +3,15 @@
 namespace Core\App;
 
 use Core\DI;
-use Core\App\Core;
+// use Core\App\Core;
 
 class Controller extends Core {
 
     protected $di;
     protected $db;
-    protected $view;
     protected $config;
     protected $request;
-    protected $load;
+    //protected $load;
     protected $parameters = array();
 
     public function __construct(DI $di, $parameters = array()) {

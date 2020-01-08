@@ -11,24 +11,32 @@ class AppKernel
 {
 
     private $di;
-    public  $router;
+    protected $router;
+    protected $controller;
 
     public function __construct(array $routes){
 
         $this->di = new DI();
-
         $this->router = new Router($routes);
-
-        $this->run();
-
+        $this->init();
     }
 
-    private function init() {
-
+    protected function init() {
+        $this->controller = $this->router->init();
     }
 
     public function run() {
-        $response = $this->router->run($this->di);
-        print_r($response); die;
+        $className  = $this->controller->class;
+        $actionName = $this->controller->action;
+        $parameters = $this->controller->parameters;
+
+        if(class_exists($className)) {
+            $controller = new $className($this->di, $parameters);
+            if(method_exists($controller, $actionName))  {
+                $response = $controller->$actionName($parameters);
+            }
+        }
+        return $response;
     }
+
 }

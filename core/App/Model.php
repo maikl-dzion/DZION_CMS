@@ -1,33 +1,20 @@
 <?php
 
-namespace Engine;
+namespace Core\App;
 
-use Engine\Core\Database\QueryBuilder;
-use Engine\DI\DI;
+// use Core\DI\DI;
 
-abstract class Model
-{
-    /**
-     * @var DI
-     */
+class Model extends Core {
+
     protected $di;
-
     protected $db;
-
     protected $config;
-
     public $queryBuilder;
 
-    /**
-     * Model constructor.
-     * @param $di
-     */
-    public function __construct(DI $di)
-    {
-        $this->di      = $di;
-        $this->db      = $this->di->get('db');
-        $this->config  = $this->di->get('config');
-
-        $this->queryBuilder = new QueryBuilder();
+    public function __construct() {
+//        $this->di      = $di;
+//        $this->db      = $this->di->get('db');
+//        $this->config  = $this->di->get('config');
+//        $this->queryBuilder = new QueryBuilder();
     }
 }
