@@ -9,7 +9,6 @@ class DI
 
     public function set($key, $value) {
         $this->container[$key] = $value;
-
         return $this;
     }
 

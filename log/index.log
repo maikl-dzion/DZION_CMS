@@ -1,0 +1,1015 @@
+=============================
+DateTime: 09.01.2020 17:48:25
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 132
+    [message] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = Array
+                                                 ^
+    [code] => 42601
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = Array
+                                                 ^
+            [string:Exception:private] => 
+            [code:protected] => 42601
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 132
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 132
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 22
+                            [function] => fetch
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => SELECT * FROM users WHERE user_id = Array
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 48
+                            [function] => getUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => 31
+                                            [1] => 56
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42601
+                    [1] => 7
+                    [2] => ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = Array
+                                                 ^
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = Array
+                                                 ^ in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>132</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>376712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1160</td><td bgcolor='#eeeeec' align='right'>539072</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>576744</td><td bgcolor='#eeeeec'>App\Controllers\UserController->getUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>48</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1180</td><td bgcolor='#eeeeec' align='right'>577416</td><td bgcolor='#eeeeec'>Core\Services\DB->fetch(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1180</td><td bgcolor='#eeeeec' align='right'>578024</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>132</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 09.01.2020 17:47:25
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 132
+    [message] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near ","
+LINE 1: SELECT * FROM users WHERE user_id = 31,56
+                                              ^
+    [code] => 42601
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near ","
+LINE 1: SELECT * FROM users WHERE user_id = 31,56
+                                              ^
+            [string:Exception:private] => 
+            [code:protected] => 42601
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 132
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 132
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 22
+                            [function] => fetch
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => SELECT * FROM users WHERE user_id = 31,56
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 49
+                            [function] => getUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => 31,56
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42601
+                    [1] => 7
+                    [2] => ERROR:  syntax error at or near ","
+LINE 1: SELECT * FROM users WHERE user_id = 31,56
+                                              ^
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near ","
+LINE 1: SELECT * FROM users WHERE user_id = 31,56
+                                              ^ in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>132</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>376712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1155</td><td bgcolor='#eeeeec' align='right'>539792</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>577496</td><td bgcolor='#eeeeec'>App\Controllers\UserController->getUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>49</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>577560</td><td bgcolor='#eeeeec'>Core\Services\DB->fetch(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>578168</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>132</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 09.01.2020 17:46:53
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 132
+    [message] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+    [code] => 42601
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+            [string:Exception:private] => 
+            [code:protected] => 42601
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 132
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 132
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 22
+                            [function] => fetch
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => SELECT * FROM users WHERE user_id = 
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 49
+                            [function] => getUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => 31,56
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42601
+                    [1] => 7
+                    [2] => ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^ in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>132</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>376712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1140</td><td bgcolor='#eeeeec' align='right'>539792</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>577368</td><td bgcolor='#eeeeec'>App\Controllers\UserController->getUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>49</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>577424</td><td bgcolor='#eeeeec'>Core\Services\DB->fetch(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1175</td><td bgcolor='#eeeeec' align='right'>578008</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>132</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 09.01.2020 17:41:09
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 132
+    [message] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+    [code] => 42601
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+            [string:Exception:private] => 
+            [code:protected] => 42601
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 132
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 132
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 22
+                            [function] => fetch
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => SELECT * FROM users WHERE user_id = 
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 48
+                            [function] => getUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => 
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42601
+                    [1] => 7
+                    [2] => ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^ in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>132</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>376696</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1100</td><td bgcolor='#eeeeec' align='right'>539208</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1135</td><td bgcolor='#eeeeec' align='right'>577504</td><td bgcolor='#eeeeec'>App\Controllers\UserController->getUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>48</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1135</td><td bgcolor='#eeeeec' align='right'>577560</td><td bgcolor='#eeeeec'>Core\Services\DB->fetch(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1135</td><td bgcolor='#eeeeec' align='right'>578144</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>132</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 09.01.2020 17:40:46
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 132
+    [message] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+    [code] => 42601
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+            [string:Exception:private] => 
+            [code:protected] => 42601
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 132
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 132
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 22
+                            [function] => fetch
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => SELECT * FROM users WHERE user_id = 
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 47
+                            [function] => getUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => 31
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 42601
+                    [1] => 7
+                    [2] => ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at end of input
+LINE 1: SELECT * FROM users WHERE user_id = 
+                                            ^ in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>132</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>376696</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1110</td><td bgcolor='#eeeeec' align='right'>539208</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1115</td><td bgcolor='#eeeeec' align='right'>576896</td><td bgcolor='#eeeeec'>App\Controllers\UserController->getUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>47</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1115</td><td bgcolor='#eeeeec' align='right'>576976</td><td bgcolor='#eeeeec'>Core\Services\DB->fetch(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1120</td><td bgcolor='#eeeeec' align='right'>577560</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>132</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 09.01.2020 16:59:15
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 96
+    [message] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas22) already exists.
+    [code] => 23505
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas22) already exists.
+            [string:Exception:private] => 
+            [code:protected] => 23505
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 96
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 96
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 108
+                            [function] => bindExec
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => INSERT INTO users (login,email,username,lastname,password)  VALUES(:login,:email,:username,:lastname,:password)
+                                    [1] => Array
+                                        (
+                                            [login] => stas22
+                                            [email] => dzion67622788222we@mail.ru
+                                            [username] => stas22
+                                            [lastname] => stas22
+                                            [password] => stas22
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 48
+                            [function] => createPrepare
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [login] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [email] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 300
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [username] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [lastname] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [password] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [note] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [phone] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [mobile] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [sex] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT 1
+                                                    [optional] => 2
+                                                )
+
+                                            [age] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [address] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [login] => stas22
+                                            [password] => stas22
+                                            [username] => stas22
+                                            [lastname] => stas22
+                                            [email] => dzion67622788222we@mail.ru
+                                        )
+
+                                    [2] => users
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 47
+                            [function] => createUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 23505
+                    [1] => 7
+                    [2] => ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas22) already exists.
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas22) already exists. in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>96</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>376696</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1165</td><td bgcolor='#eeeeec' align='right'>531120</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1180</td><td bgcolor='#eeeeec' align='right'>561064</td><td bgcolor='#eeeeec'>App\Controllers\UserController->createUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>47</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1180</td><td bgcolor='#eeeeec' align='right'>562128</td><td bgcolor='#eeeeec'>Core\Services\DB->createPrepare(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>48</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1180</td><td bgcolor='#eeeeec' align='right'>562912</td><td bgcolor='#eeeeec'>Core\Services\DB->bindExec(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>108</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.1180</td><td bgcolor='#eeeeec' align='right'>565712</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>96</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 09.01.2020 16:48:18
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 96
+    [message] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas2) already exists.
+    [code] => 23505
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas2) already exists.
+            [string:Exception:private] => 
+            [code:protected] => 23505
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 96
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 96
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 108
+                            [function] => bindExec
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => INSERT INTO users (login,email,username,lastname,password)  VALUES(:login,:email,:username,:lastname,:password)
+                                    [1] => Array
+                                        (
+                                            [login] => stas2
+                                            [email] => dzion67622788we@mail.ru
+                                            [username] => stas2
+                                            [lastname] => stas2
+                                            [password] => stas2
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 49
+                            [function] => createPrepare
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [login] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [email] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 300
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [username] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [lastname] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [password] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [note] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [phone] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [mobile] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [sex] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT 1
+                                                    [optional] => 2
+                                                )
+
+                                            [age] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [address] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [login] => stas2
+                                            [password] => stas2
+                                            [username] => stas2
+                                            [lastname] => stas2
+                                            [email] => dzion67622788we@mail.ru
+                                        )
+
+                                    [2] => users
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 47
+                            [function] => createUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 23505
+                    [1] => 7
+                    [2] => ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas2) already exists.
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas2) already exists. in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>96</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>376696</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1130</td><td bgcolor='#eeeeec' align='right'>531120</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1135</td><td bgcolor='#eeeeec' align='right'>559056</td><td bgcolor='#eeeeec'>App\Controllers\UserController->createUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>47</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1140</td><td bgcolor='#eeeeec' align='right'>560120</td><td bgcolor='#eeeeec'>Core\Services\DB->createPrepare(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>49</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1140</td><td bgcolor='#eeeeec' align='right'>560904</td><td bgcolor='#eeeeec'>Core\Services\DB->bindExec(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>108</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.1140</td><td bgcolor='#eeeeec' align='right'>563696</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>96</td></tr>
+
+        )
+
+)
+=============================
+

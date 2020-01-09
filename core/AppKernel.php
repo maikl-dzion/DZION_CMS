@@ -2,27 +2,36 @@
 
 namespace Core;
 
-//use Engine\Core\Router\DispatchedRoute;
-//use Engine\Helper\Common;
 use Core\Services\DI;
-use Core\Router;
+// use Core\Router;
+// use Core\ServicesRegister;
+use Core\Services\Logger;
 
 class AppKernel
 {
 
-    private $di;
+    private   $di;
     protected $router;
     protected $dbconfig;
+    protected $services;
+    protected $logger;
     protected $controller;
 
     public function __construct(array $routes, array $dbconfig){
         $this->dbconfig = $dbconfig;
-        $this->di = new DI();
-        $this->router = new Router($routes);
-        $this->init();
+        $this->di       = new DI();
+        $this->router   = new Router($routes);
+        $this->logger   = new Logger(LOG_PATH);
+
+        $this->initialize();
     }
 
-    protected function init() {
+    protected function initialize() {
+        $this->initServices();
+        $this->initRouter();
+    }
+
+    protected function initRouter() {
         $this->controller = $this->router->init();
     }
 
@@ -35,11 +44,46 @@ class AppKernel
         if(class_exists($className)) {
             $controller = new $className($this->di, $parameters);
             if(method_exists($controller, $actionName))  {
-                $response = $controller->$actionName($parameters);
+                if(!empty($parameters)) {
+                    $response = $controller->$actionName($parameters);
+                } else {
+                    $response = $controller->$actionName();
+                }
+            } else {
+                $message = "Не существует метод класса - {$className}->{$actionName}";
+                $this->logger->log($message, 'app_kernel');
             }
+        } else {
+            $message = "Не существует класс - {$className}";
+            $this->logger->log($message, 'app_kernel');
         }
 
         return $response;
+    }
+
+    public function loadServices() {
+        return array(
+            Services\Logger::class => array('name' => 'logger', 'params' => LOG_PATH),
+            Services\DB::class     => array('name' => 'db'    , 'params' => $this->dbconfig, $this->logger)
+        );
+    }
+
+    public function initServices() {
+
+        $services = $this->loadServices();
+
+        foreach ($services as $serviceClass => $values) {
+
+            $serviceName  = $values['name'];
+            $params = $values['params'];
+
+            if(!empty($params))
+              $service  = new $serviceClass($params);
+            else
+              $service  = new $serviceClass();
+
+            $this->di->set($serviceName, $service);
+        }
     }
 
 }

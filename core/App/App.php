@@ -6,6 +6,9 @@ abstract class App
 {
     protected $di;
     protected $db;
+    protected $logger;
 
-    // protected function post() {}
+    protected function responseCode($code) {
+        http_response_code($code);
+    }
 }

@@ -18,45 +18,39 @@ class Router
         $this->route = Request::getRouteParam(REQUEST_URL_NAME);
         // $this->route = Request::getRouteParam('REQUEST_URI');
         $class   = $this->route->class;
-        if(isset($this->routes[$class])) {
+        if(isset($this->routes[$class]))
             return $this->routes[$class];
-        } else {
-            $message = 'Не найден маршрут';
-            throw new \Exception($message);
-        }
+
+        $message = "Не найден маршрут (Router-{$class})";
+        throw new \Exception($message);
     }
 
     public function init() {
 
-        $currentRoute = $this->getRoute();
-        // $class  = $this->route->class;
+        $route = $this->getRoute();
         $action = $this->route->action;
-        $parameters = $this->route->parameters;
 
-        $className  = null;
-        $actionName = null;
-        $methodParam = null;
-
-        if(isset($currentRoute[ROUTE_CLASS_METHODS][$action])) {
-            $className   = $currentRoute[ROUTE_CLASS_NAME];
-            $methodParam = $currentRoute[ROUTE_CLASS_METHODS][$action];
-            $actionName  = $methodParam[ROUTE_METHOD_FIELD];
-
-            //$controller = new $className($di, $parameters);
-            //$response   = $controller->$actionName($parameters);
-
-        } else {
-            $message = 'Не найден метод класса';
+        if(!isset($route[ROUTE_CLASS_METHODS][$action])) {
+            $message = "Не найден метод класса (Router) ({$action})";
             throw new \Exception($message);
         }
 
+        $className   = $route[ROUTE_CLASS_NAME];
+        $methodParam = $route[ROUTE_CLASS_METHODS][$action];
+        $actionName  = $methodParam[ROUTE_METHOD_FIELD];
+        $parameters  = $this->route->parameters;
+
         $resp = new \stdClass();
-        $resp->class  = $className;
-        $resp->action = $actionName;
+        $resp->class       = $className;
+        $resp->action      = $actionName;
         $resp->parameters  = $parameters;
-        $resp->route  = $currentRoute;
+        $resp->route       = $route;
         $resp->actionParam = $methodParam;
+
         return $resp;
     }
 
+    protected function exception($message) {
+        throw new \Exception($message);
+    }
 }

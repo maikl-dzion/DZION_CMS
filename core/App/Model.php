@@ -9,7 +9,7 @@ class Model extends App {
     protected $di;
     protected $db;
     protected $config;
-    public $queryBuilder;
+    public $builder;
 
     public function __construct() {
 //        $this->di      = $di;
