@@ -14,6 +14,7 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         'A' => 
         array (
             'App\\' => 4,
+            'Admin\\' => 6,
         ),
     );
 
@@ -25,6 +26,10 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Admin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/admin',
         ),
     );
 

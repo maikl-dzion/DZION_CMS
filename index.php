@@ -12,6 +12,7 @@ require_once ROOT_DIR . '/vendor/autoload.php';
 require_once ROOT_DIR . '/core/bootstrap.php';
 
 $routes = require_once ROOT_DIR . '/config/routes.php';
+$dbconfig = require_once ROOT_DIR . '/config/dbconfig.php';
 
 //$className  = 'user';
 //$methodName = 'get_users';
@@ -20,7 +21,7 @@ $routes = require_once ROOT_DIR . '/config/routes.php';
 
 try {
 
-    $app = new AppKernel($routes);
+    $app = new AppKernel($routes, $dbconfig);
     $response = $app->run();
     print_r($response);
 

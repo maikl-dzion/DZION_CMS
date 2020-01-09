@@ -2,9 +2,9 @@
 
 namespace Core\App;
 
-// use Core\DI\DI;
+use Core\App\App;
 
-class Model extends Core {
+class Model extends App {
 
     protected $di;
     protected $db;

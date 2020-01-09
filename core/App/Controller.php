@@ -2,10 +2,10 @@
 
 namespace Core\App;
 
-use Core\DI;
-// use Core\App\Core;
+use Core\Services\DI;
+use Core\App\App;
 
-class Controller extends Core {
+class Controller extends App {
 
     protected $di;
     protected $db;
