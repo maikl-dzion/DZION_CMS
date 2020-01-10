@@ -17,94 +17,102 @@ class UserController extends Controller{
     public function getUser($args) {
         $userId = (is_array($args)) ? $args[0] : $args;
         $query = "SELECT * FROM {$this->tableName} WHERE user_id = {$userId}";
-        $users = $this->db->fetch($query);
-        return $users;
+        $user = $this->db->fetch($query);
+        if(!empty($user[0]))
+            $user = $user[0];
+        return $user;
+    }
+
+    private function getTestData() {
+
+        $salt = rand();
+
+        $data = array(
+            "login"    => "test_user" . $salt,
+            "password" => "test_user" . $salt,
+            "username" => "test_user" . $salt,
+            "lastname" => "test_user" . $salt,
+            "email"    => "test_mail{$salt}@mail.ru"
+        );
+
+        return $data;
     }
 
     public function createUser() {
 
-        $data = $this->fetchPost();
+        $data  = $this->fetchPost();
+        $error = '';
 
-        $data = array(
-              "login"    => "vlad",
-              "password" => "vlad",
-              "username" => "vlad",
-              "lastname" => "vlad",
-              "email"    => "vlad@mail.ru"
-        );
-
-        $message = "Невозможно создать пользователя ";
+        $data = $this->getTestData();
 
         // Проверка на обязательные поля
-        if( empty($data['login'])    ||
-            empty($data['password']) ||
-            empty($data['username']) ||
-            empty($data['email'])) {
+        if( !empty($data['login'])    &&
+            !empty($data['password']) &&
+            !empty($data['username']) &&
+            !empty($data['email'])) {
 
-            $message .= ", отсутствуют обязательные поля";
-            $this->logger->log($message, 'create_user');
-            $this->responseCode(400);
-            return array("message" => $message);
+            $fields = $this->getFields('create');
+            $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+            $response = $this->db->createPrepare($fields, $data, $this->tableName);
+            if($response->status) {
+                $userId = $this->db->lastInsertId();
+                $user   = $this->getUser($userId);
+                return array("message" => "Пользователь успешно создан",
+                             "user_id" => $userId, 'user' => $user);
+            }
+
+            $error = $response->message . '(' . $response->status . ')';
+        } else {
+            $error = " отсутствуют обязательные поля ";
         }
 
-        $fields = $this->getFields('create');
-        $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
-        $resp = $this->db->createPrepare($fields, $data, $this->tableName);
-        $userId = $this->db->lastInsertId();
-
-        if(!$resp->status) {
-            $message .= $resp->message . '(' . $resp->status . ')';
-            $this->logger->log(array($message, $resp), 'create_user');
-            $this->responseCode(400);
-            return array("message" => $message);
-        }
-
-        $newUser = array();
-
-        return array("message" => "Пользователь успешно создан",
-                     "user_id" => $userId, 'user' => $newUser);
-
+        $message = 'Невозможно создать пользователя, ' . $error;
+        return $this->saveErrorHandler($message, $response, 'create_user');
     }
 
     public function updateUser() {
 
         $data = $this->fetchPost();
         $userId = $this->getParam(0);
+        $error = '';
 
-        $data = array(
-            "login"    => "stas222_maikl",
-            "username" => "stas22_999",
-            "lastname" => "stas22_999",
-            "email" => "dzion676222788222we@mail.ru"
-        );
-
-        $message = "Не удалось сохранить данные ";
+        $data = $this->getTestData();
 
         // Проверка на обязательные поля
-        if( empty($data['login'])    ||
-            empty($data['username']) ||
-            empty($data['email'])) {
+        if( !empty($data['login'])    &&
+            !empty($data['username']) &&
+            !empty($data['email'])) {
 
-            $message .= ", отсутствуют обязательные поля";
-            $this->logger->log($message, 'update_user');
-            $this->responseCode(400);
-            return array("message" => $message);
+            $fields = $this->getFields('update');
+            $response = $this->db->updatePrepare($fields, $data, $this->tableName, 'user_id', $userId);
+            if($response->status) {
+                $user = $this->getUser($userId);
+                return array("message" => "Данные успешно сохранены",
+                             "user_id" => $userId, "user" => $user);
+            }
+
+            $error = $response->message . '(' . $response->status . ')';
+        } else {
+            $error = " отсутствуют обязательные поля";
         }
 
-        $fields = $this->getFields('update');
-        $resp = $this->db->updatePrepare($fields, $data, $this->tableName, 'user_id', $userId);
+        $message = 'Невозможно создать пользователя, ' . $error;
+        return $this->saveErrorHandler($message, $response, 'update_user');
+    }
 
-        if(!$resp->status) {
-            $message .= $resp->message . '(' . $resp->status . ')';
-            $this->logger->log(array($message, $resp), 'update_user');
-            $this->responseCode(400);
-            return array("message" => $message);
-        }
+    protected function saveErrorHandler($message, $response, $logFile = 'update_user'){
+        $this->logger->log(array($message, $response), $logFile);
+        $this->logger->log(array($message, $response), 'log');
+        $this->responseCode(400);
+        return array("message" => $message);
+    }
 
-        $user = array();
-
-        return array("message" => "Данные успешно сохранены",
-                     "user_id" => $userId, "user" => $user);
+    public function deleteUser() {
+        $userId = $this->getParam(0);
+        $status = $this->db->delete($this->tableName, 'user_id', $userId);
+        if(!$status)
+            return array("message" => "Не удалось удалить пользователя");
+        return array("message" => "Пользователь удален");
     }
 
     public function getFields($optional = '') {

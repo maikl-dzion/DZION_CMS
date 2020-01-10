@@ -1,4 +1,238 @@
 =============================
+DateTime: 10.01.2020 09:33:57
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 104
+    [message] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas) already exists.
+    [code] => 23505
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas) already exists.
+            [string:Exception:private] => 
+            [code:protected] => 23505
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 104
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 104
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 126
+                            [function] => bindExec
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => UPDATE users SET login = :login,email = :email,username = :username,lastname = :lastname,password = :password WHERE user_id = :user_id
+                                    [1] => Array
+                                        (
+                                            [login] => stas
+                                            [email] => vlad4@mail.ru
+                                            [username] => vlad4
+                                            [lastname] => vlad4
+                                            [password] => vlad4
+                                            [user_id] => 34
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 83
+                            [function] => updatePrepare
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [login] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [email] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 300
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [username] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [lastname] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [password] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [note] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [phone] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [mobile] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [sex] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT 1
+                                                    [optional] => 2
+                                                )
+
+                                            [age] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [address] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [login] => stas
+                                            [password] => vlad4
+                                            [username] => vlad4
+                                            [lastname] => vlad4
+                                            [email] => vlad4@mail.ru
+                                        )
+
+                                    [2] => users
+                                    [3] => user_id
+                                    [4] => 34
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 47
+                            [function] => updateUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [0] => 34
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 23505
+                    [1] => 7
+                    [2] => ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas) already exists.
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(stas) already exists. in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>104</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>376568</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.2300</td><td bgcolor='#eeeeec' align='right'>543480</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.2345</td><td bgcolor='#eeeeec' align='right'>580896</td><td bgcolor='#eeeeec'>App\Controllers\UserController->updateUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>47</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.2345</td><td bgcolor='#eeeeec' align='right'>581960</td><td bgcolor='#eeeeec'>Core\Services\DB->updatePrepare(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>83</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.2345</td><td bgcolor='#eeeeec' align='right'>583064</td><td bgcolor='#eeeeec'>Core\Services\DB->bindExec(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>126</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.2345</td><td bgcolor='#eeeeec' align='right'>586128</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>104</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
 DateTime: 10.01.2020 09:03:19
 Log data: 
 Array
