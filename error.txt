@@ -3,4 +3,5 @@
   explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php = 47
   explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php = 47
   Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 21
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 36
  

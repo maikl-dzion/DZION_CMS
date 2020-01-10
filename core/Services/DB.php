@@ -6,17 +6,21 @@ use Doctrine\DBAL\Driver\PDOException;
 use \PDO;
 
 use Core\Services\Logger;
+use Core\AbstractCore;
 
-class DB
+class DB extends AbstractCore
 {
     private $pdo;
     private $config;
-    private $logger;
+    protected $logger;
 
-    public function __construct(array $config, $logger = null){
+    public function __construct(array $config){
+
+        // parent::__construct();
+        $this->logger  = new Logger(LOG_PATH);
         $this->config = $config;
-        $this->logger = $logger;
         $this->connect($this->config);
+
     }
 
     public function reConnect($config) {
@@ -190,6 +194,12 @@ class DB
 
     public function deleteTable($tableName) {
         $query = "DROP TABLE {$tableName}";
+        $result = $this->pdo->exec($query);
+        return $result;
+    }
+
+    public function delete($tableName, $fName, $fValue) {
+        $query = "DELETE FROM {$tableName} WHERE {$fName} = {$fValue} ";
         $result = $this->pdo->exec($query);
         return $result;
     }

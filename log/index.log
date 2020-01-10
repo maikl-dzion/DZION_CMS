@@ -1,4 +1,568 @@
 =============================
+DateTime: 10.01.2020 09:03:19
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 104
+    [message] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(vlad) already exists.
+    [code] => 23505
+    [$e] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(vlad) already exists.
+            [string:Exception:private] => 
+            [code:protected] => 23505
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 104
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 104
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 116
+                            [function] => bindExec
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => INSERT INTO users (login,email,username,lastname,password)  VALUES(:login,:email,:username,:lastname,:password)
+                                    [1] => Array
+                                        (
+                                            [login] => vlad
+                                            [email] => vlad@mail.ru
+                                            [username] => vlad
+                                            [lastname] => vlad
+                                            [password] => $2y$10$0fH3SLBlKxfmEesXsl5D3uHzOz9rLVWCZvRBmACBiTqaqmjwB4kl2
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 52
+                            [function] => createPrepare
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [login] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [email] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 300
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [username] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [lastname] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [password] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [note] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [phone] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [mobile] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [sex] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT 1
+                                                    [optional] => 2
+                                                )
+
+                                            [age] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [address] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [login] => vlad
+                                            [password] => $2y$10$0fH3SLBlKxfmEesXsl5D3uHzOz9rLVWCZvRBmACBiTqaqmjwB4kl2
+                                            [username] => vlad
+                                            [lastname] => vlad
+                                            [email] => vlad@mail.ru
+                                        )
+
+                                    [2] => users
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 49
+                            [function] => createUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 31
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 23505
+                    [1] => 7
+                    [2] => ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(vlad) already exists.
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(vlad) already exists. in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>104</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>376552</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.2135</td><td bgcolor='#eeeeec' align='right'>543168</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.2150</td><td bgcolor='#eeeeec' align='right'>581032</td><td bgcolor='#eeeeec'>App\Controllers\UserController->createUser(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>49</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.3070</td><td bgcolor='#eeeeec' align='right'>582448</td><td bgcolor='#eeeeec'>Core\Services\DB->createPrepare(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>52</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.3070</td><td bgcolor='#eeeeec' align='right'>583232</td><td bgcolor='#eeeeec'>Core\Services\DB->bindExec(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>116</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.3070</td><td bgcolor='#eeeeec' align='right'>586072</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>104</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 10.01.2020 08:37:24
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 35
+    [message] => Не найден метод класса (Router) (index)
+    [code] => 0
+    [$e] => Exception Object
+        (
+            [message:protected] => Не найден метод класса (Router) (index)
+            [string:Exception:private] => 
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 35
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 35
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 31
+                            [function] => initRouter
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_class] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден метод класса (Router) (index) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>35</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0065</td><td bgcolor='#eeeeec' align='right'>376440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0100</td><td bgcolor='#eeeeec' align='right'>462064</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0125</td><td bgcolor='#eeeeec' align='right'>491400</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.3705</td><td bgcolor='#eeeeec' align='right'>528256</td><td bgcolor='#eeeeec'>Core\AppKernel->initRouter(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.3705</td><td bgcolor='#eeeeec' align='right'>528256</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>35</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 10.01.2020 08:37:14
+Log data: 
+Array
+(
+    [title] => Ошибка в файле index-C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 25
+    [message] => Не найден маршрут (Router-)
+    [code] => 0
+    [$e] => Exception Object
+        (
+            [message:protected] => Не найден маршрут (Router-)
+            [string:Exception:private] => 
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 25
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                            [line] => 30
+                            [function] => getRoute
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 35
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 31
+                            [function] => initRouter
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_class] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден маршрут (Router-) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>25</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0095</td><td bgcolor='#eeeeec' align='right'>375816</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0180</td><td bgcolor='#eeeeec' align='right'>461440</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0215</td><td bgcolor='#eeeeec' align='right'>490776</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.2040</td><td bgcolor='#eeeeec' align='right'>527632</td><td bgcolor='#eeeeec'>Core\AppKernel->initRouter(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.2040</td><td bgcolor='#eeeeec' align='right'>527632</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>35</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.2040</td><td bgcolor='#eeeeec' align='right'>527632</td><td bgcolor='#eeeeec'>Core\Router->getRoute(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php' bgcolor='#eeeeec'>...\Router.php<b>:</b>30</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
 DateTime: 09.01.2020 17:48:25
 Log data: 
 Array

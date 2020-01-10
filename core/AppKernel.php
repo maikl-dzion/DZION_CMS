@@ -3,8 +3,6 @@
 namespace Core;
 
 use Core\Services\DI;
-// use Core\Router;
-// use Core\ServicesRegister;
 use Core\Services\Logger;
 
 class AppKernel
@@ -22,7 +20,6 @@ class AppKernel
         $this->di       = new DI();
         $this->router   = new Router($routes);
         $this->logger   = new Logger(LOG_PATH);
-
         $this->initialize();
     }
 
@@ -41,21 +38,27 @@ class AppKernel
         $actionName = $this->controller->action;
         $parameters = $this->controller->parameters;
 
+        $message    = false;
+
         if(class_exists($className)) {
             $controller = new $className($this->di, $parameters);
             if(method_exists($controller, $actionName))  {
-                if(!empty($parameters)) {
+                if(!empty($parameters))
                     $response = $controller->$actionName($parameters);
-                } else {
+                 else
                     $response = $controller->$actionName();
-                }
             } else {
                 $message = "Не существует метод класса - {$className}->{$actionName}";
-                $this->logger->log($message, 'app_kernel');
             }
         } else {
             $message = "Не существует класс - {$className}";
+        }
+
+        if($message) {
             $this->logger->log($message, 'app_kernel');
+            $this->logger->log($message, 'log');
+            throw new \Exception($message);
+            exit;
         }
 
         return $response;
@@ -64,7 +67,7 @@ class AppKernel
     public function loadServices() {
         return array(
             Services\Logger::class => array('name' => 'logger', 'params' => LOG_PATH),
-            Services\DB::class     => array('name' => 'db'    , 'params' => $this->dbconfig, $this->logger)
+            Services\DB::class     => array('name' => 'db'    , 'params' => $this->dbconfig)
         );
     }
 
