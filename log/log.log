@@ -1,0 +1,68 @@
+=============================
+DateTime: 10.01.2020 18:46:37
+Log data: 
+index.php = Не найден метод класса (Router) (accsess)
+=============================
+
+=============================
+DateTime: 10.01.2020 18:45:12
+Log data: 
+index.php = Не найден метод класса (Router) (accsess)
+=============================
+
+=============================
+DateTime: 10.01.2020 18:45:02
+Log data: 
+index.php = Не найден метод класса (Router) (accsess)
+=============================
+
+=============================
+DateTime: 10.01.2020 18:44:52
+Log data: 
+index.php = Не найден метод класса (Router) (accsess)
+=============================
+
+=============================
+DateTime: 10.01.2020 18:02:39
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 10.01.2020 17:59:24
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_3) already exists.
+=============================
+
+=============================
+DateTime: 10.01.2020 11:37:37
+Log data: 
+index.php = Не найден метод класса (Router) (public)
+=============================
+
+=============================
+DateTime: 10.01.2020 11:37:36
+Log data: 
+index.php = Не найден метод класса (Router) (public)
+=============================
+
+=============================
+DateTime: 10.01.2020 11:36:27
+Log data: 
+index.php = Не найден метод класса (Router) (public)
+=============================
+
+=============================
+DateTime: 10.01.2020 11:30:12
+Log data: 
+index.php = Не найден метод класса (Router) (public)
+=============================
+
+=============================
+DateTime: 10.01.2020 11:30:00
+Log data: 
+index.php = Не найден метод класса (Router) (public)
+=============================
+

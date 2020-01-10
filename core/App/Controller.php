@@ -3,12 +3,12 @@
 namespace Core\App;
 
 use Core\Services\DI;
-// use Core\App\App;
 
 class Controller extends App {
 
     protected $di;
     protected $db;
+    protected $jwt;
     protected $config;
     protected $request;
     protected $parameters = array();
@@ -20,6 +20,7 @@ class Controller extends App {
 
         $this->db     = $this->di->get('db');
         $this->logger = $this->di->get('logger');
+        $this->jwt    = $this->di->get('jwt');
 
     }
 

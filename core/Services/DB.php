@@ -144,7 +144,8 @@ class DB extends AbstractCore
         return $this->pdo->lastInsertId();
     }
 
-    public function log($data, $name = '') {
+    public function log($data, $name = 'db_log') {
+        $this->logger->log($data, $name);
         lg($data);
     }
 
@@ -226,4 +227,5 @@ class DB extends AbstractCore
                   WHERE table_name = '{$tableName}'";
         return $this->fetch($query);
     }
+
 }

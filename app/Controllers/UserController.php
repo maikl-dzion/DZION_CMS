@@ -7,6 +7,7 @@ use Core\App\Controller;
 class UserController extends Controller{
 
     protected $tableName = 'users';
+    protected $access;
 
     public function getUsers(){
         $query = "SELECT * FROM {$this->tableName}";
@@ -23,36 +24,19 @@ class UserController extends Controller{
         return $user;
     }
 
-    private function getTestData() {
-
-        $salt = rand();
-
-        $data = array(
-            "login"    => "test_user" . $salt,
-            "password" => "test_user" . $salt,
-            "username" => "test_user" . $salt,
-            "lastname" => "test_user" . $salt,
-            "email"    => "test_mail{$salt}@mail.ru"
-        );
-
-        return $data;
-    }
 
     public function createUser() {
 
         $data  = $this->fetchPost();
-        $error = '';
+        $data = $this->getTestData(21);
 
-        $data = $this->getTestData();
-
-        // Проверка на обязательные поля
         if( !empty($data['login'])    &&
             !empty($data['password']) &&
             !empty($data['username']) &&
             !empty($data['email'])) {
 
             $fields = $this->getFields('create');
-            $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+            $data['password']= $this->passwordHash($data['password']);
             $response = $this->db->createPrepare($fields, $data, $this->tableName);
             if($response->status) {
                 $userId = $this->db->lastInsertId();
@@ -115,6 +99,106 @@ class UserController extends Controller{
         return array("message" => "Пользователь удален");
     }
 
+
+    public function login() {
+
+        $data = $this->fetchPost();
+        $result = $this->verifyPwd($data);
+        $status = false;
+        $sessionId = $jwt = $username = '';
+
+        if(!empty($result['verify_pwd'])) {
+            $sessionId = session_id();
+            $username  = $result['username'];
+            $account = array(
+                'session_id' => $sessionId,
+                'role'       => $result['role'],
+                'user_id'    => $result['user_id'],
+                'login'      => $result['login'],
+                'password'   => $result['password'],
+                'username'   => $username,
+                'verify'     => $result['verify'],
+                'status'     => $result['status'],
+                'user'       => $result,
+                'auth_dt'    => date('Y-m-d')
+            );
+
+            $jwt = $this->authJwt($account);
+            $status = true;
+        } else {
+            $this->authClose();
+        }
+
+        $response = array(
+            'status'      => $status,
+            'session_id'  => $sessionId,
+            'username'    => $username,
+            'jwt'         => $jwt
+        );
+
+        $serialize = serialize($response);
+        $response['serialize'] = $serialize;
+        return $response;
+    }
+
+    protected function md5($value) {
+        return md5($value);
+    }
+
+    protected function authJwt($data) {
+        $token = $this->jwt->encode($data['login'],
+                                    $data['password'],
+                                    $data['role']);
+        return $token;
+    }
+
+    protected function authClose() {
+
+    }
+
+    protected function logout() {
+        $this->authClose();
+    }
+
+    private function verifyPwd($data) {
+        $login    = $data['login'];
+        $password = $data['password'];
+        $query = "SELECT * FROM {$this->tableName} WHERE login='{$login}' ";
+        $user = $this->db->fetch($query);
+        if(!empty($user[0]))
+            $user = $user[0];
+        $hash = $user['password'];
+        $status = $this->passwordVerify($password, $hash);
+        if($status) {
+            $user['verify_pwd'] = $status;
+            return $user;
+        }
+        return array('verify_pwd' => $status);
+    }
+
+    private function passwordHash($data) {
+        return password_hash($data, PASSWORD_BCRYPT);
+    }
+
+    private function passwordVerify($value, $hash) {
+        return password_verify($value, $hash);
+    }
+
+    protected function verifyJwtToken($token = '') {
+        ($token) ? $jwtToken = $token :
+                   $jwtToken = end($this->getParams());
+
+        $access = $this->jwt->decode($jwtToken);
+        ($access) ? $status = true : $status = false;
+        $this->access = $status;
+        return $status;
+    }
+
+    public function access() {
+        $accessStatus = $this->verifyJwtToken();
+        return array('access_status' => $accessStatus);
+    }
+
     public function getFields($optional = '') {
 
         $fields = array(
@@ -158,5 +242,24 @@ class UserController extends Controller{
         }
 
         return $result;
+    }
+
+    private function getTestData($value = 0) {
+
+        // $salt = rand();
+        if($value)
+           $salt = $value;
+        else
+           $salt = rand();
+
+        $data = array(
+            "login"    => "testuser_" . $salt,
+            "password" => "testuser_" . $salt,
+            "username" => "testuser_" . $salt,
+            "lastname" => "testuser_" . $salt,
+            "email"    => "testmail_{$salt}@mail.ru"
+        );
+
+        return $data;
     }
 }

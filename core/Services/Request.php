@@ -2,7 +2,9 @@
 
 namespace Core\Services;
 
-class Request
+use Core\AbstractCore;
+
+class Request extends AbstractCore
 {
     public $get     = [];
     public $post    = [];
@@ -40,7 +42,6 @@ class Request
     public static function getRouteParam($type = REQUEST_URL_NAME){
         $routeObject = null;
         $url = self::getUrl($type);
-        // print_r($_SERVER); die;
         switch ($type) {
             case 'PATH_INFO'  :
                   $routeObject = self::pathInfo($url, $type);
@@ -83,4 +84,5 @@ class Request
     public static function requestUri($url, $type = '') {
         print_r($url); die;
     }
+
 }
