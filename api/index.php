@@ -18,6 +18,7 @@ try {
     $title = "Ошибка в файле index-{$fileName}";
 
     $error = array(
+        'Try-Catch-Api-Index' => 'try-catch-index',
         'title' => $title,
         'file'  => $e->getFile(),
         'line'  => $e->getLine(),
@@ -30,6 +31,7 @@ try {
     $logger->log($error, 'index');
     $logger->log('index.php = ' . $e->getMessage(), 'log');
     lg($error);
+
     exit;
 
 }

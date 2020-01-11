@@ -1,14 +1,10 @@
- Indirect modification of overloaded property App\Controllers\UserController::$params has no effect = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  end() expects parameter 1 to be array, null given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  Indirect modification of overloaded property App\Controllers\UserController::$params has no effect = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  end() expects parameter 1 to be array, null given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  Indirect modification of overloaded property App\Controllers\UserController::$params has no effect = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  end() expects parameter 1 to be array, null given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  Indirect modification of overloaded property App\Controllers\UserController::$params has no effect = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  end() expects parameter 1 to be array, null given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  Indirect modification of overloaded property App\Controllers\UserController::$params has no effect = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  end() expects parameter 1 to be array, null given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 188
-  Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php = 49
-  Only variables should be passed by reference = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 189
-  Only variables should be passed by reference = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 189
+ Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 38
+  Undefined variable: url = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
+  file_get_contents(C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log/app_kernel.log): failed to open stream: No such file or directory = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Logger.php = 38
  

@@ -35,7 +35,9 @@ class Request extends AbstractCore
     }
 
     public static function getUrl($type){
-        $url = $_SERVER[$type];
+        $url = 'default_uri/index';
+        if(!empty($_SERVER[$type]))
+            $url = $_SERVER[$type];
         return $url;
     }
 

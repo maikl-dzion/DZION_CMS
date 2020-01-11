@@ -8,6 +8,7 @@ class Router
 {
     private $routes = [];
     private $route;
+    private $routeUrl;
     private $method;
 
     public function __construct(array $routes){
@@ -15,11 +16,13 @@ class Router
     }
 
     public function getRoute() {
-        $this->route = Request::getRouteParam(REQUEST_URL_NAME);
+        $routeUrl = Request::getRouteParam(REQUEST_URL_NAME);
         // $this->route = Request::getRouteParam('REQUEST_URI');
-        $class   = $this->route->class;
-        if(isset($this->routes[$class]))
-            return $this->routes[$class];
+        $class   = $routeUrl->class;
+        if(!empty($this->routes[$class])) {
+            $this->route = $this->routes[$class];
+            return $routeUrl;
+        }
 
         $message = "Не найден маршрут (Router-{$class})";
         throw new \Exception($message);
@@ -27,25 +30,32 @@ class Router
 
     public function init() {
 
-        $route = $this->getRoute();
-        $action = $this->route->action;
+        $routeUrl = $this->getRoute();
+        $action   = $routeUrl->action;  // Имя метода для фронта : get_users
+        $parameters  = $routeUrl->parameters;
 
-        if(!isset($route[ROUTE_CLASS_METHODS][$action])) {
+        /**  Пример $this->route
+        [class] => App\Controllers\DefaultController
+        [public] => Array(
+            [get_users] => Array([func_name] => getUsers, [args] => 'id', [method] => GET)
+        ) **/
+
+        if(empty($this->route[ROUTE_METHODS_INDEX][$action])) {
             $message = "Не найден метод класса (Router) ({$action})";
             throw new \Exception($message);
         }
 
-        $className   = $route[ROUTE_CLASS_NAME];
-        $methodParam = $route[ROUTE_CLASS_METHODS][$action];
-        $actionName  = $methodParam[ROUTE_METHOD_FIELD];
-        $parameters  = $this->route->parameters;
+        $className    = $this->route[ROUTE_CLASS_NAME];     // Получаем имя класса : App\Controllers\DefaultController
+        $methodParams = $this->route[ROUTE_METHODS_INDEX][$action]; // Получаем массив метода : Array([func_name] => getUsers, [args] => 'id', [method] => GET)
+        $methodName   = $methodParams[ROUTE_METHOD_FNAME];  // Получаем имя метода : getUsers
 
         $resp = new \stdClass();
         $resp->class       = $className;
-        $resp->action      = $actionName;
+        $resp->action      = $methodName;
         $resp->parameters  = $parameters;
-        $resp->route       = $route;
-        $resp->actionParam = $methodParam;
+        $resp->route       = $this->route;
+        $resp->routeUrl    = $routeUrl;
+        $resp->actionParams = $methodParams;
 
         return $resp;
     }
