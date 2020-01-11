@@ -7,4 +7,42 @@
   Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
   Undefined index: PATH_INFO = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Request.php = 40
   file_get_contents(C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log/app_kernel.log): failed to open stream: No such file or directory = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Logger.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined offset: 400 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AbstractCore.php = 24
+  Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ErrorHandler.php = 47
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined offset: 400 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AbstractCore.php = 24
+  Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ErrorHandler.php = 48
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined offset: 400 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AbstractCore.php = 24
+  Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ErrorHandler.php = 47
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined offset: 400 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AbstractCore.php = 24
+  Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ErrorHandler.php = 47
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined offset: 400 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AbstractCore.php = 24
+  Array to string conversion = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ErrorHandler.php = 47
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
  

@@ -15,21 +15,34 @@ try {
 } catch(\Exception $e){
 
     $fileName = __FILE__;
-    $title = "Ошибка в файле index-{$fileName}";
+    $title = "Ошибка в файле index - {$fileName}";
+    $message = $e->getMessage();
+    $code    = $e->getCode();
+    $trace   = $e->getTrace();
+    $traceString = $e->getTraceAsString();
+    $toString = $e->__toString();
+    // die($toString);
 
     $error = array(
-        'Try-Catch-Api-Index' => 'try-catch-index',
+        'Try-Catch-Api-Index' => 'try-catch-api-index',
         'title' => $title,
         'file'  => $e->getFile(),
         'line'  => $e->getLine(),
-        'message' => $e->getMessage(),
-        'code'    => $e->getCode(),
+        'message' => $message,
+        'code'    => $code,
+        'to_string' => $toString,
+        'trace_string' => $traceStr,
+        'trace'   => $trace,
         'exception'  => $e
     );
 
     $logger = new Core\Services\Logger(LOG_PATH);
     $logger->log($error, 'index');
-    $logger->log('index.php = ' . $e->getMessage(), 'log');
+    $logger->log('index.php = ' . $message, 'log');
+
+    $errHandl = new Core\Services\ErrorHandler();
+    $errHandl->exceptionProcess($e, $fileName);
+
     lg($error);
 
     exit;

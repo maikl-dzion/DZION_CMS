@@ -23,4 +23,8 @@ abstract class AbstractCore {
 
         return ($status[$code]) ? $status[$code] : $status;
     }
+
+    protected function responseCode($code) {
+        http_response_code($code);
+    }
 }

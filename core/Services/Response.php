@@ -18,10 +18,10 @@ class Response extends AbstractCore {
 //    }
 
     public function response($responseName = 'result', $code = 200) {
-        header("HTTP/1.1 " . $code . " " . $this->statusCodeList($code));
+        header("HTTP/1.1 " . $code);
         $data = $this->response;
-        $data = json_encode($data);
-        return array($responseName => $data);
+        $data = json_encode(array($responseName => $data));
+        return $data;
     }
 
 }

@@ -96,12 +96,22 @@ class DB extends AbstractCore
     }
 
     public function bindExec($query, $data) {
+
         $stmt   = $this->pdo->prepare($query);
+
         foreach ($data as $fieldName => $value) {
             $value = htmlspecialchars(strip_tags($value));
             $stmt->bindValue(":{$fieldName}", $value);
         }
-        $status = $stmt->execute();
+
+        try {
+             $status = $stmt->execute();
+        } catch (Exception $e) {
+            $title = "Не удалось выполнить запрос : {$query}";
+            exceptionHandler($e, $title);
+            exit;
+        }
+
         $error  = $stmt->errorInfo();
         return $this->saveInfo($error, $status, $stmt);
     }

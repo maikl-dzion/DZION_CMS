@@ -1,4 +1,277 @@
 =============================
+DateTime: 11.01.2020 16:51:30
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:50:15
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:50:09
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:49:22
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:45:55
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:44:56
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:44:46
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:44:18
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:43:44
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:43:04
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:41:27
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:40:36
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:40:25
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:39:46
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:38:19
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:36:33
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:24:51
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:21:50
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:21:28
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:21:26
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:11:51
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:11:24
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:11:08
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:10:40
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:10:37
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:06:43
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 16:04:46
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:57:16
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:52:58
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:51:13
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:48:47
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:40:15
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:35:46
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:34:46
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:33:54
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:33:33
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:32:57
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:31:59
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 11.01.2020 15:31:13
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
 DateTime: 11.01.2020 15:28:33
 Log data: 
 index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
