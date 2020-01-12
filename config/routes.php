@@ -20,6 +20,7 @@ return array(
            'login'       => array(ROUTE_METHOD_FNAME =>'login',      'args' => 'login,password,user_id', 'method' => 'POST'),
            'logout'      => array(ROUTE_METHOD_FNAME =>'logout',     'args' => 'user_id', 'method' => 'POST'),
            'access'      => array(ROUTE_METHOD_FNAME =>'access',     'args' => 'token', 'method' => 'GET'),
+           'verify_email'  => array(ROUTE_METHOD_FNAME =>'verifyEmail', 'args' => '', 'method' => 'GET'),
        ),
    )
 

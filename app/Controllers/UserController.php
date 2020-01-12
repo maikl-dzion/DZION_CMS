@@ -25,6 +25,12 @@ class UserController extends Controller{
         return $user;
     }
 
+    public function verifyEmail() {
+        $userId = $this->getParam(0);
+        lg($userId);
+        return [];
+    }
+
     protected function hasValue($fieldName, $value, $tableName = '') {
         $item = $this->db->selectItem($this->tableName, $fieldName, $value);
         return $item;
