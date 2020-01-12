@@ -40,6 +40,11 @@ class Controller extends App {
         return $this->di->get($key);
     }
 
+    protected function sendMail($email, $header, $message) {
+        $result = mail($email, $header, $message);
+        return $result;
+    }
+
     protected function fetchPost($cast = 'array') {
         $data = json_decode(file_get_contents("php://input"));
         switch ($cast) {

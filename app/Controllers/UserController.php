@@ -288,7 +288,7 @@ class UserController extends Controller{
             "password" => "1234",
             "username" => "maikl",
             "lastname" => "abasov",
-            "email"    => "dzion@mail.ru"
+            "email"    => "dzion67@mail.ru"
         );
 
         return $data;
