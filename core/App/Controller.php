@@ -34,6 +34,11 @@ class Controller extends App {
         return $this->parameters;
     }
 
+    protected function sendMail($email, $header, $message) {
+        $result = mail($email, $header, $message);
+        return $result;
+    }
+
     public function __get($key) {
         return $this->di->get($key);
     }

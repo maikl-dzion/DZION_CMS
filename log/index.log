@@ -1,4 +1,2996 @@
 =============================
+DateTime: 12.01.2020 07:38:07
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 108
+    [message] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+    [code] => 23505
+    [to_string] => PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists. in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:108
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(108): PDOStatement->execute()
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(126): Core\Services\DB->bindExec('INSERT INTO use...', Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php(60): Core\Services\DB->createPrepare(Array, Array, 'users')
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(52): App\Controllers\UserController->createUser()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(12): Core\AppKernel->run()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 108
+                    [function] => execute
+                    [class] => PDOStatement
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 126
+                    [function] => bindExec
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => INSERT INTO users (login,email,username,lastname,password)  VALUES(:login,:email,:username,:lastname,:password)
+                            [1] => Array
+                                (
+                                    [login] => testuser_21
+                                    [email] => testmail_21@mail.ru
+                                    [username] => testuser_21
+                                    [lastname] => testuser_21
+                                    [password] => $2y$10$4Tl7PWdK9WWaKTolIUmh9uYy7muj.7VFMN5ZjOfqZFTIKJfIhF5Y2
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                    [line] => 60
+                    [function] => createPrepare
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [login] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 250
+                                            [param] => UNIQUE NOT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [email] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 300
+                                            [param] => UNIQUE NOT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [username] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 250
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [lastname] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 250
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [password] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 250
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [note] => Array
+                                        (
+                                            [type] => text
+                                            [size] => 0
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [phone] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 250
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [mobile] => Array
+                                        (
+                                            [type] => varchar
+                                            [size] => 250
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [sex] => Array
+                                        (
+                                            [type] => integer
+                                            [size] => 0
+                                            [param] => DEFAULT 1
+                                            [optional] => 2
+                                        )
+
+                                    [age] => Array
+                                        (
+                                            [type] => integer
+                                            [size] => 0
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                    [address] => Array
+                                        (
+                                            [type] => text
+                                            [size] => 0
+                                            [param] => DEFAULT NULL
+                                            [optional] => 2
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [login] => testuser_21
+                                    [password] => $2y$10$4Tl7PWdK9WWaKTolIUmh9uYy7muj.7VFMN5ZjOfqZFTIKJfIhF5Y2
+                                    [username] => testuser_21
+                                    [lastname] => testuser_21
+                                    [email] => testmail_21@mail.ru
+                                )
+
+                            [2] => users
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 52
+                    [function] => createUser
+                    [class] => App\Controllers\UserController
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 12
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+            [string:Exception:private] => PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists. in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:108
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(108): PDOStatement->execute()
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(126): Core\Services\DB->bindExec('INSERT INTO use...', Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php(60): Core\Services\DB->createPrepare(Array, Array, 'users')
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(52): App\Controllers\UserController->createUser()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(12): Core\AppKernel->run()
+#5 {main}
+            [code:protected] => 23505
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 108
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 108
+                            [function] => execute
+                            [class] => PDOStatement
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 126
+                            [function] => bindExec
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => INSERT INTO users (login,email,username,lastname,password)  VALUES(:login,:email,:username,:lastname,:password)
+                                    [1] => Array
+                                        (
+                                            [login] => testuser_21
+                                            [email] => testmail_21@mail.ru
+                                            [username] => testuser_21
+                                            [lastname] => testuser_21
+                                            [password] => $2y$10$4Tl7PWdK9WWaKTolIUmh9uYy7muj.7VFMN5ZjOfqZFTIKJfIhF5Y2
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php
+                            [line] => 60
+                            [function] => createPrepare
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [login] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [email] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 300
+                                                    [param] => UNIQUE NOT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [username] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [lastname] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [password] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [note] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [phone] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [mobile] => Array
+                                                (
+                                                    [type] => varchar
+                                                    [size] => 250
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [sex] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT 1
+                                                    [optional] => 2
+                                                )
+
+                                            [age] => Array
+                                                (
+                                                    [type] => integer
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                            [address] => Array
+                                                (
+                                                    [type] => text
+                                                    [size] => 0
+                                                    [param] => DEFAULT NULL
+                                                    [optional] => 2
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [login] => testuser_21
+                                            [password] => $2y$10$4Tl7PWdK9WWaKTolIUmh9uYy7muj.7VFMN5ZjOfqZFTIKJfIhF5Y2
+                                            [username] => testuser_21
+                                            [lastname] => testuser_21
+                                            [email] => testmail_21@mail.ru
+                                        )
+
+                                    [2] => users
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 52
+                            [function] => createUser
+                            [class] => App\Controllers\UserController
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 12
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => Array
+                (
+                    [0] => 23505
+                    [1] => 7
+                    [2] => ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+                )
+
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists. in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>108</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0040</td><td bgcolor='#eeeeec' align='right'>362856</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1010</td><td bgcolor='#eeeeec' align='right'>576720</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>12</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1040</td><td bgcolor='#eeeeec' align='right'>637920</td><td bgcolor='#eeeeec'>App\Controllers\UserController->createUser(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>52</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.2340</td><td bgcolor='#eeeeec' align='right'>644040</td><td bgcolor='#eeeeec'>Core\Services\DB->createPrepare(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php' bgcolor='#eeeeec'>...\UserController.php<b>:</b>60</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.2340</td><td bgcolor='#eeeeec' align='right'>644824</td><td bgcolor='#eeeeec'>Core\Services\DB->bindExec(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>126</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.2360</td><td bgcolor='#eeeeec' align='right'>647696</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDOStatement.execute' target='_new'>execute</a>
+(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>108</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 07:02:23
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 45
+    [message] => Не найден метод класса (Router) (index)
+    [code] => 0
+    [to_string] => Exception: Не найден метод класса (Router) (index) in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(35): Core\Router->init()
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(31): Core\AppKernel->initRouter()
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#4 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 35
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 31
+                    [function] => initRouter
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 26
+                    [function] => initialize
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден метод класса (Router) (index)
+            [string:Exception:private] => Exception: Не найден метод класса (Router) (index) in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(35): Core\Router->init()
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(31): Core\AppKernel->initRouter()
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#4 {main}
+            [code:protected] => 0
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 45
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 35
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 31
+                            [function] => initRouter
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден метод класса (Router) (index) in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>45</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0040</td><td bgcolor='#eeeeec' align='right'>362712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0150</td><td bgcolor='#eeeeec' align='right'>460392</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0180</td><td bgcolor='#eeeeec' align='right'>497432</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0970</td><td bgcolor='#eeeeec' align='right'>562344</td><td bgcolor='#eeeeec'>Core\AppKernel->initRouter(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0970</td><td bgcolor='#eeeeec' align='right'>562344</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>35</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 07:02:14
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 45
+    [message] => Не найден метод класса (Router) (index)
+    [code] => 0
+    [to_string] => Exception: Не найден метод класса (Router) (index) in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(35): Core\Router->init()
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(31): Core\AppKernel->initRouter()
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#4 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 35
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 31
+                    [function] => initRouter
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 26
+                    [function] => initialize
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден метод класса (Router) (index)
+            [string:Exception:private] => Exception: Не найден метод класса (Router) (index) in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(35): Core\Router->init()
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(31): Core\AppKernel->initRouter()
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#4 {main}
+            [code:protected] => 0
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 45
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 35
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 31
+                            [function] => initRouter
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден метод класса (Router) (index) in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>45</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0040</td><td bgcolor='#eeeeec' align='right'>362712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0180</td><td bgcolor='#eeeeec' align='right'>460392</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0210</td><td bgcolor='#eeeeec' align='right'>497432</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>1.1231</td><td bgcolor='#eeeeec' align='right'>562344</td><td bgcolor='#eeeeec'>Core\AppKernel->initRouter(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>31</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>1.1231</td><td bgcolor='#eeeeec' align='right'>562344</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>35</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 06:59:08
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 89
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 30
+                    [function] => initServices
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 26
+                    [function] => initialize
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+            [code:protected] => 0
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 89
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 30
+                            [function] => initServices
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [5] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0000</td><td bgcolor='#eeeeec' align='right'>362712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0030</td><td bgcolor='#eeeeec' align='right'>460392</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0050</td><td bgcolor='#eeeeec' align='right'>497432</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0050</td><td bgcolor='#eeeeec' align='right'>497432</td><td bgcolor='#eeeeec'>Core\AppKernel->initServices(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0060</td><td bgcolor='#eeeeec' align='right'>537944</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>89</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0060</td><td bgcolor='#eeeeec' align='right'>538112</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>7</td><td bgcolor='#eeeeec' align='center'>0.0060</td><td bgcolor='#eeeeec' align='right'>538400</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 06:59:05
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 89
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 30
+                    [function] => initServices
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 26
+                    [function] => initialize
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+            [code:protected] => 0
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 89
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 30
+                            [function] => initServices
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [5] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0020</td><td bgcolor='#eeeeec' align='right'>362712</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0080</td><td bgcolor='#eeeeec' align='right'>460392</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0110</td><td bgcolor='#eeeeec' align='right'>497432</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0110</td><td bgcolor='#eeeeec' align='right'>497432</td><td bgcolor='#eeeeec'>Core\AppKernel->initServices(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0120</td><td bgcolor='#eeeeec' align='right'>537944</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>89</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0120</td><td bgcolor='#eeeeec' align='right'>538112</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>7</td><td bgcolor='#eeeeec' align='center'>0.0120</td><td bgcolor='#eeeeec' align='right'>538400</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 06:57:51
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 89
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 30
+                    [function] => initServices
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 26
+                    [function] => initialize
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+            [code:protected] => 0
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 89
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 30
+                            [function] => initServices
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [5] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>362568</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0070</td><td bgcolor='#eeeeec' align='right'>460248</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0100</td><td bgcolor='#eeeeec' align='right'>497288</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0100</td><td bgcolor='#eeeeec' align='right'>497288</td><td bgcolor='#eeeeec'>Core\AppKernel->initServices(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0120</td><td bgcolor='#eeeeec' align='right'>537800</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>89</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0120</td><td bgcolor='#eeeeec' align='right'>537968</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>7</td><td bgcolor='#eeeeec' align='center'>0.0120</td><td bgcolor='#eeeeec' align='right'>538256</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 06:57:31
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 89
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 30
+                    [function] => initServices
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 26
+                    [function] => initialize
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(89): Core\Services\DB->__construct(Array)
+#3 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(30): Core\AppKernel->initServices()
+#4 C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(26): Core\AppKernel->initialize()
+#5 C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#6 {main}
+            [code:protected] => 0
+            [file:protected] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 89
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 30
+                            [function] => initServices
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 26
+                            [function] => initialize
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [5] => Array
+                        (
+                            [file] => C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0000</td><td bgcolor='#eeeeec' align='right'>361192</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0176</td><td bgcolor='#eeeeec' align='right'>458960</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0206</td><td bgcolor='#eeeeec' align='right'>496000</td><td bgcolor='#eeeeec'>Core\AppKernel->initialize(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>26</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0206</td><td bgcolor='#eeeeec' align='right'>496000</td><td bgcolor='#eeeeec'>Core\AppKernel->initServices(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0216</td><td bgcolor='#eeeeec' align='right'>536512</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>89</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0216</td><td bgcolor='#eeeeec' align='right'>536680</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>7</td><td bgcolor='#eeeeec' align='center'>0.0216</td><td bgcolor='#eeeeec' align='right'>536968</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
 DateTime: 11.01.2020 16:51:30
 Log data: 
 Array

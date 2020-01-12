@@ -24,10 +24,25 @@ class UserController extends Controller{
         return $user;
     }
 
+    protected function hasValue($fieldName, $value, $tableName = '') {
+        $item = $this->db->selectItem($this->tableName, $fieldName, $value);
+        return $item;
+    }
+
+    public function hasLogin($login) {
+        $user = $this->hasValue('login', $login);
+        return (!empty($user['user_id'])) ? $user['user_id'] : false;
+    }
+
+    public function hasEmail($email) {
+        $user = $this->hasValue('email', $email);
+        return (!empty($user['user_id'])) ? $user['user_id'] : false;
+    }
 
     public function createUser() {
 
         $data  = $this->fetchPost();
+        $this->db->truncateTable($this->tableName);
         $data = $this->getTestData(21);
 
         if( !empty($data['login'])    &&
@@ -35,12 +50,20 @@ class UserController extends Controller{
             !empty($data['username']) &&
             !empty($data['email'])) {
 
+            if($userId = $this->hasLogin($data['login']))
+                return array("message" => 'Такой логин уже существует - ' . $data['login']);
+
+            if($userId = $this->hasEmail($data['email']))
+                return array("message" => 'Такой email уже существует - ' . $data['email']);
+
             $fields = $this->getFields('create');
             $data['password']= $this->passwordHash($data['password']);
             $response = $this->db->createPrepare($fields, $data, $this->tableName);
             if($response->status) {
                 $userId = $this->db->lastInsertId();
                 $user   = $this->getUser($userId);
+                $verifyEmailUrl = 'http://home.ru/DZION_CMS/user/verify_email/' . $userId;
+                $this->sendMail($data['email'], 'Проверка email', $verifyEmailUrl);
                 return array("message" => "Пользователь успешно создан",
                              "user_id" => $userId, 'user' => $user);
             }
@@ -258,6 +281,14 @@ class UserController extends Controller{
             "username" => "testuser_" . $salt,
             "lastname" => "testuser_" . $salt,
             "email"    => "testmail_{$salt}@mail.ru"
+        );
+
+        $data = array(
+            "login"    => "maikl",
+            "password" => "1234",
+            "username" => "maikl",
+            "lastname" => "abasov",
+            "email"    => "dzion@mail.ru"
         );
 
         return $data;

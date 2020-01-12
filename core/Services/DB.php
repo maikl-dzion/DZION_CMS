@@ -150,6 +150,15 @@ class DB extends AbstractCore
         return $result;
     }
 
+    public function fetchRow($query) {
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($result[0]))
+           return $result[0];
+        return [];
+    }
+
     public function lastInsertId(){
         return $this->pdo->lastInsertId();
     }
@@ -236,6 +245,14 @@ class DB extends AbstractCore
                   FROM INFORMATION_SCHEMA.COLUMNS 
                   WHERE table_name = '{$tableName}'";
         return $this->fetch($query);
+    }
+
+    public function selectItem($tableName, $fieldName, $value, $select = "*", $where = '') {
+        $value = "'{$value}'";
+        if (is_numeric($value))
+            $value = $value;
+        $query = "SELECT {$select} FROM {$tableName} WHERE {$fieldName} = " . $value . $where;
+        return $this->fetchRow($query);
     }
 
 }

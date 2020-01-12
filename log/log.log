@@ -1,4 +1,47 @@
 =============================
+DateTime: 12.01.2020 07:38:07
+Log data: 
+index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
+DETAIL:  Key (login)=(testuser_21) already exists.
+=============================
+
+=============================
+DateTime: 12.01.2020 07:02:23
+Log data: 
+index.php = Не найден метод класса (Router) (index)
+=============================
+
+=============================
+DateTime: 12.01.2020 07:02:14
+Log data: 
+index.php = Не найден метод класса (Router) (index)
+=============================
+
+=============================
+DateTime: 12.01.2020 06:59:08
+Log data: 
+index.php = could not find driver
+=============================
+
+=============================
+DateTime: 12.01.2020 06:59:05
+Log data: 
+index.php = could not find driver
+=============================
+
+=============================
+DateTime: 12.01.2020 06:57:51
+Log data: 
+index.php = could not find driver
+=============================
+
+=============================
+DateTime: 12.01.2020 06:57:31
+Log data: 
+index.php = could not find driver
+=============================
+
+=============================
 DateTime: 11.01.2020 16:51:30
 Log data: 
 index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"
