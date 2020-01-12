@@ -58,4 +58,7 @@
   mail(): &quot;sendmail_from&quot; not set in php.ini or custom &quot;From:&quot; header missing = C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\App\Controller.php = 38
   mail(): &quot;sendmail_from&quot; not set in php.ini or custom &quot;From:&quot; header missing = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\App\Controller.php = 44
   mail(): &quot;sendmail_from&quot; not set in php.ini or custom &quot;From:&quot; header missing = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\App\Controller.php = 44
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
  

@@ -1,4 +1,22 @@
 =============================
+DateTime: 12.01.2020 16:00:00
+Log data: 
+index.php = Не найден метод класса (Router) (verify_email)
+=============================
+
+=============================
+DateTime: 12.01.2020 15:56:47
+Log data: 
+index.php = Не найден метод класса (Router) (verify_email)
+=============================
+
+=============================
+DateTime: 12.01.2020 15:52:50
+Log data: 
+index.php = Не найден метод класса (Router) (verify_email)
+=============================
+
+=============================
 DateTime: 12.01.2020 07:38:07
 Log data: 
 index.php = SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_login_key"

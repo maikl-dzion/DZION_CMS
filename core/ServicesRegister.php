@@ -10,7 +10,9 @@ class ServicesRegister extends AbstractCore {
             Services\DB::class                => array('name' => 'db'           , 'params' => $dbconfig),
             Services\JwtAuthController::class => array('name' => 'jwt'          , 'params' => ''),
             Services\FileUploads::class       => array('name' => 'files_loader' , 'params' => ''),
-            Services\Response::class          => array('name' => 'response'     , 'params' => '')
+            Services\Response::class          => array('name' => 'response'     , 'params' => ''),
+            Services\SendMailer::class        => array('name' => 'mail'         , 'params' => ''),
+            Services\DbMigrateController::class => array('name' => 'migrate'    , 'params' => '')
         );
     }
 

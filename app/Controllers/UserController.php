@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\App\Controller;
 
+
 class UserController extends Controller{
 
     protected $tableName = 'users';
@@ -62,8 +63,13 @@ class UserController extends Controller{
             if($response->status) {
                 $userId = $this->db->lastInsertId();
                 $user   = $this->getUser($userId);
-                $verifyEmailUrl = 'http://home.ru/DZION_CMS/user/verify_email/' . $userId;
-                $this->sendMail($data['email'], 'Проверка email', $verifyEmailUrl);
+
+                $mailHeader  = 'Проверка email';
+                $linkMessage = 'Пройдите по адресу для подтверждения почты';
+                $serviceUrl  = 'http://home.ru/DZION_CMS/user/verify_email/' . $userId;
+                $verifyEmailUrl = '<a href="'. $serviceUrl .'" >' .$linkMessage. '</a>';
+                $this->sendMail($data['email'], $verifyEmailUrl, $mailHeader);
+
                 return array("message" => "Пользователь успешно создан",
                              "user_id" => $userId, 'user' => $user);
             }

@@ -40,8 +40,9 @@ class Controller extends App {
         return $this->di->get($key);
     }
 
-    protected function sendMail($email, $header, $message) {
-        $result = mail($email, $header, $message);
+    protected function sendMail($email, $message, $header) {
+        $mail = $this->di->get('mail');
+        $result = $mail->send($email, $message, $header);
         return $result;
     }
 

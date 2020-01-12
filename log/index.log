@@ -1,4 +1,964 @@
 =============================
+DateTime: 12.01.2020 16:00:00
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 45
+    [message] => Не найден метод класса (Router) (verify_email)
+    [code] => 0
+    [to_string] => Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(45): Core\Router->init()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(34): Core\AppKernel->routerInit()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#3 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 45
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 34
+                    [function] => routerInit
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден метод класса (Router) (verify_email)
+            [string:Exception:private] => Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(45): Core\Router->init()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(34): Core\AppKernel->routerInit()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#3 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 45
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 45
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 34
+                            [function] => routerInit
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>45</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>364296</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0040</td><td bgcolor='#eeeeec' align='right'>459704</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.2250</td><td bgcolor='#eeeeec' align='right'>580080</td><td bgcolor='#eeeeec'>Core\AppKernel->routerInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>34</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.2250</td><td bgcolor='#eeeeec' align='right'>580080</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>45</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 15:56:47
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 45
+    [message] => Не найден метод класса (Router) (verify_email)
+    [code] => 0
+    [to_string] => Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(45): Core\Router->init()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(34): Core\AppKernel->routerInit()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#3 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 45
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 34
+                    [function] => routerInit
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден метод класса (Router) (verify_email)
+            [string:Exception:private] => Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(45): Core\Router->init()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(34): Core\AppKernel->routerInit()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#3 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 45
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 45
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 34
+                            [function] => routerInit
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>45</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>364296</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0035</td><td bgcolor='#eeeeec' align='right'>459704</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.2851</td><td bgcolor='#eeeeec' align='right'>579512</td><td bgcolor='#eeeeec'>Core\AppKernel->routerInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>34</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.2851</td><td bgcolor='#eeeeec' align='right'>579512</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>45</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 12.01.2020 15:52:50
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 45
+    [message] => Не найден метод класса (Router) (verify_email)
+    [code] => 0
+    [to_string] => Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(45): Core\Router->init()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(34): Core\AppKernel->routerInit()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#3 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 45
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 34
+                    [function] => routerInit
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 11
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [default_uri] => Array
+                                        (
+                                            [class] => App\Controllers\DefaultController
+                                            [public] => Array
+                                                (
+                                                    [index] => Array
+                                                        (
+                                                            [func_name] => index
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [user] => Array
+                                        (
+                                            [class] => App\Controllers\UserController
+                                            [public] => Array
+                                                (
+                                                    [get_users] => Array
+                                                        (
+                                                            [func_name] => getUsers
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [get_user] => Array
+                                                        (
+                                                            [func_name] => getUser
+                                                            [args] => 
+                                                            [method] => GET
+                                                        )
+
+                                                    [create_user] => Array
+                                                        (
+                                                            [func_name] => createUser
+                                                            [args] => 
+                                                            [method] => POST
+                                                        )
+
+                                                    [update_user] => Array
+                                                        (
+                                                            [func_name] => updateUser
+                                                            [args] => user_id
+                                                            [method] => PUT
+                                                        )
+
+                                                    [delete_user] => Array
+                                                        (
+                                                            [func_name] => deleteUser
+                                                            [args] => user_id
+                                                            [method] => DELETE
+                                                        )
+
+                                                    [login] => Array
+                                                        (
+                                                            [func_name] => login
+                                                            [args] => login,password,user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [logout] => Array
+                                                        (
+                                                            [func_name] => logout
+                                                            [args] => user_id
+                                                            [method] => POST
+                                                        )
+
+                                                    [access] => Array
+                                                        (
+                                                            [func_name] => access
+                                                            [args] => token
+                                                            [method] => GET
+                                                        )
+
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден метод класса (Router) (verify_email)
+            [string:Exception:private] => Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:45
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(45): Core\Router->init()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(34): Core\AppKernel->routerInit()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(11): Core\AppKernel->__construct(Array, Array)
+#3 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 45
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 45
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 34
+                            [function] => routerInit
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 11
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [default_uri] => Array
+                                                (
+                                                    [class] => App\Controllers\DefaultController
+                                                    [public] => Array
+                                                        (
+                                                            [index] => Array
+                                                                (
+                                                                    [func_name] => index
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [user] => Array
+                                                (
+                                                    [class] => App\Controllers\UserController
+                                                    [public] => Array
+                                                        (
+                                                            [get_users] => Array
+                                                                (
+                                                                    [func_name] => getUsers
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [get_user] => Array
+                                                                (
+                                                                    [func_name] => getUser
+                                                                    [args] => 
+                                                                    [method] => GET
+                                                                )
+
+                                                            [create_user] => Array
+                                                                (
+                                                                    [func_name] => createUser
+                                                                    [args] => 
+                                                                    [method] => POST
+                                                                )
+
+                                                            [update_user] => Array
+                                                                (
+                                                                    [func_name] => updateUser
+                                                                    [args] => user_id
+                                                                    [method] => PUT
+                                                                )
+
+                                                            [delete_user] => Array
+                                                                (
+                                                                    [func_name] => deleteUser
+                                                                    [args] => user_id
+                                                                    [method] => DELETE
+                                                                )
+
+                                                            [login] => Array
+                                                                (
+                                                                    [func_name] => login
+                                                                    [args] => login,password,user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [logout] => Array
+                                                                (
+                                                                    [func_name] => logout
+                                                                    [args] => user_id
+                                                                    [method] => POST
+                                                                )
+
+                                                            [access] => Array
+                                                                (
+                                                                    [func_name] => access
+                                                                    [args] => token
+                                                                    [method] => GET
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден метод класса (Router) (verify_email) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>45</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0020</td><td bgcolor='#eeeeec' align='right'>364296</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0105</td><td bgcolor='#eeeeec' align='right'>459704</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>11</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1150</td><td bgcolor='#eeeeec' align='right'>579512</td><td bgcolor='#eeeeec'>Core\AppKernel->routerInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>34</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1150</td><td bgcolor='#eeeeec' align='right'>579512</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>45</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
 DateTime: 12.01.2020 07:38:07
 Log data: 
 Array

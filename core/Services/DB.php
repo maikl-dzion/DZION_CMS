@@ -255,4 +255,35 @@ class DB extends AbstractCore
         return $this->fetchRow($query);
     }
 
+    public function getTableListSheme($shemeName = '') {
+        $shemeName = (!$shemeName) ? 'public' : $shemeName;
+        $query = "SELECT * FROM information_schema.columns
+                  WHERE table_schema='{$shemeName}'";
+        $list = $this->fetch($query);
+        $result = array();
+
+        foreach ($list as $key => $values) {
+
+            $tableName = $values['table_name'];
+            $fieldName = $values['column_name'];
+            $auto      = $values['column_default'];
+            $fieldType = $values['data_type'];
+            if($auto) $auto = true;
+
+            $field = array(
+                'name' => $fieldName,
+                'auto' => $auto,
+                'type' => $fieldType,
+            );
+
+            foreach($field as $fk => $fval)
+                $values[$fk] = $fval;
+
+            $result[$tableName]['name'] = $tableName;
+            $result[$tableName]['fields'][] = $values;
+        }
+
+        return $result;
+    }
+
 }
