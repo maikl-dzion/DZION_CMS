@@ -9,8 +9,8 @@ require_once 'bootstrap.php';
 try {
 
     $app = new Core\AppKernel($routes, $dbconfig);
-    $response = $app->run();
-    print_r($response->response());
+    $response = $app->run()->response();
+    die($response);
 
 } catch(\Exception $e){
 

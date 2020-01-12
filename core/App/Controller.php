@@ -11,6 +11,7 @@ class Controller extends App {
     protected $jwt;
     protected $config;
     protected $request;
+    protected $response;
     protected $parameters = array();
 
     public function __construct(DI $di, $parameters = array()) {
@@ -21,6 +22,7 @@ class Controller extends App {
         $this->db     = $this->di->get('db');
         $this->logger = $this->di->get('logger');
         $this->jwt    = $this->di->get('jwt');
+        $this->response    = $this->di->get('response');
 
     }
 
@@ -32,11 +34,6 @@ class Controller extends App {
 
     protected function getParams() {
         return $this->parameters;
-    }
-
-    protected function sendMail($email, $header, $message) {
-        $result = mail($email, $header, $message);
-        return $result;
     }
 
     public function __get($key) {

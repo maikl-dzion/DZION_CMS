@@ -6,20 +6,24 @@ use Core\AbstractCore;
 
 class Response extends AbstractCore {
 
-    protected $response;
+    public $responseData;
 
-    public function setResponse($response) {
-        $this->response = $response;
+    public function setData($data) {
+        $this->responseData = $data;
     }
 
-//    public function response($data, $status = 200) {
-//        header("HTTP/1.1 " . $status . " " . $this->statusCodeList($status));
-//        return json_encode($data);
-//    }
-
-    public function response($responseName = 'result', $code = 200) {
+    public function response($data = null, $responseName = RESPONSE_RESULT_NAME, $code = 200) {
         header("HTTP/1.1 " . $code);
-        $data = $this->response;
+        if(empty($data))
+          $data = $this->responseData;
+        $data = json_encode(array($responseName => $data));
+        return $data;
+    }
+
+    public function responseError($data = null, $responseName = RESPONSE_ERROR_NAME, $code = 200) {
+        header("HTTP/1.1 " . $code);
+        if(empty($data))
+            $data = $this->responseData;
         $data = json_encode(array($responseName => $data));
         return $data;
     }

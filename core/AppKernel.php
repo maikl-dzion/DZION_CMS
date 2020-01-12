@@ -14,24 +14,33 @@ class AppKernel
     protected $dbconfig;
     protected $services;
     protected $logger;
-    protected $response;
     protected $controller;
+    public    $response;
 
     public function __construct(array $routes, array $dbconfig){
+
         $this->dbconfig = $dbconfig;
         $this->di       = new DI();
         $this->router   = new Router($routes);
         $this->logger   = new Logger(LOG_PATH);
         $this->response = new Response();
-        $this->initialize();
+
+        $this->di->set('logger'  , $this->logger);
+        $this->di->set('response', $this->response);
+
+        $this->services = new ServicesRegister();
+        $this->services->servicesInit($this->di, $this->dbconfig);
+        $this->routerInit();
+
+        // $this->initialize();
     }
 
-    protected function initialize() {
-        $this->initServices();
-        $this->initRouter();
-    }
+//    protected function initialize() {
+//        $this->servicesInit();
+//        $this->routerInit();
+//    }
 
-    protected function initRouter() {
+    protected function routerInit() {
         $this->controller = $this->router->init();
     }
 
@@ -65,32 +74,8 @@ class AppKernel
             exit;
         }
 
-        $this->response->setResponse($response);
-
+        $this->response->responseData = $response;
         return $this->response;
-    }
-
-    public function loadServices() {
-        return array(
-            Services\Logger::class            => array('name' => 'logger'       , 'params' => LOG_PATH),
-            Services\DB::class                => array('name' => 'db'           , 'params' => $this->dbconfig),
-            Services\JwtAuthController::class => array('name' => 'jwt'          , 'params' => ''),
-            Services\FileUploads::class       => array('name' => 'files_loader' , 'params' => ''),
-            Services\Response::class          => array('name' => 'response'     , 'params' => '')
-        );
-    }
-
-    public function initServices() {
-        $services = $this->loadServices();
-        foreach ($services as $serviceClass => $values) {
-            $serviceName  = $values['name'];
-            $params = $values['params'];
-            if(!empty($params))
-              $service  = new $serviceClass($params);
-            else
-              $service  = new $serviceClass();
-            $this->di->set($serviceName, $service);
-        }
     }
 
 }
