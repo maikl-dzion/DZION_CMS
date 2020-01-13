@@ -61,4 +61,12 @@
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 34
+  Undefined variable: userId = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 60
+  Undefined variable: data = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 62
+  Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
+  Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
+  Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
+  Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
+  Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
+  Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
  

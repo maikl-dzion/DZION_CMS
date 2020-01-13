@@ -3,6 +3,7 @@
 namespace Core;
 
 use Core\Services\DI;
+use Core\Services\Response;
 
 
 class AppKernel
@@ -16,6 +17,12 @@ class AppKernel
     protected $controller;
     public    $response;
 
+    /**
+     * AppKernel constructor.
+     * @param array $routes
+     * @param array $dbconfig
+     * @throws \Exception
+     */
     public function __construct(array $routes, array $dbconfig){
 
         $this->dbconfig = $dbconfig;
@@ -39,11 +46,18 @@ class AppKernel
 //        $this->routerInit();
 //    }
 
+    /**
+     * @throws \Exception
+     */
     protected function routerInit() {
         $this->controller = $this->router->init();
     }
 
-    public function run() {
+    /**
+     * @return Response
+     * @throws \Exception
+     */
+    public function run() : Response {
 
         $className  = $this->controller->class;
         $actionName = $this->controller->action;

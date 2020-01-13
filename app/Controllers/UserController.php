@@ -27,8 +27,43 @@ class UserController extends Controller{
 
     public function verifyEmail() {
         $userId = $this->getParam(0);
-        lg($userId);
-        return [];
+        $query = "UPDATE {$this->tableName} SET verify = 1 WHERE user_id = {$userId}";
+        return $this->db->exec($query);
+    }
+
+    public function changePassword() {
+
+        $userId = $this->getParam(0);
+        $data  = $this->fetchPost();
+
+        // тестовые данные для отладки
+//        $data = [
+//            'email' => 'dzion67@mail.ru',
+//            'new_password' => '556677',
+//            'repeat_password' => '556677'
+//        ];
+
+        $newPassword = $this->passwordHash($data['new_password']);
+        $email = $data['email'];
+
+        $query = "UPDATE {$this->tableName} SET password = '{$newPassword}' 
+                  WHERE user_id = {$userId} AND email = '{$email}'";
+        return $this->db->exec($query);
+    }
+
+    public function forgotYourPassword() {
+
+        $email = $this->getParam(0);
+        $item = $this->hasValue('email', $email);
+
+        if(empty($item['user_id'])) return false;
+
+        $userId = $item['user_id'];
+        $mailHeader  = 'Смена пароля';
+        $linkMessage = 'Пройдите по адресу для смены пароля';
+        $serviceUrl  = 'http://home.ru/DZION_CMS/user/change_password/' . $userId;
+        $verifyEmailUrl = '<a href="'. $serviceUrl .'" >' .$linkMessage. '</a>';
+        return $this->sendMail($email, $verifyEmailUrl, $mailHeader);
     }
 
     protected function hasValue($fieldName, $value, $tableName = '') {
@@ -49,8 +84,8 @@ class UserController extends Controller{
     public function createUser() {
 
         $data  = $this->fetchPost();
-        $this->db->truncateTable($this->tableName);
-        $data = $this->getTestData(21);
+        //$this->db->truncateTable($this->tableName);
+        //$data = $this->getTestData(21);
 
         if( !empty($data['login'])    &&
             !empty($data['password']) &&
@@ -74,10 +109,10 @@ class UserController extends Controller{
                 $linkMessage = 'Пройдите по адресу для подтверждения почты';
                 $serviceUrl  = 'http://home.ru/DZION_CMS/user/verify_email/' . $userId;
                 $verifyEmailUrl = '<a href="'. $serviceUrl .'" >' .$linkMessage. '</a>';
-                $this->sendMail($data['email'], $verifyEmailUrl, $mailHeader);
+                $mailResponse = $this->sendMail($data['email'], $verifyEmailUrl, $mailHeader);
 
                 return array("message" => "Пользователь успешно создан",
-                             "user_id" => $userId, 'user' => $user);
+                             "user_id" => $userId, "user" => $user, "mail_response" => $mailResponse);
             }
 
             $error = $response->message . '(' . $response->status . ')';
@@ -95,7 +130,7 @@ class UserController extends Controller{
         $userId = $this->getParam(0);
         $error = '';
 
-        $data = $this->getTestData();
+        // $data = $this->getTestData();
 
         // Проверка на обязательные поля
         if( !empty($data['login'])    &&

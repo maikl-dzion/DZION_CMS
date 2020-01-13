@@ -8,9 +8,13 @@ require_once 'bootstrap.php';
 
 try {
 
+    $visit = new Core\Services\PequestVisitsController();
+    $visitHtml = $visit->printVisits();
+
     $app = new Core\AppKernel($routes, $dbconfig);
     $response = $app->run()->response();
     die($response);
+
 
 } catch(\Exception $e){
 

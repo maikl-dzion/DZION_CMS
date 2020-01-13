@@ -141,6 +141,18 @@ class DB extends AbstractCore
         return $stmt->execute($data);
     }
 
+    public function exec($query){
+        return $this->pdo->exec($query);
+    }
+
+    public function query($query){
+        return $this->pdo->query($query);
+    }
+
+    public function getPdo(){
+        return $this->pdo;
+    }
+
     public function fetch($query, $data = [], $statement = PDO::FETCH_ASSOC) {
         $stmt = $this->pdo->prepare($query);
         $stmt->execute($data);
@@ -286,4 +298,35 @@ class DB extends AbstractCore
         return $result;
     }
 
+
 }
+
+
+// $sql = "INSERT INTO books (title,author) VALUES (:title,:author)";
+// $q = $conn->prepare($sql);
+// $q->execute(array(':author'=>$author,':title'=>$title));
+
+// $sql = "UPDATE books  SET title=?, author=? WHERE id=?";
+// $q = $conn->prepare($sql);
+// $q->execute(array($title, $author, $id));
+
+
+//$this->pdo->beginTransaction();
+//
+///* Вставка множества записей по принципу "все или ничего" */
+//$sql = 'INSERT INTO fruit
+//       (name, colour, calories)
+//       VALUES (?, ?, ?)';
+//
+//$stmt = $this->pdo->prepare($sql);
+//
+//foreach ($items as $item) {
+//    $stmt->execute(array(
+//        $item->name,
+//        $item->colour,
+//        $item->calories,
+//    ));
+//}
+//
+///* Фиксация изменений */
+// $this->pdo->commit();
