@@ -38,6 +38,10 @@ class AppKernel
         $this->migrate = $this->di->get('migrate');
         $this->migrate->migrateLoader($this->db);
 
+//        $mail = $this->di->get('mail');
+//        $res = $mail->send('dzion67@mail.ru', 'Тестовое письмо', 'Заголовок письма');
+//        lg($res);
+
         $this->routerInit();
     }
 

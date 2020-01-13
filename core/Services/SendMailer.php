@@ -12,15 +12,19 @@ class SendMailer extends AbstractCore {
     public function send($email, $body, $header = '') {
 
         $mail = new PHPMailer(true);
-        $fromAddress  = 'vlad1985petrov@list.ru';
-        $fromPassword = '1985list';
+        $fromAddress  = SMTP_USER_NAME;
+        $fromPassword = SMTP_USER_PASSWORD;
+
+//        ini_set('error_reporting', E_ALL);
+//        ini_set('display_errors', 1);
+//        ini_set('display_startup_errors', 1);
 
         try {
             // Server settings
-            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;             // Enable verbose debug output
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;             // Enable verbose debug output
             $mail->CharSet   = "utf-8";
             $mail->isSMTP();                                      // Send using SMTP
-            $mail->Host       = 'smtp.mail.ru';                   // Set the SMTP server to send through
+            $mail->Host       = SMTP_HOST_NAME;                   // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                             // Enable SMTP authentication
             $mail->Username   = $fromAddress;                     // SMTP username
             $mail->Password   = $fromPassword;                          // SMTP password
