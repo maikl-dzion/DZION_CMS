@@ -21,15 +21,17 @@ class SendMailer extends AbstractCore {
 
         try {
             // Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;             // Enable verbose debug output
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;             // Enable verbose debug output
             $mail->CharSet   = "utf-8";
             $mail->isSMTP();                                      // Send using SMTP
-            $mail->Host       = SMTP_HOST_NAME;                   // Set the SMTP server to send through
+            $mail->Host       = SMTP_SERVER_NAME;                  // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                             // Enable SMTP authentication
             $mail->Username   = $fromAddress;                     // SMTP username
             $mail->Password   = $fromPassword;                          // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-            $mail->Port       = 587;                                    // TCP port to connect to
+            $mail->Port       = SMPT_SERVER_PORT;                       // TCP port to connect to
+            $mail->SMTPKeepAlive = true;
+            $mail->Mailer = 'smtp'; // don't change the quotes!
 
             //Recipients
             $mail->setFrom($fromAddress, 'Mail Sender');
@@ -49,12 +51,13 @@ class SendMailer extends AbstractCore {
             $mail->Subject = $header;
             $mail->Body    = $body;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-            $mail->send();
+            $result = $mail->send();
+            $message =  'Message has been sent';
+            return 1;
 
-            //echo 'Message has been sent';
         } catch (\Exception $e) {
+            $message = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             return false;
-            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
         return true;

@@ -40,7 +40,7 @@ class AppKernel
 
 //        $mail = $this->di->get('mail');
 //        $res = $mail->send('dzion67@mail.ru', 'Тестовое письмо', 'Заголовок письма');
-//        lg($res);
+//        lg($res); die;
 
         $this->routerInit();
     }
