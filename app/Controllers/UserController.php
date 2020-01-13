@@ -3,12 +3,17 @@
 namespace App\Controllers;
 
 use Core\App\Controller;
-
+use Core\Services\DI;
 
 class UserController extends Controller{
 
     protected $tableName = 'users';
     protected $access;
+
+    public function __construct(DI $di, $parameters = array()) {
+        parent::__construct($di, $parameters);
+        $this->loaderModel('UserModel');
+    }
 
     public function getUsers(){
         $query = "SELECT * FROM {$this->tableName}";

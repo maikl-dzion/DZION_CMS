@@ -4,6 +4,7 @@ namespace Core;
 
 use Core\Services\DI;
 use Core\Services\Response;
+use Core\Tests\TestAppController;
 
 
 class AppKernel
@@ -28,9 +29,9 @@ class AppKernel
         $this->dbconfig = $dbconfig;
         $this->di       = new DI();
         $this->router   = new Router($routes);
+
         $this->services = new ServicesRegister();
         $this->services->servicesInit($this->di, $this->dbconfig);
-
         $this->logger   = $this->di->get('logger');
         $this->response = $this->di->get('response');
 
@@ -38,9 +39,9 @@ class AppKernel
         $this->migrate = $this->di->get('migrate');
         $this->migrate->migrateLoader($this->db);
 
-//        $mail = $this->di->get('mail');
-//        $res = $mail->send('dzion67@mail.ru', 'Тестовое письмо', 'Заголовок письма');
-//        lg($res); die;
+        //$test = new TestAppController($this->di);
+        //$test->testMail();
+        // $this->di->set('test', $test);
 
         $this->routerInit();
     }
