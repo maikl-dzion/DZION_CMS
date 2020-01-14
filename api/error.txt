@@ -71,4 +71,7 @@
   Undefined variable: result = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\SendMailer.php = 55
   Undefined variable: response = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 124
   file_get_contents(C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log/create_user.log): failed to open stream: No such file or directory = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Logger.php = 38
+  Undefined variable: routes = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 14
+  Undefined variable: dbconfig = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 14
+  Undefined variable: response = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 129
  

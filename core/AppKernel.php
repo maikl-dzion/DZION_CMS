@@ -5,6 +5,7 @@ namespace Core;
 use Core\Services\DI;
 use Core\Services\Response;
 use Core\Tests\TestAppController;
+use Core\Services\ConfigController;
 
 
 class AppKernel
@@ -24,25 +25,31 @@ class AppKernel
      * @param array $dbconfig
      * @throws \Exception
      */
-    public function __construct(array $routes, array $dbconfig){
+    public function __construct(){
 
-        $this->dbconfig = $dbconfig;
-        $this->di       = new DI();
+        $this->di = new DI(); // Создаем контейнер зависисимостей
+        $config   = new ConfigController(); // Получаем конфиги приложения (из папки config)
+        $routes   = $config->get('routes');
+        $this->dbconfig = $config->get('dbconfig');
         $this->router   = new Router($routes);
 
+        // Инициализируем общие сервисы
         $this->services = new ServicesRegister();
         $this->services->servicesInit($this->di, $this->dbconfig);
         $this->logger   = $this->di->get('logger');
         $this->response = $this->di->get('response');
 
+        // Подготавливаем миграции
         $this->db = $this->di->get('db');
         $this->migrate = $this->di->get('migrate');
         $this->migrate->migrateLoader($this->db);
 
-        //$test = new TestAppController($this->di);
-        //$test->testMail();
+        // Тестирование компонентов
+        // $test = new TestAppController($this->di);
+        // $test->testMail();
         // $this->di->set('test', $test);
 
+        // Запускаем обработку роута
         $this->routerInit();
     }
 

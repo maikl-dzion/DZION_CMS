@@ -10,13 +10,19 @@ $config = [
     'password' => '1985list',
 ];
 
-$remoteDir = 'tmp/load';
+$remoteDir = 'DZION_CMS';
 $localDir = __DIR__;
 
 if(!empty($argv[1]))
     $remoteDir = $argv[1];
 
-$ftp = new FtpClientController($config, $remoteDir, $localDir);
+$ignore = array(
+    'public',
+    '.',
+    '.git'
+);
+
+$ftp = new FtpClientController($config, $remoteDir, $localDir, $ignore);
 
 $ftp->moveFilesToRemote();
 
@@ -25,23 +31,25 @@ die('ok');
 
 class FtpClientController {
 
-    private $connect;
-    private $status;
+    private   $connect;
+    private   $status;
     protected $remoteDir;
     protected $localDir;
-    public $remoteRootDir;
-    private $config = array();
-    public $logs = array();
-    public $level = 0;
+    public    $remoteRootDir;
+    private   $config = array();
+    public    $logs   = array();
+    public    $level  = 0;
+    protected $ignore = array();
 
-    public function __construct($config, $remoteDir, $localDir = __DIR__)
-    {
+    public function __construct($config, $remoteDir, $localDir = __DIR__, $ignore = array()) {
+
         $this->config = $config;
         $this->remoteDir = $remoteDir;
         $this->localDir = $localDir;
         $this->auth();
         $this->remoteRootDir = $this->getDirName();
-        // lg($this);
+        $this->ignore = $ignore;
+
     }
 
     // ################################
@@ -49,27 +57,22 @@ class FtpClientController {
     // -- Публичные методы (интерфейсы)
 
     // Загрузить файлы из текущей директории на удаленный сервер
-    public function moveFilesToRemote()
-    {
+    public function moveFilesToRemote() {
         $this->level = 0;
         $remoteDir = $this->remoteDir;
         $localDir  = $this->localDir;
-        $this->scan($remoteDir, $localDir);
-        //$this->close();
+        // $this->scan($remoteDir, $localDir);
+        $this->moveRun($remoteDir, $localDir);
     }
 
 
-    public function getRemoteDirFiles($dirName = '', $recursive = true)
-    {
-        // lg($dirName);
+    public function getRemoteDirFiles($dirName = '', $recursive = true) {
         $dirName = (!$dirName) ? $this->remoteDir : $dirName;
         $result = $this->remoteDirScan($dirName, $recursive);
-        //$this->close();
         return $result;
     }
 
-    public function getLocalDirFiles($dirName = '', $recursive = true)
-    {
+    public function getLocalDirFiles($dirName = '', $recursive = true) {
         $dirName = (!$dirName) ? $this->localDir : $dirName;
         $result = $this->localDirScan($dirName, $recursive);
         return $result;
@@ -79,8 +82,7 @@ class FtpClientController {
     // ### PROTECTED METHODS ####
     // --  Защищенные методы ----
 
-    protected function auth()
-    {
+    protected function auth() {
         $config = $this->config;
 
         $host = $config['host'];
@@ -105,8 +107,8 @@ class FtpClientController {
         return $result;
     }
 
-    protected function listRender($list)
-    {
+    protected function listRender($list) {
+
         $result = array();
         $dirName = '';
 
@@ -148,39 +150,58 @@ class FtpClientController {
         return $result;
     }
 
-    protected function _is($arr, $index)
-    {
+    protected function _is($arr, $index) {
         $result = '';
-        if (!empty($arr[$index])) {
+        if (!empty($arr[$index]))
             $result = $arr[$index];
-        }
         return $result;
     }
 
-    protected function localDirScan($dirName = __DIR__, $recursive = true)
-    {
+    protected function localDirScan($dirName = __DIR__, $recursive = true) {
         $connect = $this->connect;
         $files = scandir($dirName);
         $result = $files;
         return $result;
     }
 
-    protected function scan($remoteDir, $localDir)
-    {
+//    protected function scan($remoteDir, $localDir)
+//    {
+//        $this->level++;
+//        $connect = $this->connect;
+//        $funcName = __FUNCTION__;
+//        $files = scandir($localDir);
+//
+//        foreach ($files as $key => $file) {
+//            if ($file == '.' || $file == '..') {
+//                continue;
+//            }
+//
+//            $remoteFile = $remoteDir . '/' . $file;
+//            $localFile = $localDir . '/' . $file;
+//
+//            if (is_dir($localFile)) {
+//                ftp_mkdir($connect, $remoteFile);
+//                $this->$funcName($remoteFile, $localFile);
+//            } else {
+//                $this->sendToRemote($remoteFile, $localFile);
+//            }
+//        }
+//    }
+
+    protected function moveRun($remoteDir, $localDir) {
+
         $this->level++;
         $connect = $this->connect;
         $funcName = __FUNCTION__;
         $files = scandir($localDir);
-        // lg($funcName);
+
         foreach ($files as $key => $file) {
-            if ($file == '.' || $file == '..') {
-                continue;
-            }
+            if ($file == '.' || $file == '..') continue;
 
             $remoteFile = $remoteDir . '/' . $file;
-            $localFile = $localDir . '/' . $file;
+            $localFile  = $localDir . '/' . $file;
 
-            // if($this->level == 2) lg($remoteFile, $localFile);
+            // if($this->ignore($file)) continue;
 
             if (is_dir($localFile)) {
                 ftp_mkdir($connect, $remoteFile);
@@ -191,28 +212,42 @@ class FtpClientController {
         }
     }
 
-    protected function sendToRemote($remoteFile, $localFile)
-    {
+    protected function ignore($fileName) {
+
+        if($this->findSubstr($fileName, '.'))
+            return true;
+
+        foreach ($this->ignore as $key => $value) {
+            if($this->findSubstr($fileName, $value))
+                return true;
+        }
+        return false;
+    }
+
+    protected function sendToRemote($remoteFile, $localFile) {
         $connect = $this->connect;
         $status = ftp_put($connect, $remoteFile, $localFile, FTP_ASCII);
 
-        if ($status) {
+        if ($status)
             $message = "$localFile($remoteFile) успешно загружен на сервер\n";
-        } else {
+        else
             $message = "Не удалось загрузить $localFile($remoteFile)  на сервер\n";
-        }
-
         $this->logs[] = $message;
     }
 
-    protected function close()
-    {
+    protected function close(){
         ftp_close($this->connect);
     }
 
-    protected function getDirName()
-    {
+    protected function getDirName(){
         return ftp_pwd($this->connect);
+    }
+
+    private function findSubstr($text, $search) {
+        $pos = strrpos($text, $search);
+        if($pos === false)
+            return false;
+        return true;
     }
 }
 

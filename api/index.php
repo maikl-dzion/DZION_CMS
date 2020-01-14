@@ -11,7 +11,7 @@ try {
     $visit = new Core\Services\PequestVisitsController();
     $visitHtml = $visit->printVisits();
 
-    $app = new Core\AppKernel($routes, $dbconfig);
+    $app = new Core\AppKernel();
     $response = $app->run()->response();
     die($response);
 
