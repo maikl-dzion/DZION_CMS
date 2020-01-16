@@ -29,7 +29,7 @@ class ConfigController extends AbstractCore
     }
 
     protected function configLoader() {
-        $configDirName = CONFIG_DIR; // Директория где лежат все конфиги
+        $configDirName = CONFIG_DIR;  // Директория где лежат все конфиги
         $configFiles = scandir($configDirName);
         foreach ($configFiles as $key => $fileName) {
             if($fileName == '.' || $fileName == '..') continue;
@@ -44,6 +44,22 @@ class ConfigController extends AbstractCore
 
     public function printRoutes() {
         $routes = $this->get('routes');
+    }
+
+    public function routesShow() {
+        $routes   = $this->get('routes');
+        $result = array();
+        foreach($routes as $classWebtUrl => $route) {
+            $className = $route['class'];
+            foreach($route['public'] as $funcWebUrl => $params) {
+                $webUrl = '/' . $classWebtUrl . '/' . $funcWebUrl;
+                $classUrl = $className . '::' . $params['func_name'];
+                $args     = implode('@', $params);
+                // list($fname, $args, $m)   = $params;
+                $result[$webUrl] = $classUrl . ' (' . $args. ')';
+            }
+        }
+        return $result;
     }
 
 }

@@ -5,7 +5,8 @@ return array(
    'default_uri' => array(
        ROUTE_CLASS_NAME  => App\Controllers\DefaultController::class,
        ROUTE_METHODS_INDEX => array(
-            'index' => array(ROUTE_METHOD_FNAME =>'index', 'args' => '', 'method' => 'GET')
+            'index'       => array(ROUTE_METHOD_FNAME =>'index', 'args' => '', 'method' => 'GET'),
+            'routes_show' => array(ROUTE_METHOD_FNAME =>'routesShow', 'args' => '', 'method' => 'GET')
        ),
    ),
 

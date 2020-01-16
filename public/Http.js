@@ -16,7 +16,8 @@ const HttpServiceAsync = {
         httpErrorHandler(code, message, url, comment) {
             this.httErrorInfo = { code, url, comment, message };
             console.log(this.httErrorInfo);
-            alert(comment);
+            lg(this.httErrorInfo);
+            // alert(comment);
         },
 
         async send(url, postData = {}, method = 'get') {
@@ -38,7 +39,7 @@ const HttpServiceAsync = {
                         break;
                 }
             } catch (error) {
-                this.httpErrorHandler(1, error, apiUrl, 'Ошибка при выполнении запроса');
+                this.httpErrorHandler(1, error, apiUrl, 'Ошибка при выполнении запроса: возможно неправильный Ip или url');
                 return false;
             }
 
@@ -47,7 +48,7 @@ const HttpServiceAsync = {
                 return result;
             }
 
-            this.httpErrorHandler(2, response.data, apiUrl, 'Произошла ошибка на стороне сервера');
+            this.httpErrorHandler(2, response.data, apiUrl, 'Произошла ошибка на стороне сервера:вернулась строка вместо json');
             return false;
         }
 

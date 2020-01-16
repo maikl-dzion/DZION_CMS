@@ -83,4 +83,83 @@
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined property: Core\Services\ConfigController::$routesShow = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\DefaultController.php = 16
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  explode() expects parameter 2 to be string, array given = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 57
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+  Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
  

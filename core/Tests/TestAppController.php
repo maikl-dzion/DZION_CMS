@@ -2,7 +2,6 @@
 
 namespace Core\Tests;
 
-
 use Core\AbstractCore;
 
 class TestAppController extends AbstractCore {
