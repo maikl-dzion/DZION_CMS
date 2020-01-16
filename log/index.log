@@ -1,4 +1,2281 @@
 =============================
+DateTime: 16.01.2020 13:55:57
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 28
+    [message] => Не найден маршрут (Router-apiuser)
+    [code] => 0
+    [to_string] => Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:28
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php(33): Core\Router->getRoute()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(65): Core\Router->init()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(53): Core\AppKernel->routerInit()
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#4 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                    [line] => 33
+                    [function] => getRoute
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 65
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 53
+                    [function] => routerInit
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден маршрут (Router-apiuser)
+            [string:Exception:private] => Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:28
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php(33): Core\Router->getRoute()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(65): Core\Router->init()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(53): Core\AppKernel->routerInit()
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#4 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 28
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                            [line] => 33
+                            [function] => getRoute
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 65
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 53
+                            [function] => routerInit
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>28</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>368440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0075</td><td bgcolor='#eeeeec' align='right'>555584</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1780</td><td bgcolor='#eeeeec' align='right'>678592</td><td bgcolor='#eeeeec'>Core\AppKernel->routerInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>53</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1780</td><td bgcolor='#eeeeec' align='right'>678592</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>65</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1780</td><td bgcolor='#eeeeec' align='right'>678592</td><td bgcolor='#eeeeec'>Core\Router->getRoute(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php' bgcolor='#eeeeec'>...\Router.php<b>:</b>33</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 13:55:50
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 28
+    [message] => Не найден маршрут (Router-apiuser)
+    [code] => 0
+    [to_string] => Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:28
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php(33): Core\Router->getRoute()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(65): Core\Router->init()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(53): Core\AppKernel->routerInit()
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#4 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                    [line] => 33
+                    [function] => getRoute
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 65
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 53
+                    [function] => routerInit
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден маршрут (Router-apiuser)
+            [string:Exception:private] => Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:28
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php(33): Core\Router->getRoute()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(65): Core\Router->init()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(53): Core\AppKernel->routerInit()
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#4 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 28
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                            [line] => 33
+                            [function] => getRoute
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 65
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 53
+                            [function] => routerInit
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>28</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>368440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0085</td><td bgcolor='#eeeeec' align='right'>555584</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1865</td><td bgcolor='#eeeeec' align='right'>678592</td><td bgcolor='#eeeeec'>Core\AppKernel->routerInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>53</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1865</td><td bgcolor='#eeeeec' align='right'>678592</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>65</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1865</td><td bgcolor='#eeeeec' align='right'>678592</td><td bgcolor='#eeeeec'>Core\Router->getRoute(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php' bgcolor='#eeeeec'>...\Router.php<b>:</b>33</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 13:42:08
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+    [line] => 28
+    [message] => Не найден маршрут (Router-apiuser)
+    [code] => 0
+    [to_string] => Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:28
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php(33): Core\Router->getRoute()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(65): Core\Router->init()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(53): Core\AppKernel->routerInit()
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#4 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                    [line] => 33
+                    [function] => getRoute
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 65
+                    [function] => init
+                    [class] => Core\Router
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 53
+                    [function] => routerInit
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден маршрут (Router-apiuser)
+            [string:Exception:private] => Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php:28
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php(33): Core\Router->getRoute()
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(65): Core\Router->init()
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(53): Core\AppKernel->routerInit()
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#4 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+            [line:protected] => 28
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php
+                            [line] => 33
+                            [function] => getRoute
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 65
+                            [function] => init
+                            [class] => Core\Router
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 53
+                            [function] => routerInit
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден маршрут (Router-apiuser) in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php on line <i>28</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>368440</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0115</td><td bgcolor='#eeeeec' align='right'>551488</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1800</td><td bgcolor='#eeeeec' align='right'>674496</td><td bgcolor='#eeeeec'>Core\AppKernel->routerInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>53</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.1800</td><td bgcolor='#eeeeec' align='right'>674496</td><td bgcolor='#eeeeec'>Core\Router->init(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>65</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.1800</td><td bgcolor='#eeeeec' align='right'>674496</td><td bgcolor='#eeeeec'>Core\Router->getRoute(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php' bgcolor='#eeeeec'>...\Router.php<b>:</b>33</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 12:58:21
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                    [line] => 30
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 38
+                    [function] => servicesInit
+                    [class] => Core\ServicesRegister
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Core\Services\DI Object
+                                (
+                                    [container:Core\Services\DI:private] => Array
+                                        (
+                                            [logger] => Core\Services\Logger Object
+                                                (
+                                                    [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                    [ext:protected] => .log
+                                                    [mode] => ON
+                                                    [trace] => OFF
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 38
+                            [function] => servicesInit
+                            [class] => Core\ServicesRegister
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Core\Services\DI Object
+                                        (
+                                            [container:Core\Services\DI:private] => Array
+                                                (
+                                                    [logger] => Core\Services\Logger Object
+                                                        (
+                                                            [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                            [ext:protected] => .log
+                                                            [mode] => ON
+                                                            [trace] => OFF
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>367880</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0080</td><td bgcolor='#eeeeec' align='right'>522256</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0100</td><td bgcolor='#eeeeec' align='right'>557664</td><td bgcolor='#eeeeec'>Core\ServicesRegister->servicesInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>38</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0110</td><td bgcolor='#eeeeec' align='right'>606256</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php' bgcolor='#eeeeec'>...\ServicesRegister.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0110</td><td bgcolor='#eeeeec' align='right'>606424</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0110</td><td bgcolor='#eeeeec' align='right'>606712</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 12:58:20
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                    [line] => 30
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 38
+                    [function] => servicesInit
+                    [class] => Core\ServicesRegister
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Core\Services\DI Object
+                                (
+                                    [container:Core\Services\DI:private] => Array
+                                        (
+                                            [logger] => Core\Services\Logger Object
+                                                (
+                                                    [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                    [ext:protected] => .log
+                                                    [mode] => ON
+                                                    [trace] => OFF
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 38
+                            [function] => servicesInit
+                            [class] => Core\ServicesRegister
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Core\Services\DI Object
+                                        (
+                                            [container:Core\Services\DI:private] => Array
+                                                (
+                                                    [logger] => Core\Services\Logger Object
+                                                        (
+                                                            [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                            [ext:protected] => .log
+                                                            [mode] => ON
+                                                            [trace] => OFF
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>367880</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0140</td><td bgcolor='#eeeeec' align='right'>522256</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0160</td><td bgcolor='#eeeeec' align='right'>557664</td><td bgcolor='#eeeeec'>Core\ServicesRegister->servicesInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>38</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0165</td><td bgcolor='#eeeeec' align='right'>606256</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php' bgcolor='#eeeeec'>...\ServicesRegister.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0170</td><td bgcolor='#eeeeec' align='right'>606424</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0170</td><td bgcolor='#eeeeec' align='right'>606712</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 12:57:14
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                    [line] => 30
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 38
+                    [function] => servicesInit
+                    [class] => Core\ServicesRegister
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Core\Services\DI Object
+                                (
+                                    [container:Core\Services\DI:private] => Array
+                                        (
+                                            [logger] => Core\Services\Logger Object
+                                                (
+                                                    [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                    [ext:protected] => .log
+                                                    [mode] => ON
+                                                    [trace] => OFF
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 38
+                            [function] => servicesInit
+                            [class] => Core\ServicesRegister
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Core\Services\DI Object
+                                        (
+                                            [container:Core\Services\DI:private] => Array
+                                                (
+                                                    [logger] => Core\Services\Logger Object
+                                                        (
+                                                            [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                            [ext:protected] => .log
+                                                            [mode] => ON
+                                                            [trace] => OFF
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>367880</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0085</td><td bgcolor='#eeeeec' align='right'>522256</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0100</td><td bgcolor='#eeeeec' align='right'>557664</td><td bgcolor='#eeeeec'>Core\ServicesRegister->servicesInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>38</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0105</td><td bgcolor='#eeeeec' align='right'>606256</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php' bgcolor='#eeeeec'>...\ServicesRegister.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0105</td><td bgcolor='#eeeeec' align='right'>606424</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0105</td><td bgcolor='#eeeeec' align='right'>606712</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 12:57:10
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                    [line] => 30
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 38
+                    [function] => servicesInit
+                    [class] => Core\ServicesRegister
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Core\Services\DI Object
+                                (
+                                    [container:Core\Services\DI:private] => Array
+                                        (
+                                            [logger] => Core\Services\Logger Object
+                                                (
+                                                    [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                    [ext:protected] => .log
+                                                    [mode] => ON
+                                                    [trace] => OFF
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 38
+                            [function] => servicesInit
+                            [class] => Core\ServicesRegister
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Core\Services\DI Object
+                                        (
+                                            [container:Core\Services\DI:private] => Array
+                                                (
+                                                    [logger] => Core\Services\Logger Object
+                                                        (
+                                                            [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                            [ext:protected] => .log
+                                                            [mode] => ON
+                                                            [trace] => OFF
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>368008</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0110</td><td bgcolor='#eeeeec' align='right'>522384</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0130</td><td bgcolor='#eeeeec' align='right'>557792</td><td bgcolor='#eeeeec'>Core\ServicesRegister->servicesInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>38</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0135</td><td bgcolor='#eeeeec' align='right'>606384</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php' bgcolor='#eeeeec'>...\ServicesRegister.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0135</td><td bgcolor='#eeeeec' align='right'>606552</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0135</td><td bgcolor='#eeeeec' align='right'>606840</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 12:55:47
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                    [line] => 30
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 38
+                    [function] => servicesInit
+                    [class] => Core\ServicesRegister
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Core\Services\DI Object
+                                (
+                                    [container:Core\Services\DI:private] => Array
+                                        (
+                                            [logger] => Core\Services\Logger Object
+                                                (
+                                                    [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                    [ext:protected] => .log
+                                                    [mode] => ON
+                                                    [trace] => OFF
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 38
+                            [function] => servicesInit
+                            [class] => Core\ServicesRegister
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Core\Services\DI Object
+                                        (
+                                            [container:Core\Services\DI:private] => Array
+                                                (
+                                                    [logger] => Core\Services\Logger Object
+                                                        (
+                                                            [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                            [ext:protected] => .log
+                                                            [mode] => ON
+                                                            [trace] => OFF
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>367736</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0105</td><td bgcolor='#eeeeec' align='right'>522112</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0135</td><td bgcolor='#eeeeec' align='right'>557520</td><td bgcolor='#eeeeec'>Core\ServicesRegister->servicesInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>38</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0150</td><td bgcolor='#eeeeec' align='right'>606112</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php' bgcolor='#eeeeec'>...\ServicesRegister.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0150</td><td bgcolor='#eeeeec' align='right'>606280</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0150</td><td bgcolor='#eeeeec' align='right'>606568</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 16.01.2020 12:53:50
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+    [line] => 44
+    [message] => could not find driver
+    [code] => 0
+    [to_string] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 44
+                    [function] => __construct
+                    [class] => PDO
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                            [1] => w1user
+                            [2] => w1password
+                            [3] => Array
+                                (
+                                    [3] => 2
+                                    [19] => 2
+                                )
+
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                    [line] => 22
+                    [function] => connect
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                    [line] => 30
+                    [function] => __construct
+                    [class] => Core\Services\DB
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 38
+                    [function] => servicesInit
+                    [class] => Core\ServicesRegister
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Core\Services\DI Object
+                                (
+                                    [container:Core\Services\DI:private] => Array
+                                        (
+                                            [logger] => Core\Services\Logger Object
+                                                (
+                                                    [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                    [ext:protected] => .log
+                                                    [mode] => ON
+                                                    [trace] => OFF
+                                                )
+
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [host] => 185.63.191.96
+                                    [dbname] => maikldb
+                                    [user] => w1user
+                                    [password] => w1password
+                                    [driver] => pgsql
+                                    [port] => 5432
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 14
+                    [function] => __construct
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => PDOException Object
+        (
+            [message:protected] => could not find driver
+            [string:Exception:private] => PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php:44
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(44): PDO->__construct('pgsql:dbname=ma...', 'w1user', 'w1password', Array)
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php(22): Core\Services\DB->connect(Array)
+#2 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php(30): Core\Services\DB->__construct(Array)
+#3 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(38): Core\ServicesRegister->servicesInit(Object(Core\Services\DI), Array)
+#4 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(14): Core\AppKernel->__construct()
+#5 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+            [line:protected] => 44
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 44
+                            [function] => __construct
+                            [class] => PDO
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => pgsql:dbname=maikldb;host=185.63.191.96;port=5432
+                                    [1] => w1user
+                                    [2] => w1password
+                                    [3] => Array
+                                        (
+                                            [3] => 2
+                                            [19] => 2
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php
+                            [line] => 22
+                            [function] => connect
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php
+                            [line] => 30
+                            [function] => __construct
+                            [class] => Core\Services\DB
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 38
+                            [function] => servicesInit
+                            [class] => Core\ServicesRegister
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Core\Services\DI Object
+                                        (
+                                            [container:Core\Services\DI:private] => Array
+                                                (
+                                                    [logger] => Core\Services\Logger Object
+                                                        (
+                                                            [logPath:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log
+                                                            [ext:protected] => .log
+                                                            [mode] => ON
+                                                            [trace] => OFF
+                                                        )
+
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [host] => 185.63.191.96
+                                            [dbname] => maikldb
+                                            [user] => w1user
+                                            [password] => w1password
+                                            [driver] => pgsql
+                                            [port] => 5432
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 14
+                            [function] => __construct
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [errorInfo] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> PDOException: could not find driver in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php on line <i>44</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0030</td><td bgcolor='#eeeeec' align='right'>367544</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0360</td><td bgcolor='#eeeeec' align='right'>522008</td><td bgcolor='#eeeeec'>Core\AppKernel->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>14</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0405</td><td bgcolor='#eeeeec' align='right'>557416</td><td bgcolor='#eeeeec'>Core\ServicesRegister->servicesInit(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>38</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>4</td><td bgcolor='#eeeeec' align='center'>0.0425</td><td bgcolor='#eeeeec' align='right'>606008</td><td bgcolor='#eeeeec'>Core\Services\DB->__construct(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\ServicesRegister.php' bgcolor='#eeeeec'>...\ServicesRegister.php<b>:</b>30</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>5</td><td bgcolor='#eeeeec' align='center'>0.0430</td><td bgcolor='#eeeeec' align='right'>606176</td><td bgcolor='#eeeeec'>Core\Services\DB->connect(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>22</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>6</td><td bgcolor='#eeeeec' align='center'>0.0430</td><td bgcolor='#eeeeec' align='right'>606464</td><td bgcolor='#eeeeec'><a href='http://www.php.net/PDO.construct' target='_new'>__construct</a>
+(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\DB.php' bgcolor='#eeeeec'>...\DB.php<b>:</b>44</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
 DateTime: 12.01.2020 16:00:00
 Log data: 
 Array

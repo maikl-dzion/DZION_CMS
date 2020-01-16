@@ -74,4 +74,13 @@
   Undefined variable: routes = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 14
   Undefined variable: dbconfig = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 14
   Undefined variable: response = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\app\Controllers\UserController.php = 129
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
+  Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
  
