@@ -3,60 +3,104 @@
 namespace Core;
 
 use Core\Services\DI;
-use Core\Services\Logger;
 use Core\Services\Response;
+use Core\Services\ConfigController;
+use Core\Tests\TestAppController;
+
 
 class AppKernel
 {
 
     private   $di;
+    protected $app;
     protected $router;
     protected $dbconfig;
     protected $services;
     protected $logger;
-    protected $response;
     protected $controller;
+    public    $response;
 
-    public function __construct(array $routes, array $dbconfig){
-        $this->dbconfig = $dbconfig;
-        $this->di       = new DI();
+    /**
+     * AppKernel constructor.
+     * @param array $routes
+     * @param array $dbconfig
+     * @throws \Exception
+     */
+    public function __construct(){
+
+        $this->di = new DI(); // Создаем контейнер зависисимостей
+        $config   = new ConfigController(); // Получаем конфиги приложения (из папки config)
+        $routes   = $config->get('routes');
+        $this->dbconfig = $config->get('dbconfig');
         $this->router   = new Router($routes);
-        $this->logger   = new Logger(LOG_PATH);
-        $this->response = new Response();
-        $this->initialize();
+
+        // Инициализируем общие сервисы
+        $this->services = new ServicesRegister();
+        $this->services->servicesInit($this->di, $this->dbconfig);
+        $this->logger   = $this->di->get('logger');
+        $this->response = $this->di->get('response');
+
+        // Подготавливаем миграции
+        $this->db = $this->di->get('db');
+        $this->migrate = $this->di->get('migrate');
+        $this->migrate->migrateLoader($this->db);
+
+        // Тестирование компонентов
+        // $test = new \Core\Tests\TestAppController($this->di);
+        // $test->testMail();
+        // $this->di->set('test', $test);
+
+        // Запускаем обработку роута
+        $this->routerInit();
     }
 
-    protected function initialize() {
-        $this->initServices();
-        $this->initRouter();
+//    protected function initialize() {
+//        $this->servicesInit();
+//        $this->routerInit();
+//    }
+
+    /**
+     * @throws \Exception
+     */
+    protected function routerInit() {
+        $this->app = $this->router->init();
     }
 
-    protected function initRouter() {
-        $this->controller = $this->router->init();
-    }
+    /**
+     * @return Response
+     * @throws \Exception
+     */
+    public function run() : Response {
 
-    public function run() {
-
-        $className  = $this->controller->class;
-        $actionName = $this->controller->action;
-        $parameters = $this->controller->parameters;
-
+        $className  = $this->app->class;
+        $actionName = $this->app->action;
+        $parameters = $this->app->parameters; // ассоциативный массив
+        $arguments  = $this->app->arguments;  // массив с цифровыми индексами
         $message    = false;
-        // lg($_SERVER);
-        if(class_exists($className)) {
-            $controller = new $className($this->di, $parameters);
-            if(method_exists($controller, $actionName))  {
-                if(!empty($parameters)) {
-                    $response = $controller->$actionName($parameters);
-                } else {
-                    $response = $controller->$actionName();
-                }
-            } else {
-                $message = "Не существует метод класса - {$className}->{$actionName}";
-            }
-        } else {
-            $message = "Не существует класс - {$className}";
-        }
+        // lg($className);
+
+        $controller = new $className($this->di, $parameters);
+        if(!empty($arguments))
+            $response = $controller->$actionName(...$arguments);
+        else
+            $response = $controller->$actionName();
+
+
+//        if(class_exists($className)) {
+//            $controller = new $className($this->di, $parameters);
+//            if(method_exists($controller, $actionName))  {
+//                if(!empty($parameters)) {
+//
+//                    $response = $controller->$actionName($parameters);
+//                } else {
+//                    $response = $controller->$actionName();
+//                }
+//            } else {
+//                $message = "Не существует метод класса - {$className}->{$actionName}";
+//            }
+//        } else {
+//            $message = "Не существует класс - {$className}";
+//        }
 
         if($message) {
             $this->logger->log($message, 'app_kernel');
@@ -65,32 +109,8 @@ class AppKernel
             exit;
         }
 
-        $this->response->setResponse($response);
-
+        $this->response->data = $response;
         return $this->response;
-    }
-
-    public function loadServices() {
-        return array(
-            Services\Logger::class            => array('name' => 'logger'       , 'params' => LOG_PATH),
-            Services\DB::class                => array('name' => 'db'           , 'params' => $this->dbconfig),
-            Services\JwtAuthController::class => array('name' => 'jwt'          , 'params' => ''),
-            Services\FileUploads::class       => array('name' => 'files_loader' , 'params' => ''),
-            Services\Response::class          => array('name' => 'response'     , 'params' => '')
-        );
-    }
-
-    public function initServices() {
-        $services = $this->loadServices();
-        foreach ($services as $serviceClass => $values) {
-            $serviceName  = $values['name'];
-            $params = $values['params'];
-            if(!empty($params))
-              $service  = new $serviceClass($params);
-            else
-              $service  = new $serviceClass();
-            $this->di->set($serviceName, $service);
-        }
     }
 
 }

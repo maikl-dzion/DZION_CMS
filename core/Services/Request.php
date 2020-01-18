@@ -58,17 +58,17 @@ class Request extends AbstractCore
 
     public static function pathInfo($url, $type = '') {
 
-        $url   = trim($url, '/');
-        $route = explode('/', $url);
+        $url    = trim($url, '/');
+        $route  = explode('/', $url);
         $class  = 'default_class';
         $action = 'index';
-        $parameters = array();
+        $arguments   = array();
 
         foreach ($route as $key => $value) {
             switch ($key) {
-                case 0  : $class   = $value; break;
+                case 0  : $class  = $value; break;
                 case 1  : $action = $value; break;
-                default : $parameters[] = $value; break;
+                default : $arguments[] = $value; break;
             }
         }
 
@@ -77,7 +77,8 @@ class Request extends AbstractCore
         $resp->type   = $type;
         $resp->class  = $class;
         $resp->action = $action;
-        $resp->parameters  = $parameters;
+        $resp->url_key = $class . '/' . $action;
+        $resp->arguments = $arguments;
 
         return $resp;
     }

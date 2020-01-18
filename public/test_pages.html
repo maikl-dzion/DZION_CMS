@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование страниц</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <style></style>
+    
+</head>
+
+<body>
+
+<div id="app">
+
+    <v-app id="inspire">
+
+        <v-navigation-drawer v-model="drawer" app>
+            <v-list dense>
+
+                <v-list-item link>
+                    <v-list-item-action><v-icon>mdi-home</v-icon></v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-list-item link v-for="(route, url) in routes">
+                    <v-list-item-action><v-icon>mdi-contact-mail</v-icon></v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title 
+                            @click="makeRequestAsync(url, 'response', route.params)">
+                            {{route.title}}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
+            </v-list>
+        </v-navigation-drawer>
+    
+        <v-app-bar app color="indigo" dark>
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+            <v-toolbar-title style="margin-left:250px;" >Тестирование страниц</v-toolbar-title> 
+        </v-app-bar>
+    
+        <v-content> <h3 style="padding:5px;">{{pageUrl}}</h3>
+            <v-container class="fill-height" fluid>
+                <v-row align="center" justify="center">
+                    <pre>
+                        {{response}}
+                    </pre>
+                </v-row>
+            </v-container>
+        </v-content>
+        <v-footer color="indigo" app>
+            <span class="white--text">&copy; 2019</span>
+        </v-footer>
+    </v-app>
+
+</div>
+
+ <!---- ######################################### ------>   
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+ <script src="http://bolderfest.ru/ARCHIVES/lg.js"></script>
+
+ <script src="Http.js"></script>
+
+<script>
+
+    var vm = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        mixins: [HttpServiceAsync],
+        data() {
+            return {
+                
+                drawer: null,
+              
+                users: [],
+                user : {},
+                response : [],
+
+                routes : { 
+                    '/user/get_users'     : { title : 'Получить всех пользователей', params : "" },
+                    '/user/get_user/103'  : { title  : 'Получить пользователя'     , params : "" },
+                    '/default_uri/routes_show'   : { title  : 'Получить все маршруты'  , params : "" },
+                },
+
+                pageUrl : '',
+                
+            }
+        },
+
+        created() {
+
+        },
+
+        methods: {
+
+            async makeRequestAsync(url, objectName, params = null) {
+                this.pageUrl = url;
+                if(params)
+                   this[objectName] = await this.send(url, params, 'post');
+                else 
+                   this[objectName] = await this.send(url);    
+            },
+
+            makeRequest(url, objectName, params = null) {
+                this.send(url).then(response => {
+                    this[objectName] = response;
+                }).catch(error => {
+                    alert('Ошибка в конечном запросе');
+                });
+            },
+
+            async getUsersAsync() {
+                let url = '/user/get_users';
+                this.makeRequestAsync(url, 'users');
+            },
+
+            async getUserAsync() {
+                let url = '/user/get_user/103';
+                this.makeRequestAsync(url, 'user');
+            },
+
+            getUsers() {
+                let url = '/user/get_users';
+                this.send(url).then(response => {
+                    this.users = response;
+                }).catch(error => {
+                    alert('Ошибка в конечном запросе');
+                });
+            },
+        },
+    })
+</script>
+</body>
+</html>

@@ -3,11 +3,17 @@
 namespace App\Controllers;
 
 use Core\App\Controller;
+use Core\Services\DI;
 
 class UserController extends Controller{
 
     protected $tableName = 'users';
     protected $access;
+
+    public function __construct(DI $di, $parameters = array()) {
+        parent::__construct($di, $parameters);
+        $this->loaderModel('UserModel');
+    }
 
     public function getUsers(){
         $query = "SELECT * FROM {$this->tableName}";
@@ -15,13 +21,56 @@ class UserController extends Controller{
         return $users;
     }
 
-    public function getUser($args) {
-        $userId = (is_array($args)) ? $args[0] : $args;
+    public function getUser($userId) {
+        // lg($this);
+        // $userId = (is_array($args)) ? $args[0] : $args;
+        // $userId = $request['user_id'];
         $query = "SELECT * FROM {$this->tableName} WHERE user_id = {$userId}";
         $user = $this->db->fetch($query);
         if(!empty($user[0]))
             $user = $user[0];
         return $user;
+    }
+
+    public function verifyEmail() {
+        $userId = $this->getParam(0);
+        $query = "UPDATE {$this->tableName} SET verify = 1 WHERE user_id = {$userId}";
+        return $this->db->exec($query);
+    }
+
+    public function changePassword() {
+
+        $userId = $this->getParam(0);
+        $data  = $this->fetchPost();
+
+        // тестовые данные для отладки
+//        $data = [
+//            'email' => 'dzion67@mail.ru',
+//            'new_password' => '556677',
+//            'repeat_password' => '556677'
+//        ];
+
+        $newPassword = $this->passwordHash($data['new_password']);
+        $email = $data['email'];
+
+        $query = "UPDATE {$this->tableName} SET password = '{$newPassword}' 
+                  WHERE user_id = {$userId} AND email = '{$email}'";
+        return $this->db->exec($query);
+    }
+
+    public function forgotYourPassword() {
+
+        $email = $this->getParam(0);
+        $item = $this->hasValue('email', $email);
+
+        if(empty($item['user_id'])) return false;
+
+        $userId = $item['user_id'];
+        $mailHeader  = 'Смена пароля';
+        $linkMessage = 'Пройдите по адресу для смены пароля';
+        $serviceUrl  = 'http://home.ru/DZION_CMS/user/change_password/' . $userId;
+        $verifyEmailUrl = '<a href="'. $serviceUrl .'" >' .$linkMessage. '</a>';
+        return $this->sendMail($email, $verifyEmailUrl, $mailHeader);
     }
 
     protected function hasValue($fieldName, $value, $tableName = '') {
@@ -42,8 +91,8 @@ class UserController extends Controller{
     public function createUser() {
 
         $data  = $this->fetchPost();
-        $this->db->truncateTable($this->tableName);
-        $data = $this->getTestData(21);
+        //$this->db->truncateTable($this->tableName);
+        //$data = $this->getTestData(21);
 
         if( !empty($data['login'])    &&
             !empty($data['password']) &&
@@ -62,10 +111,15 @@ class UserController extends Controller{
             if($response->status) {
                 $userId = $this->db->lastInsertId();
                 $user   = $this->getUser($userId);
-                $verifyEmailUrl = 'http://home.ru/DZION_CMS/user/verify_email/' . $userId;
-                $this->sendMail($data['email'], 'Проверка email', $verifyEmailUrl);
+
+                $mailHeader  = 'Проверка email';
+                $linkMessage = 'Пройдите по адресу для подтверждения почты';
+                $serviceUrl  = 'http://home.ru/DZION_CMS/user/verify_email/' . $userId;
+                $verifyEmailUrl = '<a href="'. $serviceUrl .'" >' .$linkMessage. '</a>';
+                $mailResponse = $this->sendMail($data['email'], $verifyEmailUrl, $mailHeader);
+
                 return array("message" => "Пользователь успешно создан",
-                             "user_id" => $userId, 'user' => $user);
+                             "user_id" => $userId, "user" => $user, "mail_response" => $mailResponse);
             }
 
             $error = $response->message . '(' . $response->status . ')';
@@ -83,7 +137,7 @@ class UserController extends Controller{
         $userId = $this->getParam(0);
         $error = '';
 
-        $data = $this->getTestData();
+        // $data = $this->getTestData();
 
         // Проверка на обязательные поля
         if( !empty($data['login'])    &&
@@ -288,7 +342,7 @@ class UserController extends Controller{
             "password" => "1234",
             "username" => "maikl",
             "lastname" => "abasov",
-            "email"    => "dzion@mail.ru"
+            "email"    => "dzion67@mail.ru"
         );
 
         return $data;

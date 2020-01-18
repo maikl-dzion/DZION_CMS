@@ -141,6 +141,18 @@ class DB extends AbstractCore
         return $stmt->execute($data);
     }
 
+    public function exec($query){
+        return $this->pdo->exec($query);
+    }
+
+    public function query($query){
+        return $this->pdo->query($query);
+    }
+
+    public function getPdo(){
+        return $this->pdo;
+    }
+
     public function fetch($query, $data = [], $statement = PDO::FETCH_ASSOC) {
         $stmt = $this->pdo->prepare($query);
         $stmt->execute($data);
@@ -255,4 +267,66 @@ class DB extends AbstractCore
         return $this->fetchRow($query);
     }
 
+    public function getTableListSheme($shemeName = '') {
+        $shemeName = (!$shemeName) ? 'public' : $shemeName;
+        $query = "SELECT * FROM information_schema.columns
+                  WHERE table_schema='{$shemeName}'";
+        $list = $this->fetch($query);
+        $result = array();
+
+        foreach ($list as $key => $values) {
+
+            $tableName = $values['table_name'];
+            $fieldName = $values['column_name'];
+            $auto      = $values['column_default'];
+            $fieldType = $values['data_type'];
+            if($auto) $auto = true;
+
+            $field = array(
+                'name' => $fieldName,
+                'auto' => $auto,
+                'type' => $fieldType,
+            );
+
+            foreach($field as $fk => $fval)
+                $values[$fk] = $fval;
+
+            $result[$tableName]['name'] = $tableName;
+            $result[$tableName]['fields'][] = $values;
+        }
+
+        return $result;
+    }
+
+
 }
+
+
+// $sql = "INSERT INTO books (title,author) VALUES (:title,:author)";
+// $q = $conn->prepare($sql);
+// $q->execute(array(':author'=>$author,':title'=>$title));
+
+// $sql = "UPDATE books  SET title=?, author=? WHERE id=?";
+// $q = $conn->prepare($sql);
+// $q->execute(array($title, $author, $id));
+
+
+//$this->pdo->beginTransaction();
+//
+///* Вставка множества записей по принципу "все или ничего" */
+//$sql = 'INSERT INTO fruit
+//       (name, colour, calories)
+//       VALUES (?, ?, ?)';
+//
+//$stmt = $this->pdo->prepare($sql);
+//
+//foreach ($items as $item) {
+//    $stmt->execute(array(
+//        $item->name,
+//        $item->colour,
+//        $item->calories,
+//    ));
+//}
+//
+///* Фиксация изменений */
+// $this->pdo->commit();
