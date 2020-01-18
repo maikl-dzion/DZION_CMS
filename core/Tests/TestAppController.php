@@ -6,10 +6,15 @@ use Core\AbstractCore;
 
 class TestAppController extends AbstractCore {
     public $di;
+<<<<<<< HEAD
     public function __construct($di = array()){
         parent::__construct();
         if(empty($di))
             $di = new \Core\Services\DI();
+=======
+    public function __construct($di){
+        parent::__construct();
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
         $this->di = $di;
     }
 
@@ -22,6 +27,7 @@ class TestAppController extends AbstractCore {
         return $res;
     }
 
+<<<<<<< HEAD
     public function testAppClass($className, $funcName = '', $params = array()) {
         $controller = new $className($this->di, $params);
         if(!$funcName)
@@ -29,4 +35,6 @@ class TestAppController extends AbstractCore {
         return $controller->$funcName($params);
     }
 
+=======
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
 }

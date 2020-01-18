@@ -6,7 +6,9 @@
             "email": "dzion67@mail.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    },
 	"autoload": {
 		"psr-4": {
 		  "Core\\": "core/",

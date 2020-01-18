@@ -162,6 +162,7 @@
   Undefined offset: 0 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
   Undefined offset: 1 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
   Undefined offset: 2 = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\ConfigController.php = 58
+<<<<<<< HEAD
   Undefined variable: traceStr = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php = 38
   file_get_contents(C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log/index.log): failed to open stream: No such file or directory = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Logger.php = 38
   file_get_contents(C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS/log/log.log): failed to open stream: No such file or directory = C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\Services\Logger.php = 38
@@ -218,4 +219,6 @@
   Undefined offset: 1 = C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php = 75
   Undefined property: stdClass::$urlKey = C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php = 26
   Undefined offset: 1 = C:\WebServer\Ampps\www\home.ru\DZION_CMS\core\Router.php = 75
+=======
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
  

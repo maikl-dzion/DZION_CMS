@@ -28,7 +28,11 @@ class Controller extends App {
         $this->db     = $this->di->get('db');
         $this->logger = $this->di->get('logger');
         $this->jwt    = $this->di->get('jwt');
+<<<<<<< HEAD
         $this->response = $this->di->get('response');
+=======
+        $this->response    = $this->di->get('response');
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
 
     }
 

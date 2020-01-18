@@ -12,11 +12,15 @@ namespace Core\Services;
 use Core\AbstractCore;
 
 class StringProcessingController extends AbstractCore {
+<<<<<<< HEAD
 
+=======
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
     public function __construct() {
         parent::__construct();
     }
 
+<<<<<<< HEAD
     public function replace($source, $replaceValue, $pattern) {
         return str_replace($pattern, $replaceValue, $source);
     }
@@ -28,4 +32,6 @@ class StringProcessingController extends AbstractCore {
         return true;
     }
 
+=======
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
 }

@@ -12,7 +12,10 @@ class ServicesRegister extends AbstractCore {
             Services\FileUploads::class       => array('name' => 'files_loader' , 'params' => ''),
             Services\Response::class          => array('name' => 'response'     , 'params' => ''),
             Services\SendMailer::class        => array('name' => 'mail'         , 'params' => ''),
+<<<<<<< HEAD
             Services\StringProcessingController::class => array('name' => 'string_helper', 'params' => ''),
+=======
+>>>>>>> d8e115ebd1c0e451b3ef0def7b1e80db89cce685
             Services\DbMigrateController::class => array('name' => 'migrate'    , 'params' => '')
         );
     }
