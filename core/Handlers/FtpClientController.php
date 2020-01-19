@@ -1,32 +1,36 @@
 <?php
 
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
 
-$config = [
-    'host' => 'bolderp5.beget.tech',
-    'user' => 'bolderp5_vlad',
-    'password' => '1985list',
-];
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//
+//$config = [
+//    'host' => 'bolderp5.beget.tech',
+//    'user' => 'bolderp5_vlad',
+//    'password' => '1985list',
+//];
+//
+//$remoteDir = 'DZION_CMS';
+//$localDir = __DIR__;
+//
+//if(!empty($argv[1]))
+//    $remoteDir = $argv[1];
+//
+//$ignore = array(
+//    'public',
+//    '.',
+//    '.git'
+//);
+//
+//$ftp = new FtpClientController($config, $remoteDir, $localDir, $ignore);
+//
+//$ftp->moveFilesToRemote();
+//
+//die('ok');
+//
 
-$remoteDir = 'DZION_CMS';
-$localDir = __DIR__;
-
-if(!empty($argv[1]))
-    $remoteDir = $argv[1];
-
-$ignore = array(
-    'public',
-    '.',
-    '.git'
-);
-
-$ftp = new FtpClientController($config, $remoteDir, $localDir, $ignore);
-
-$ftp->moveFilesToRemote();
-
-die('ok');
+namespace Core\Handlers;
 
 
 class FtpClientController {
@@ -43,9 +47,9 @@ class FtpClientController {
 
     public function __construct($config, $remoteDir, $localDir = __DIR__, $ignore = array()) {
 
-        $this->config = $config;
+        $this->config    = $config;
         $this->remoteDir = $remoteDir;
-        $this->localDir = $localDir;
+        $this->localDir  = $localDir;
         $this->auth();
         $this->remoteRootDir = $this->getDirName();
         $this->ignore = $ignore;

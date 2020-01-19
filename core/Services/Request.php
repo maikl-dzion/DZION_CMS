@@ -13,7 +13,7 @@ class Request extends AbstractCore
     public $files   = [];
     public $server  = [];
 
-    public function __construct() {}
+    // public function __construct() {}
 
     public function init() {
         $this->get     = $_GET;
@@ -35,13 +35,13 @@ class Request extends AbstractCore
     }
 
     public static function getUrl($type){
-        $url = 'default_uri/index';
+        // $url = 'default_url/index';
         if(!empty($_SERVER[$type]))
             $url = $_SERVER[$type];
         return $url;
     }
 
-    public static function getRouteParam($type = REQUEST_URL_NAME){
+    public static function getUrlParam($type = REQUEST_URL_NAME){
         $routeObject = null;
         $url = self::getUrl($type);
         switch ($type) {
@@ -60,9 +60,9 @@ class Request extends AbstractCore
 
         $url    = trim($url, '/');
         $route  = explode('/', $url);
-        $class  = 'default_class';
-        $action = 'index';
+        $class  = $action = '';
         $arguments   = array();
+        $error = $warning = '';
 
         foreach ($route as $key => $value) {
             switch ($key) {
@@ -72,6 +72,12 @@ class Request extends AbstractCore
             }
         }
 
+        if(!$class || !$action) {
+            $warning = "Неопределенный маршрут - {$class} / {$action}";
+            $class  = DEFAULT_URL_NAME;
+            $action = DEFAULT_ACTION_NAME;
+        }
+
         $resp = new \stdClass();
         $resp->url    = $url;
         $resp->type   = $type;
@@ -79,6 +85,8 @@ class Request extends AbstractCore
         $resp->action = $action;
         $resp->url_key = $class . '/' . $action;
         $resp->arguments = $arguments;
+        $resp->error = $error;
+        $resp->warning = $warning;
 
         return $resp;
     }

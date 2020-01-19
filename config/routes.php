@@ -27,8 +27,8 @@ return array(
 //       ),
 //   )
 
-    "default_uri/index"         => "App\Controllers\DefaultController::index::GET",
-    "default_uri/routes_show"   => "App\Controllers\DefaultController::routesShow::GET",
+    "default_url/index"         => "App\Controllers\DefaultController::index::GET",
+    "default_url/routes_show"   => "App\Controllers\DefaultController::routesShow::GET",
 
     "user/get_user/:user_id"    => "App\Controllers\UserController::getUser::GET",
     "user/get_users"            => "App\Controllers\UserController::getUsers::GET",

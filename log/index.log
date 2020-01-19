@@ -1,4 +1,725 @@
 =============================
+DateTime: 19.01.2020 15:31:25
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - index
+    [code] => 0
+    [to_string] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - index
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - index
+            [string:Exception:private] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - index
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>368680</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1870</td><td bgcolor='#eeeeec' align='right'>810656</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1870</td><td bgcolor='#eeeeec' align='right'>810936</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 19.01.2020 15:31:13
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - index
+    [code] => 0
+    [to_string] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - index
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - index
+            [string:Exception:private] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - index
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0015</td><td bgcolor='#eeeeec' align='right'>368680</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1880</td><td bgcolor='#eeeeec' align='right'>810656</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1885</td><td bgcolor='#eeeeec' align='right'>810936</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 19.01.2020 15:30:19
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - index
+    [code] => 0
+    [to_string] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - index
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - index
+            [string:Exception:private] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - index
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0055</td><td bgcolor='#eeeeec' align='right'>368680</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.2040</td><td bgcolor='#eeeeec' align='right'>810264</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.2040</td><td bgcolor='#eeeeec' align='right'>810544</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 19.01.2020 14:33:32
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - index
+    [code] => 0
+    [to_string] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - index
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - index
+            [string:Exception:private] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - index
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>368616</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1890</td><td bgcolor='#eeeeec' align='right'>794472</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1890</td><td bgcolor='#eeeeec' align='right'>794752</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 19.01.2020 14:33:11
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - 
+    [code] => 0
+    [to_string] => Exception: Не найден класс -  in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - 
+            [string:Exception:private] => Exception: Не найден класс -  in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - 
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс -  in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>368616</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1735</td><td bgcolor='#eeeeec' align='right'>794472</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1735</td><td bgcolor='#eeeeec' align='right'>794696</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 19.01.2020 14:32:28
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - index
+    [code] => 0
+    [to_string] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - index
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - index
+            [string:Exception:private] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - index
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>368616</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.1980</td><td bgcolor='#eeeeec' align='right'>794472</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.1980</td><td bgcolor='#eeeeec' align='right'>794752</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
+DateTime: 19.01.2020 14:31:47
+Log data: 
+Array
+(
+    [Try-Catch-Api-Index] => try-catch-api-index
+    [title] => Ошибка в файле index - C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+    [line] => 103
+    [message] => Не найден класс - index
+    [code] => 0
+    [to_string] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+    [trace_string] => 
+    [trace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                    [line] => 77
+                    [function] => error
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Не найден класс - index
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                    [line] => 15
+                    [function] => run
+                    [class] => Core\AppKernel
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [exception] => Exception Object
+        (
+            [message:protected] => Не найден класс - index
+            [string:Exception:private] => Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php:103
+Stack trace:
+#0 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php(77): Core\AppKernel->error('\xD0\x9D\xD0\xB5 \xD0\xBD\xD0\xB0\xD0\xB9\xD0\xB4\xD0\xB5...')
+#1 C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php(15): Core\AppKernel->run()
+#2 {main}
+            [code:protected] => 0
+            [file:protected] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+            [line:protected] => 103
+            [trace:Exception:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php
+                            [line] => 77
+                            [function] => error
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                    [0] => Не найден класс - index
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [file] => C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php
+                            [line] => 15
+                            [function] => run
+                            [class] => Core\AppKernel
+                            [type] => ->
+                            [args] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [previous:Exception:private] => 
+            [xdebug_message] => <tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Exception: Не найден класс - index in C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php on line <i>103</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0030</td><td bgcolor='#eeeeec' align='right'>368472</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>0</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.2065</td><td bgcolor='#eeeeec' align='right'>794328</td><td bgcolor='#eeeeec'>Core\AppKernel->run(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\api\index.php' bgcolor='#eeeeec'>...\index.php<b>:</b>15</td></tr>
+<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.2065</td><td bgcolor='#eeeeec' align='right'>794608</td><td bgcolor='#eeeeec'>Core\AppKernel->error(  )</td><td title='C:\AmppsWebServer\Ampps\www\home.ru\DZION_CMS\core\AppKernel.php' bgcolor='#eeeeec'>...\AppKernel.php<b>:</b>77</td></tr>
+
+        )
+
+)
+=============================
+
+=============================
 DateTime: 17.01.2020 13:06:06
 Log data: 
 Array

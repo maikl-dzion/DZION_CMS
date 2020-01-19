@@ -10,6 +10,8 @@
 -------------------------------------------------------------------------------------------
 */
 
+namespace Core/Handlers;
+
 class Cargades {
 	
 	public static $debug = false;

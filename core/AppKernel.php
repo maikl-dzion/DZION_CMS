@@ -36,7 +36,7 @@ class AppKernel
 
         // Инициализируем общие сервисы
         $this->services = new ServicesProvider();
-        $this->services->servicesInit($this->di, $this->dbconfig);
+        $this->services->servicesInit(array($this->di, $this->dbconfig));
         $this->logger   = $this->di->get('logger');
         $this->response = $this->di->get('response');
 
@@ -45,19 +45,14 @@ class AppKernel
         $this->migrate = $this->di->get('migrate');
         $this->migrate->migrateLoader($this->db);
 
+        // lg($this);
         // Тестирование компонентов
         // $test = new \Core\Tests\TestAppController($this->di);
         // $test->testMail();
         // $this->di->set('test', $test);
 
-        // Запускаем обработку роута
-        $this->routerInit();
+        $this->routerInit(); // Запускаем обработку роута
     }
-
-//    protected function initialize() {
-//        $this->servicesInit();
-//        $this->routerInit();
-//    }
 
     /**
      * @throws \Exception
@@ -76,41 +71,42 @@ class AppKernel
         $actionName = $this->app->action;
         $parameters = $this->app->parameters; // ассоциативный массив
         $arguments  = $this->app->arguments;  // массив с цифровыми индексами
-        $message    = false;
-        // lg($className);
+        $errorMessage  = '';
 
+        if(!class_exists($className)) {
+            $errorMessage = "Не найден класс - {$className}";
+            $this->error($errorMessage);
+            return false;
+        }
+
+        // Создаем объект класса (App)
         $controller = new $className($this->di, $parameters);
+
+        if(!method_exists($controller, $actionName))  {
+            $errorMessage = "Не найден метод класса - {$className}->{$actionName}";
+            $this->error($errorMessage);
+            return false;
+        }
+
+        // Вызываем метод класса (App)
         if(!empty($arguments))
             $response = $controller->$actionName(...$arguments);
         else
             $response = $controller->$actionName();
 
-
-//        if(class_exists($className)) {
-//            $controller = new $className($this->di, $parameters);
-//            if(method_exists($controller, $actionName))  {
-//                if(!empty($parameters)) {
-//
-//                    $response = $controller->$actionName($parameters);
-//                } else {
-//                    $response = $controller->$actionName();
-//                }
-//            } else {
-//                $message = "Не существует метод класса - {$className}->{$actionName}";
-//            }
-//        } else {
-//            $message = "Не существует класс - {$className}";
-//        }
-
-        if($message) {
-            $this->logger->log($message, 'app_kernel');
-            $this->logger->log($message, 'log');
-            throw new \Exception($message);
-            exit;
-        }
-
         $this->response->data = $response;
         return $this->response;
     }
 
+    protected function error($errorMessage) {
+        $this->logger->log($errorMessage, 'AppKernel');
+        $this->logger->log($errorMessage, 'log');
+        throw new \Exception($errorMessage);
+        exit;
+    }
+
+    //    protected function initialize() {
+    //        $this->servicesInit();
+    //        $this->routerInit();
+    //    }
 }

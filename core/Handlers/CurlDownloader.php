@@ -9,9 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Flex;
+namespace Core\Handlers;
 
-use Composer\Downloader\TransportException;
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>

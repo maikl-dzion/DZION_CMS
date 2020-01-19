@@ -10,6 +10,7 @@ class Controller extends App {
     protected $db;
     protected $jwt;
     protected $model;
+    protected $handl;
     protected $config;
     protected $request;
     protected $response;
@@ -29,6 +30,7 @@ class Controller extends App {
         $this->logger = $this->di->get('logger');
         $this->jwt    = $this->di->get('jwt');
         $this->response = $this->di->get('response');
+        $this->handl = $this->di->get('handl');
 
     }
 

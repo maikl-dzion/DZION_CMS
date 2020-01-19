@@ -8,9 +8,7 @@ abstract class App
     protected $db;
     protected $logger;
 
-    public function __construct() {
-
-    }
+    public function __construct() {}
 
     protected function responseCode($code) {
         http_response_code($code);

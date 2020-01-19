@@ -13,15 +13,14 @@ class ServicesProvider extends AbstractCore {
             Services\Response::class          => array('name' => 'response'     , 'params' => ''),
             Services\SendMailer::class        => array('name' => 'mail'         , 'params' => ''),
             Services\StringProcessingController::class => array('name' => 'string_helper', 'params' => ''),
-            Services\DbMigrateController::class => array('name' => 'migrate'    , 'params' => '')
+            Services\DbMigrateController::class => array('name' => 'migrate'    , 'params' => ''),
+            HandlersProvider::class           => array('name' => 'handl', 'params' => '')
         );
     }
 
-    public function servicesInit(...$args) {
-
+    public function servicesInit($args) {
         $di       = $args[0];
         $dbconfig = $args[1];
-
         $services = $this->servicesList($dbconfig);
 
         foreach ($services as $serviceClass => $values) {
@@ -35,8 +34,6 @@ class ServicesProvider extends AbstractCore {
             if(!$di->has($serviceName))
                $di->set($serviceName, $service);
         }
-
-        // return $di;
     }
 
 }

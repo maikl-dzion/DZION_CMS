@@ -4,8 +4,8 @@ namespace Core;
 
 use Core\Services\Request;
 
-class Router
-{
+class Router extends AbstractCore {
+
     private $routes  = [];
     private $request;
     private $route;
@@ -13,24 +13,47 @@ class Router
     private $method;
 
     public function __construct(array $routes){
+        parent::__construct();
         $this->routes = $routes;
     }
 
-    public function getReguest(){
-        // $this->route = Request::getRouteParam('REQUEST_URI');
-        $request = Request::getRouteParam(REQUEST_URL_NAME);
-        return $request;
+    public function init() {
+
+        $this->request = $this->getReguest();
+        $urlKey        = $this->request->url_key;
+        // lg($this->request);
+        $this->route   = $this->findRoute($this->routes, $urlKey);
+        $result = $this->routeProcessing($this->request, $this->route);
+
+        return $result;
     }
 
-    public function findRoute($routes, $urlKey) {
-        foreach($routes as $routeKey => $routeServer) {
-            if($this->findText($routeKey, $urlKey))
-                return array(
-                    'front'  => $routeKey,
-                    'server' => $routeServer
-                );
+    protected function getReguest(){
+        return Request::getUrlParam(REQUEST_URL_NAME);
+    }
+
+    public function findRoute($routes, $requestUrlKey) {
+
+        foreach($routes as $frontRoute => $serverRoute) {
+            $route  = explode('/', $frontRoute);
+            $className  = $route[0];
+            $actionName = $route[1];
+            $routeUrl   =  $className . '/' . $actionName;
+            if($requestUrlKey != $routeUrl) continue;
+
+            return array(
+                'front'  => $frontRoute,
+                'server' => $serverRoute
+            );
         }
-        return false;
+
+        $warning = "Неопределенный маршрут - {$requestUrlKey}";
+        $this->error($warning);
+
+        return array(
+            'front'  => DEFAULT_FRONT_ROUTE,
+            'server' => DEFAULT_SERVER_ROUTE
+        );
     }
 
     protected function argumentsFormatted($routeUrl, $arguments, $urlKey) {
@@ -49,130 +72,66 @@ class Router
 
     protected function routeProcessing($request, $route) {
 
-        $delimiter = '::';
-
-        //$class    = $request->class;
-        //$funcName = $request->action;
-        //$url      = $request->url;
         $arguments = $request->arguments;
         $urlKey    = $request->url_key;
+        $warning   = $request->warning;
+        $error     = $request->error;
 
-        $routeUrl   = $route['front'];
-        $serverLink = $route['server'];
+        if($warning)
+            $this->error($warning);
+        if($error)
+            $this->error($error, true);
 
-        $server = explode($delimiter, $serverLink);
+        $frontRouteUrl  = $route['front'];
+        $serverRouteUrl = $route['server'];
 
-        $error = 0;
-        $className = $funcName = $argsStr = $method = '';
-        // $arguments = $argNames = array();
+        $srvRouteArr = $this->serverRouteFormatted($serverRouteUrl);
+        $parameters  = $this->argumentsFormatted($frontRouteUrl, $arguments, $urlKey . '/');
 
-        list($className,
-             $funcName
-             //$argsStr,
-             //$method
-             ) = $server;
-
-//        $argNames = explode(',', $args);
-//
-//        foreach($parameters as $key => $value) {
-//            if(!empty($argNames[$key])) {
-//                $name = $argNames[$key];
-//                $arguments[$name] = $value;
-//            }
-//        }
-        $parameters = $this->argumentsFormatted($routeUrl, $arguments, $urlKey . '/');
-        // lg($parameters);
-
-        // Тестирование пользовательского контроллера
-//        $test = new \Core\Tests\TestAppController();
-//        $testResult = $test->testAppClass($className, $funcName, $arguments);
-//        lg($testResult);
-
+        //        Тестирование пользовательского контроллера
+        //        $test = new \Core\Tests\TestAppController();
+        //        $testResult = $test->testAppClass($className, $funcName, $arguments);
+        //        lg($testResult);
 
         $std = new \stdClass();
-        $std->class       = $className;
-        $std->action      = $funcName;
-        $std->parameters  = $parameters;
-        $std->arguments   = $arguments;
-        // $std->args  = $parameters;
-
+        $std->class       = $srvRouteArr['className'];
+        $std->action      = $srvRouteArr['actionName'];
+        $std->parameters  = $parameters; // Параметры в ассоциативном массиве (передаем в конструктор)
+        $std->arguments   = $arguments;  // Параметры в числовом массиве (передаем в аргументы метода)
         $std->route       = $route;
         $std->resquest    = $request;
-
-        //$resp->routeUrl    = $routeUrl;
-        //$resp->actionParams = $methodParams;
-
-
-
-//        $urlKey   = $class . '/' . $funcName;
-//        foreach($this->routes as $routeKey => $routeServer) {
-//             if($this->find($routeKey, $urlKey)) {
-//                 lg($routeServer, $realUrl); die;
-//             }
-//        }
-
-        // lg($request); die;
-//        if(!empty($this->routes[$class])) {
-//            $this->route = $this->routes[$class];
-//            return $routeUrl;
-//        }
-
-        //$message = "Не найден маршрут (Router-{$class})";
-        //throw new \Exception($message);
 
         return $std;
     }
 
-
-
-    public function init() {
-
-        $this->request = $this->getReguest();
-        $urlKey = $this->request->url_key;
-        $this->route   = $this->findRoute($this->routes, $urlKey);
-        $result = $this->routeProcessing($this->request, $this->route);
-
-
-
-//        $routeUrl   = $this->routeProcessing();
-//        $action     = $routeUrl->action;  // Имя метода для фронта : get_users
-//        $parameters = $routeUrl->parameters;
-//
-//        /**  Пример $this->route
-//        [class] => App\Controllers\DefaultController
-//        [public] => Array(
-//            [get_users] => Array([func_name] => getUsers, [args] => 'id', [method] => GET)
-//        ) **/
-//
-//        if(empty($this->route[ROUTE_METHODS_INDEX][$action])) {
-//            $message = "Не найден метод класса (Router) ({$action})";
-//            throw new \Exception($message);
-//        }
-//
-//        $className    = $this->route[ROUTE_CLASS_NAME];     // Получаем имя класса : App\Controllers\DefaultController
-//        $methodParams = $this->route[ROUTE_METHODS_INDEX][$action]; // Получаем массив метода : Array([func_name] => getUsers, [args] => 'id', [method] => GET)
-//        $methodName   = $methodParams[ROUTE_METHOD_FNAME];  // Получаем имя метода : getUsers
-//
-//        $resp = new \stdClass();
-//        $resp->class       = $className;
-//        $resp->action      = $methodName;
-//        $resp->parameters  = $parameters;
-//        $resp->route       = $this->route;
-//        $resp->routeUrl    = $routeUrl;
-//        $resp->actionParams = $methodParams;
-
-        return $result;
+    protected function serverRouteFormatted(string $serverRouteUrl) {
+        // пример "App\Controllers\UserController::getUser::GET",
+        $server = explode(ROUTE_PARAM_DELIMITER, $serverRouteUrl);
+        list($className,    // Имя класса         - App\Controllers\UserController
+             $actionName,   // Имя метода класса  - getUser
+             $requestMethod // Имя метода запроса - GET
+            ) = $server;
+        return array(
+            'className'     => $className,
+            'actionName'    => $actionName,
+            'requestMethod' => $requestMethod
+        );
     }
 
 
-    public function findText($source, $findValue) {
+    protected function findText($source, $findValue) {
         $pos = strrpos($source, $findValue);
         if($pos === false)
             return false;
         return true;
     }
 
-    protected function exception($message) {
-        throw new \Exception($message);
+    protected function error($errorMessage, $fatalError = false) {
+        $this->logger->log($errorMessage, 'Router');
+        $this->logger->log($errorMessage, 'log');
+        if($fatalError) {
+            throw new \Exception($errorMessage);
+            exit;
+        }
     }
 }
