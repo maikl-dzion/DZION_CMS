@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class ServicesRegister extends AbstractCore {
+class ServicesProvider extends AbstractCore {
 
     public function servicesList($dbconfig) {
         return array(

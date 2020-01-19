@@ -35,7 +35,7 @@ class AppKernel
         $this->router   = new Router($routes);
 
         // Инициализируем общие сервисы
-        $this->services = new ServicesRegister();
+        $this->services = new ServicesProvider();
         $this->services->servicesInit($this->di, $this->dbconfig);
         $this->logger   = $this->di->get('logger');
         $this->response = $this->di->get('response');
