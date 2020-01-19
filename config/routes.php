@@ -27,6 +27,21 @@ return array(
 //       ),
 //   )
 
-    "user/get_user/:user_id/:user_type" => "App\Controllers\UserController::getUser::user_id,user_type::GET",
+    "default_uri/index"         => "App\Controllers\DefaultController::index::GET",
+    "default_uri/routes_show"   => "App\Controllers\DefaultController::routesShow::GET",
+
+    "user/get_user/:user_id"    => "App\Controllers\UserController::getUser::GET",
+    "user/get_users"            => "App\Controllers\UserController::getUsers::GET",
+    "user/create_user"          => "App\Controllers\UserController::createUser::POST",
+    "user/update_user/:user_id" => "App\Controllers\UserController::updateUser::PUT",
+    "user/delete_user/:user_id" => "App\Controllers\UserController::deleteUser::DELETE",
+
+    "user/login"                => "App\Controllers\UserController::login::POST",
+    "user/logout/:user_id"      => "App\Controllers\UserController::logout::GET",
+
+    "user/access"               => "App\Controllers\UserController::access::GET",
+    "user/verify_email"         => "App\Controllers\UserController::verifyEmail::GET",
+    "user/change_password"      => "App\Controllers\UserController::changePassword::POST",
+    "user/forgot_your_password" => "App\Controllers\UserController::forgotYourPassword::POST",
 
 );
