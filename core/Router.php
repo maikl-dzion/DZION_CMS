@@ -21,18 +21,17 @@ class Router extends AbstractCore {
 
         $this->request = $this->getReguest();
         $urlKey        = $this->request->url_key;
-        // lg($this->request);
         $this->route   = $this->findRoute($this->routes, $urlKey);
         $result = $this->routeProcessing($this->request, $this->route);
 
         return $result;
     }
 
-    protected function getReguest(){
+    protected function getReguest() : \stdClass{
         return Request::getUrlParam(REQUEST_URL_NAME);
     }
 
-    public function findRoute($routes, $requestUrlKey) {
+    public function findRoute(array $routes, string $requestUrlKey): array {
 
         foreach($routes as $frontRoute => $serverRoute) {
             $route  = explode('/', $frontRoute);
@@ -56,7 +55,7 @@ class Router extends AbstractCore {
         );
     }
 
-    protected function argumentsFormatted($routeUrl, $arguments, $urlKey) {
+    protected function argumentsFormatted(string $routeUrl, array $arguments, string $urlKey): array {
         $routeUrl = str_replace($urlKey, "", $routeUrl);
         $routeUrl = str_replace(':', "", $routeUrl);
         $paramsName = explode('/', $routeUrl);
@@ -70,7 +69,7 @@ class Router extends AbstractCore {
         return $result;
     }
 
-    protected function routeProcessing($request, $route) {
+    protected function routeProcessing(\stdClass $request, array $route): \stdClass {
 
         $arguments = $request->arguments;
         $urlKey    = $request->url_key;
@@ -104,7 +103,7 @@ class Router extends AbstractCore {
         return $std;
     }
 
-    protected function serverRouteFormatted(string $serverRouteUrl) {
+    protected function serverRouteFormatted(string $serverRouteUrl): array {
         // пример "App\Controllers\UserController::getUser::GET",
         $server = explode(ROUTE_PARAM_DELIMITER, $serverRouteUrl);
         list($className,    // Имя класса         - App\Controllers\UserController
@@ -119,7 +118,7 @@ class Router extends AbstractCore {
     }
 
 
-    protected function findText($source, $findValue) {
+    protected function findText(string $source, string $findValue) : bool {
         $pos = strrpos($source, $findValue);
         if($pos === false)
             return false;

@@ -24,24 +24,24 @@ class Request extends AbstractCore
         $this->server  = $_SERVER;
     }
 
-    public static function isPost() {
+    public static function isPost(): bool {
         if($_SERVER['REQUEST_METHOD'] == 'POST')
             return true;
         return false;
     }
 
-    public static function getMethod() {
+    public static function getMethod():string {
         return $_SERVER['REQUEST_METHOD'];
     }
 
-    public static function getUrl($type){
+    public static function getUrl(string $type): string{
         // $url = 'default_url/index';
         if(!empty($_SERVER[$type]))
             $url = $_SERVER[$type];
         return $url;
     }
 
-    public static function getUrlParam($type = REQUEST_URL_NAME){
+    public static function getUrlParam(string $type = REQUEST_URL_NAME): \stdClass {
         $routeObject = null;
         $url = self::getUrl($type);
         switch ($type) {
@@ -56,7 +56,7 @@ class Request extends AbstractCore
         return $routeObject;
     }
 
-    public static function pathInfo($url, $type = '') {
+    public static function pathInfo(string $url, string $type = ''): \stdClass {
 
         $url    = trim($url, '/');
         $route  = explode('/', $url);
@@ -92,7 +92,7 @@ class Request extends AbstractCore
     }
 
 
-    public static function requestUri($url, $type = '') {
+    public static function requestUri(string $url, string $type = '') {
         print_r($url); die;
     }
 
