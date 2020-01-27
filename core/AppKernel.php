@@ -8,8 +8,7 @@ use Core\Services\ConfigController;
 use Core\Tests\TestAppController;
 
 
-class AppKernel
-{
+class AppKernel {
 
     private   $di;
     protected $app;
@@ -71,7 +70,7 @@ class AppKernel
         $actionName = $this->app->action;
         $parameters = $this->app->parameters; // ассоциативный массив
         $arguments  = $this->app->arguments;  // массив с цифровыми индексами
-        $errorMessage  = '';
+        $errorMessage = '';
 
         if(!class_exists($className)) {
             $errorMessage = "Не найден класс - {$className}";

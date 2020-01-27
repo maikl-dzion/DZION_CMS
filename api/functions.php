@@ -40,7 +40,7 @@ function lg() {
         $output .= '<div style="' . $style . '" ><pre>' . $line . '</pre></div>';
     }
 
-    if ($get) return $output;
+    // if ($get) return $output;
 
     print $output;
     die ;

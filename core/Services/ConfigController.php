@@ -47,18 +47,25 @@ class ConfigController extends AbstractCore
     }
 
     public function routesShow() {
-        $routes   = $this->get('routes');
+
         $result = array();
-        foreach($routes as $classWebtUrl => $route) {
-            $className = $route['class'];
-            foreach($route['public'] as $funcWebUrl => $params) {
-                $webUrl = '/' . $classWebtUrl . '/' . $funcWebUrl;
-                $classUrl = $className . '::' . $params['func_name'];
-                $args     = implode('@', $params);
-                // list($fname, $args, $m)   = $params;
-                $result[$webUrl] = $classUrl . ' (' . $args. ')';
-            }
+        $routes = $this->get('routes');
+
+        foreach($routes as $frontUrl => $serverRoute) {
+            $result[$frontUrl] = $serverRoute;
         }
+
+//        foreach($routes as $classWebtUrl => $route) {
+//            $className = $route['class'];
+//            foreach($route['public'] as $funcWebUrl => $params) {
+//                $webUrl   = '/' . $classWebtUrl . '/' . $funcWebUrl;
+//                $classUrl = $className . '::' . $params['func_name'];
+//                $args     = implode('@', $params);
+//                // list($fname, $args, $m)   = $params;
+//                $result[$webUrl] = $classUrl . ' (' . $args. ')';
+//            }
+//        }
+
         return $result;
     }
 

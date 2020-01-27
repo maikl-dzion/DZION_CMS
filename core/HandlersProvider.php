@@ -12,7 +12,7 @@ class HandlersProvider extends AbstractCore {
 
     public function handlerList($params) {
         return array(
-            'curl' => array('Core\HandlersCurlDownloader', array()),
+            'curl' => array('Core\Handlers\CurlDownloader', array()),
         );
     }
 

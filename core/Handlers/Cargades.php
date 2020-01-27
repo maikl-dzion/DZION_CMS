@@ -15,43 +15,49 @@ namespace Core/Handlers;
 class Cargades {
 	
 	public static $debug = false;
-	public static $l = 0;//login
-	public static $p = 0;//Pass
+	public static $l = 0; // login
+	public static $p = 0; // Pass
 	
 	/*******************************************
 	 * Отдача файла с сервера с возможностью докачки - new CargaDes($realFilePath, $speed);
-	 *******************************************************************
+	 *******************************************
 	 * @param string $realFilePath - Путь к отдаваемому файлу
 	 * @param int $apach - True отдача производится средствами Apache
 	 *	(должна быть включена директива XSendFile On), ограничение скорости отдачи в этом случае не работает
 	 * @param int $speed - Скорость отдачи файла
 	 * @return - В случае ошибки выдаст сообшение или true в случае удачи
 	 */
-	public function __construct($realFilePath, $apach=0, $speed=0){
-		
-		if( !$fileCType = self::mime_type($realFilePath) ){//Проверим, что файл существует и присвоим соотв. mime тип, иначе будет общий
+
+	public function __construct($realFilePath, $apach = 0, $speed = 0){
+
+		//Проверим, что файл существует и присвоим соотв. mime тип, иначе будет общий
+		if( !$fileCType = self::mime_type($realFilePath) ){
 			die('<script>alert("Файл не существует!");</script>');
 			return false;
 		}
 		
-		$CLen = filesize($realFilePath);//Размер файла
-		$filename = basename($realFilePath); // запрашиваемое имя
+		$CLen     = filesize($realFilePath); // Размер файла
+		$filename = basename($realFilePath); // Запрашиваемое имя
 		
-		$rangePosition = self::httpRange($filename, $fileCType, $CLen);// Формируем HTTP-заголовки ответа
+		$rangePosition = self::httpRange($filename, $fileCType, $CLen); // Формируем HTTP-заголовки ответа
 		
-		if( !$apach ){
-			$rangePosition = self::httpRange($filename, $fileCType, $CLen);// Формируем HTTP-заголовки ответа
-			
-			if( !self::descargaFile($realFilePath, $rangePosition, $speed) ){//Встаем на позицию $rangePosition и выдаем в поток содержимое файла
+		if(!$apach){
+
+		    // Формируем HTTP-заголовки ответа
+			$rangePosition = self::httpRange($filename, $fileCType, $CLen);
+			// Встаем на позицию $rangePosition и выдаем в поток содержимое файла
+			if( !self::descargaFile($realFilePath, $rangePosition, $speed) ){
 				die('<script>alert("Ошибка открытия файла!");</script>');
 				return false;
 			}
-		}else{
+
+		} else {
 			header('X-SendFile: '. $realFilePath);
 			header('Content-Type: '. $fileCType);
 			header('Content-Disposition: attachment; filename='. $filename);
 			exit;
 		}
+
 		return true;
 	}
 	
@@ -65,6 +71,7 @@ class Cargades {
 	 * @param int $CLen - Размер файла
 	 * @return - номер байта, c которого надо возобновить передачу содержимого файла
 	 */
+
 	private function httpRange($filename, $fileCType, $CLen){
 		
 		if( isset($_SERVER['HTTP_RANGE']) ){
@@ -77,14 +84,17 @@ class Cargades {
 				self::headerD($filename, $fileCType);
 				header ( 'Content-Range: bytes ' . $rangePosition . '-' . $CLen - 1 . '/' . $CLen);
 				header ( 'Content-Length: ' . $newCLen );
-			}else {return false;}
-		}else{
+			} else {
+			    return false;
+			}
+		} else {
 			header ( 'HTTP/1.1 200 OK', true, 200 );
 			header ( 'Status: 200 OK' );
 			self::headerD($filename, $fileCType);
 			header ( 'Content-Length: ' . $CLen );
 			$rangePosition = 0;
 		}
+
 		return $rangePosition;
 	}
 	
@@ -107,11 +117,11 @@ class Cargades {
 		// HTTP/1.0
 		header ( 'Pragma: no-cache' );
 		header ( 'Accept-Ranges: bytes');//Поддержка докачки
-		header ( 'Content-Disposition: attachment; filename="' . $filename . '"' );//Указывает на скачиваемый контент; 
+		header ( 'Content-Disposition: attachment; filename="' . $filename . '"');//Указывает на скачиваемый контент;
 		//большинство браузеров отображают диалог "Сохранить как" с заранее заполненным именем файла из параметра filename, если он задан.
-		header ( 'Content-Description: File Transfer' );//
-		header ( 'Content-Type: ' . $fileCType );//тип файла
-		header ( 'Content-Transfer-Encoding: binary');// Означает, что никакой трансформации содержимого не производится
+		header ( 'Content-Description: File Transfer' ); //
+		header ( 'Content-Type: ' . $fileCType );        // тип файла
+		header ( 'Content-Transfer-Encoding: binary');   // Означает, что никакой трансформации содержимого не производится
 	}
 	
 	/*******************************************
@@ -225,18 +235,25 @@ class Cargades {
 
 	/*******************************************
 	 * Забераем файл с удаленного сервера на свой сервер - CargaDes::_serverD($remoteUrl, $realFilePath, $progress, $login, $pass, $speedS);
-	 *******************************************************************
+	 *******************************************
 	 * @param string 	$remoteUrl 	- Путь к удаленному серверу.
 	 * @param string 	$realFilePath 	- Полный путь куда кладем скачанный файл
 	 * @param int 		$progress	- Подключение индикатора
-	 * @param string	$login		- Логин отправляемый на сервер, если есть авторизация типа .htaccess
+	 * @param string	$login		- Логин отправляемый на сервер, если есть авторизация типа  .htaccess
 	 * @param string	$pass		- Пароль отправляемый на сервер, если есть авторизация типа .htaccess
 	 * @param int 		$speedS		- Ограничение скорости
-	 * @return - false или текст ошибки
+	 * @return - false              - или текст ошибки
 	 */
-	public static function _serverD($remoteUrl, $realFilePath, $progress=1, $login=0, $pass=0, $speedS=0){
+
+	public static function _serverD($remoteUrl,
+	                                $realFilePath,
+	                                $progress = 1,
+	                                $login = 0,
+	                                $pass = 0,
+	                                $speedS = 0) {
+
 		$login = !$login?self::$l:$login;
-		$pass = !$pass?self::$p:$pass;
+		$pass  = !$pass?self::$p:$pass;
 		
 		if( phpversion() < 5.5 and $progress ){
 			$progressCallback = function( $download_size, $downloaded_size, $upload_size, $uploaded_size ){
@@ -394,6 +411,7 @@ class Cargades {
 		}
 		return $post;
 	}
+
 	/*******************************************
 	 * Подключение индикатора загрузки - CargaDes::_serverProgress();
 	 *******************************************************************
@@ -402,6 +420,7 @@ class Cargades {
 	 * @param string	$color	- Цвет линии прогресса загрузки
 	 * @return - готовый скрипт
 	 */
+
 	public static function _serverProgress($style='style.cargades.css', $idp='', $color='4098D3'){
 		$style = $style?'<link rel="stylesheet" type="text/css" href="'.$style.'?v=2" />':'';
 		return $style . '
