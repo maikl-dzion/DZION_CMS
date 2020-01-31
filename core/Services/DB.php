@@ -90,6 +90,41 @@ class DB extends AbstractCore
                      'values' => $_values);
     }
 
+    // Пример использования
+    // $arr = array('login' => 'Maikl', 'passwd' => '343535');
+    // $data = $db->prepareInsertBuilder($arr);
+    // $item  = $data['data'];
+    // $query = $data['query'];
+    // $res = $db->prepareExecSimple($query, $item);
+    protected function prepareInsertBuilder(array $items) :array {
+
+        $data = $fields = $values = array();
+
+        foreach ($items as $fname => $value) {
+            $fields[] = $fname;
+            $values[] = '?';
+            $data[]   = $value;
+        }
+
+        $fieldsSql = '(' . implode(',', $fields) . ') ';
+        $valuesSql = 'VALUES(' . implode(',', $values) . ')';
+        $query = $fieldsSql . $valuesSql;
+
+        return array(
+            'data'  => $data,
+            'query' => $query
+        );
+    }
+
+    protected function prepareExecSimple(string $query, array $data, $getInsertId = false) :array {
+        $lastInsertId = 0;
+        $stmt    = $this->pdo->prepare($query);
+        $result  = $stmt->execute($data);
+        if($getInsertId)
+            $lastInsertId = $this->pdo->lastInsertId();
+        return array($result, $lastInsertId);
+    }
+
     public function debugStmt($stmt) {
         $debug = $stmt->debugDumpParams();
         return $debug;
