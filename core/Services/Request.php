@@ -34,11 +34,10 @@ class Request extends AbstractCore
         return $_SERVER['REQUEST_METHOD'];
     }
 
-    public static function getUrl(string $type): string{
-        // $url = 'default_url/index';
+    public static function getUrl(string $type): string {
         if(!empty($_SERVER[$type]))
-            $url = $_SERVER[$type];
-        return $url;
+            return $_SERVER[$type];
+        return '';
     }
 
     public static function getUrlParam(string $type = REQUEST_URL_NAME): \stdClass {

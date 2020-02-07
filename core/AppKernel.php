@@ -46,9 +46,9 @@ class AppKernel {
 
         // lg($this);
         // Тестирование компонентов
-        // $test = new \Core\Tests\TestAppController($this->di);
-        // $test->testMail();
-        // $this->di->set('test', $test);
+         // $test = new \Core\Tests\TestAppController($this->di);
+         // $test->testMail();
+         // $this->di->set('test', $test);
 
         $this->routerInit(); // Запускаем обработку роута
     }
@@ -104,8 +104,4 @@ class AppKernel {
         exit;
     }
 
-    //    protected function initialize() {
-    //        $this->servicesInit();
-    //        $this->routerInit();
-    //    }
 }

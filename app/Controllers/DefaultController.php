@@ -6,7 +6,7 @@ use Core\Services\ConfigController;
 
 class DefaultController {
     public function index() {
-        $message = 'Default controller';
+        $message = 'Default controller (404 not found)';
         return $message;
     }
 
