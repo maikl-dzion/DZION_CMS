@@ -8,12 +8,16 @@ require_once 'bootstrap.php';
 
 try {
 
-    $visit = new Core\Services\PequestVisitsController();
-    $visitHtml = $visit->printVisits();
+    $r = new \Core\Services\Request();
 
-    $app = new Core\AppKernel();
-    $response = $app->run()->response();
-    die($response);
+    lg($r->getUrlParam());
+
+//    $visit = new Core\Services\PequestVisitsController();
+//    $visitHtml = $visit->printVisits();
+//
+//    $app = new Core\AppKernel();
+//    $response = $app->run()->response();
+//    die($response);
 
 
 } catch(\Exception $e){

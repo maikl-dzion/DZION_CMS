@@ -3,6 +3,7 @@
 namespace Core\Services;
 
 use Core\AbstractCore;
+use Core\Services\RequestResult;
 
 class Request extends AbstractCore
 {
@@ -12,10 +13,67 @@ class Request extends AbstractCore
     public $cookie  = [];
     public $files   = [];
     public $server  = [];
+    protected $urlType;
+    protected $urlString;
+    protected $requestResult;
 
-    // public function __construct() {}
+    public function __construct() {
+        parent::__construct();
+        $this->init();
+        $this->requestResult = new RequestResult();
+    }
 
-    public function init() {
+
+
+    public function isPost(): bool {
+        if($this->server['REQUEST_METHOD'] == 'POST')
+            return true;
+        return false;
+    }
+
+    public function getRequestMethod():string {
+        return $this->server['REQUEST_METHOD'];
+    }
+
+    public function getUrlParam(): RequestResult {
+
+        // ? QUERY_STRING    / PATH_INFO  / REQUEST_URI
+        $urlString = $this->getUrlInfoString();
+
+        switch ($this->urlType) {
+            case 'PATH_INFO'  :
+                  $requestResult = $this->getPathInfo($urlString, $this->urlType);
+                  break;
+
+            case 'QUERY_STRING' :
+                  $requestResult = $this->getQueryString($urlString, $this->urlType);
+                  break;
+
+            default :
+                  $requestResult = $this->getRequestUri($urlString, $this->urlType);
+                  break;
+        }
+
+        return $requestResult;
+    }
+
+    protected  function getUrlInfoString() {
+
+        if(!empty($this->server['PATH_INFO'])) {
+            $this->urlType = 'PATH_INFO';
+            $this->urlString = $this->server['PATH_INFO'];
+        } elseif(!empty($this->server['QUERY_STRING'])) {
+            $this->urlType = 'QUERY_STRING';
+            $this->urlString = $this->server['QUERY_STRING'];
+        } elseif(!empty($this->server['REQUEST_URI'])) {
+            $this->urlType = 'REQUEST_URI';
+            $this->urlString = $this->server['REQUEST_URI'];
+        }
+
+        return $this->urlString;
+    }
+
+    protected function init() {
         $this->get     = $_GET;
         $this->post    = $_POST;
         $this->request = $_REQUEST;
@@ -24,38 +82,9 @@ class Request extends AbstractCore
         $this->server  = $_SERVER;
     }
 
-    public static function isPost(): bool {
-        if($_SERVER['REQUEST_METHOD'] == 'POST')
-            return true;
-        return false;
-    }
-
-    public static function getMethod():string {
-        return $_SERVER['REQUEST_METHOD'];
-    }
-
-    public static function getUrl(string $type): string {
-        if(!empty($_SERVER[$type]))
-            return $_SERVER[$type];
-        return '';
-    }
-
-    public static function getUrlParam(string $type = REQUEST_URL_NAME): \stdClass {
-        $routeObject = null;
-        $url = self::getUrl($type);
-        switch ($type) {
-            case 'PATH_INFO'  :
-                  $routeObject = self::pathInfo($url, $type);
-                  break;
-            case 'REQUEST_URI' :
-                  $routeObject = self::requestUri($url, $type);
-                  break;
-        }
-
-        return $routeObject;
-    }
-
-    public static function pathInfo(string $url, string $type = ''): \stdClass {
+    // -- /DZION_CMS/api/user/get_user/103/r5
+    // -- /user/get_user/103/rev
+    protected function getPathInfo(string $url, string $type = '') : RequestResult {
 
         $url    = trim($url, '/');
         $route  = explode('/', $url);
@@ -72,26 +101,30 @@ class Request extends AbstractCore
         }
 
         if(!$class || !$action) {
-            $warning = "Неопределенный маршрут - {$class} / {$action}";
+            $warning = " Неопределенный маршрут - {$class} / {$action}";
             $class  = DEFAULT_URL_NAME;
             $action = DEFAULT_ACTION_NAME;
         }
 
-        $resp = new \stdClass();
-        $resp->url    = $url;
-        $resp->type   = $type;
-        $resp->class  = $class;
-        $resp->action = $action;
-        $resp->url_key = $class . '/' . $action;
-        $resp->arguments = $arguments;
-        $resp->error = $error;
-        $resp->warning = $warning;
+        $this->requestResult->url    = $url;
+        $this->requestResult->type   = $type;
+        $this->requestResult->class  = $class;
+        $this->requestResult->action = $action;
+        $this->requestResult->url_key   = $class . '/' . $action;
+        $this->requestResult->arguments = $arguments;
+        $this->requestResult->error     = $error;
+        $this->requestResult->warning   = $warning;
 
-        return $resp;
+        return $this->requestResult;
     }
 
+    // -- /DZION_CMS/api/?class=user&method_name=get_user&p=103
+    // -- class=user&method_name=get_user&p=103
+    protected function getQueryString(string $url, string $type = '') {
+        print_r($url); die;
+    }
 
-    public static function requestUri(string $url, string $type = '') {
+    protected function getRequestUri(string $url, string $type = '') {
         print_r($url); die;
     }
 
