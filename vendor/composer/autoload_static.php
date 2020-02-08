@@ -27,7 +27,6 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         'P' => 
         array (
             'Prophecy\\' => 9,
-            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'D' => 
         array (
@@ -64,10 +63,6 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
-        'PHPMailer\\PHPMailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -78,15 +73,15 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         ),
         'Core\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/core',
+            0 => __DIR__ . '/../..' . '/server/core',
         ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/server/app',
         ),
         'Admin\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/admin',
+            0 => __DIR__ . '/../..' . '/server/admin',
         ),
     );
 

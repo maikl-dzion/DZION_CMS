@@ -10,10 +10,9 @@ return array(
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
-    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
-    'Core\\' => array($baseDir . '/core'),
-    'App\\' => array($baseDir . '/app'),
-    'Admin\\' => array($baseDir . '/admin'),
+    'Core\\' => array($baseDir . '/server/core'),
+    'App\\' => array($baseDir . '/server/app'),
+    'Admin\\' => array($baseDir . '/server/admin'),
 );
