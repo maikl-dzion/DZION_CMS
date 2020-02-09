@@ -1,12 +1,11 @@
 <?php
 
-namespace Core;
+namespace Core\Kernel;
 
 use Core\Services\DI;
 use Core\Services\Response;
 use Core\Services\ConfigController;
 use Core\Tests\TestAppController;
-
 
 class AppKernel {
 
@@ -19,30 +18,31 @@ class AppKernel {
     protected $controller;
     public    $response;
 
-    /**
-     * AppKernel constructor.
-     * @param array $routes
-     * @param array $dbconfig
-     * @throws \Exception
-     */
+    protected $route;
+    protected $routes;
+    protected $config;
+
     public function __construct(){
 
-        $this->di = new DI(); // Создаем контейнер зависисимостей
-        $config   = new ConfigController(); // Получаем конфиги приложения (из папки config)
-        $routes   = $config->get('routes');
-        $this->dbconfig = $config->get('dbconfig');
-        $this->router   = new Router($routes);
+        $configPath = ConstContainer::CONFIG_DIR;
+        $this->routerStart($configPath); // Запускаем обработку роута
 
-        // Инициализируем общие сервисы
-        $this->services = new ServicesProvider();
-        $this->services->servicesInit(array($this->di, $this->dbconfig));
-        $this->logger   = $this->di->get('logger');
-        $this->response = $this->di->get('response');
-
-        // Подготавливаем миграции
-        $this->db = $this->di->get('db');
-        $this->migrate = $this->di->get('migrate');
-        $this->migrate->migrateLoader($this->db);
+//        $this->di = new DI(); // Создаем контейнер зависисимостей
+//        $config   = new ConfigController(); // Получаем конфиги приложения (из папки config)
+//        $routes   = $config->get('routes');
+//        $this->dbconfig = $config->get('dbconfig');
+//        $this->router   = new Router($routes);
+//
+//        // Инициализируем общие сервисы
+//        $this->services = new ServicesProvider();
+//        $this->services->servicesInit(array($this->di, $this->dbconfig));
+//        $this->logger   = $this->di->get('logger');
+//        $this->response = $this->di->get('response');
+//
+//        // Подготавливаем миграции
+//        $this->db = $this->di->get('db');
+//        $this->migrate = $this->di->get('migrate');
+//        $this->migrate->migrateLoader($this->db);
 
         // lg($this);
         // Тестирование компонентов
@@ -50,26 +50,28 @@ class AppKernel {
          // $test->testMail();
          // $this->di->set('test', $test);
 
-        $this->routerInit(); // Запускаем обработку роута
+
     }
 
-    /**
-     * @throws \Exception
-     */
-    protected function routerInit() {
-        $this->app = $this->router->init();
+
+    protected function routerStart($configPath) {
+
+        $this->config = new \Core\Kernel\ConfigController($configPath);
+        $routes = $this->config->getConfig('routes');
+
+        $request = new \Core\Kernel\Request();
+        //lg($request->getRequest());
+
+        $router = new \Core\Kernel\Router($request, $routes);
+        $this->route = $router->init();
     }
 
-    /**
-     * @return Response
-     * @throws \Exception
-     */
     public function run() : Response {
 
-        $className  = $this->app->class;
-        $actionName = $this->app->action;
-        $parameters = $this->app->parameters; // ассоциативный массив
-        $arguments  = $this->app->arguments;  // массив с цифровыми индексами
+        $className  = $this->route->class;
+        $actionName = $this->route->action;
+        $parameters = $this->route->parameters; // ассоциативный массив
+        $arguments  = $this->route->arguments;  // массив с цифровыми индексами
         $errorMessage = '';
 
         if(!class_exists($className)) {

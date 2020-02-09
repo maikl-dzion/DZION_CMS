@@ -2,6 +2,8 @@
 
 namespace Core\Kernel;
 
+use Core\Interfaces\ILogger;
+use Core\Services\FileLogger;
 use Core\Services\Logger;
 
 abstract class AbstractCore {
@@ -9,7 +11,11 @@ abstract class AbstractCore {
     protected $logger;
 
     public function __construct(){
-        $this->logger  = new Logger(LOG_PATH);
+        $this->logger  = new FileLogger(LOG_PATH);
+    }
+
+    protected function setLogger(ILogger $logger){
+        $this->logger  = $logger;
     }
 
     protected function statusCodeList($code = '') {
