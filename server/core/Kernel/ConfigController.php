@@ -2,8 +2,6 @@
 
 namespace Core\Kernel;
 
-// use Core\AbstractCore;
-
 use Core\Interfaces\IConfigController;
 
 class ConfigController extends AbstractCore implements IConfigController

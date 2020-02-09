@@ -15,4 +15,9 @@ class DefaultController {
         $result   = $config->routesShow();
         return $result;
     }
+
+    public function page404() {
+        $message = '(404 not found)';
+        return $message;
+    }
 }

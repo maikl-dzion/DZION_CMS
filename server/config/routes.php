@@ -28,6 +28,7 @@ return array(
 //   )
 
     "default_url/index"         => "App\Controllers\DefaultController::index::GET",
+    "default_url/404"           => "App\Controllers\DefaultController::page404::GET",
     "default_url/routes_show"   => "App\Controllers\DefaultController::routesShow::GET",
 
     "user/get_user/:user_id"    => "App\Controllers\UserController::getUser::GET",
