@@ -1,6 +1,5 @@
 *.log
 error.txt
 .idea
-server/utils/FtpDataLoaderToServer.php
 server/config/dbconfig.php
 server/config/ftpconfig.php
