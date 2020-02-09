@@ -2,25 +2,21 @@
 
 namespace Core\Services;
 
-use Doctrine\DBAL\Driver\PDOException;
+use Core\Interfaces\IDatabase;
+// use Doctrine\DBAL\Driver\PDOException;
 use \PDO;
 
-use Core\Services\Logger;
-use Core\AbstractCore;
+use Core\Kernel\AbstractCore;
 
-class DB extends AbstractCore
+class DB extends AbstractCore implements IDatabase
 {
     private $pdo;
     private $config;
-    protected $logger;
 
     public function __construct(array $config){
-
-        // parent::__construct();
-        $this->logger  = new Logger(LOG_PATH);
+        parent::__construct();
         $this->config = $config;
         $this->connect($this->config);
-
     }
 
     public function reConnect($config) {
@@ -43,7 +39,7 @@ class DB extends AbstractCore
             $dsn = "{$driver}:dbname={$dbname};host={$host};port={$port}";
             $this -> pdo = new PDO($dsn, $user, $password, $options);
 
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             $title = "Не удалось подключиться к базе данных";
             exceptionHandler($e, $title);
             exit;

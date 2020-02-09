@@ -8,7 +8,7 @@
 
 namespace Core\Services;
 
-use Core\AbstractCore;
+use Core\Kernel\AbstractCore;
 
 class StringProcessingController extends AbstractCore {
 

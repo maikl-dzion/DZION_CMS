@@ -11,6 +11,17 @@ use \Core\Kernel\ConstContainer;
 
 try {
 
+    // $str = new \Core\Services\StringProcessingController();
+
+    //$di = new \Core\Services\DI();
+    // $di->register('string_class', "\\Core\\Services\\StringProcessingController");
+    // $r = $di->init('string_class');
+    //lg($di);
+
+    //$concrete = "\\Core\\Services\\StringProcessingController";
+    //$reflector = new ReflectionClass($concrete);
+    //lg(new $reflector->name);
+
 //    $configPath = CONFIG_DIR;
 //    $configPath = ConstContainer::CONFIG_DIR;
 //    lg($configPath);
@@ -29,9 +40,9 @@ try {
 //    $visitHtml = $visit->printVisits();
 //
     $app = new AppKernel();
-    // $response = $app->run()->response();
-    // die($response);
-    lg($app);
+    $response = $app->run()->response();
+    die($response);
+    // lg($app);
 
 
 } catch(\Exception $e){

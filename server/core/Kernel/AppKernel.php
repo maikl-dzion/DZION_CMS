@@ -3,9 +3,7 @@
 namespace Core\Kernel;
 
 use Core\Services\DI;
-use Core\Services\Response;
 use Core\Services\ConfigController;
-use Core\Tests\TestAppController;
 
 class AppKernel {
 
@@ -24,8 +22,29 @@ class AppKernel {
 
     public function __construct(){
 
+        // Получаем конфиги
         $configPath = ConstContainer::CONFIG_DIR;
-        $this->routerStart($configPath); // Запускаем обработку роута
+        $this->config = new \Core\Kernel\ConfigController($configPath);
+        $routes   = $this->config->getConfig('routes');
+        $dbconfig = $this->config->getConfig('dbconfig');
+
+        // Запускаем router
+        $this->routerStart($routes);
+
+        // Загружаем сервисы
+        $this->di = new DI();  // Создаем DI container
+        $this->services = new ServicesProvider();
+        $this->services->servicesRegister($this->di, array($dbconfig));
+
+        // lg($this->di->init('db'));
+
+        // Загружаем компоненты
+        $components = new ComponentsProvider();
+        $components->componentsRegister($this->di, array());
+
+        $this->response = new Response();
+
+        // lg($this->di->init('curl'));
 
 //        $this->di = new DI(); // Создаем контейнер зависисимостей
 //        $config   = new ConfigController(); // Получаем конфиги приложения (из папки config)
@@ -50,14 +69,9 @@ class AppKernel {
          // $test->testMail();
          // $this->di->set('test', $test);
 
-
     }
 
-
-    protected function routerStart($configPath) {
-
-        $this->config = new \Core\Kernel\ConfigController($configPath);
-        $routes = $this->config->getConfig('routes');
+    protected function routerStart($routes) {
 
         $request = new \Core\Kernel\Request();
         //lg($request->getRequest());
@@ -95,7 +109,10 @@ class AppKernel {
         else
             $response = $controller->$actionName();
 
+        // lg($response);
+
         $this->response->data = $response;
+
         return $this->response;
     }
 

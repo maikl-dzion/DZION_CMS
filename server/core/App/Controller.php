@@ -17,7 +17,6 @@ class Controller extends App {
     protected $parameters = array();
 
     public function __construct(DI $di, $parameters = array()) {
-
         parent::__construct();
 
         $this->di = $di;
@@ -26,11 +25,10 @@ class Controller extends App {
         foreach ($parameters as $name => $value)
             $this->$name = $value;
 
-        $this->db     = $this->di->get('db');
-        $this->logger = $this->di->get('logger');
-        $this->jwt    = $this->di->get('jwt');
-        $this->response = $this->di->get('response');
-        $this->handl = $this->di->get('handl');
+        $this->db  = $this->di->init('db');
+        $this->jwt = $this->di->get('jwt');
+        //$this->response = $this->di->get('response');
+        //$this->handl = $this->di->get('handl');
 
     }
 

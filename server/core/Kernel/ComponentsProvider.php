@@ -1,38 +1,52 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: abasovm
- * Date: 19.01.2020
- * Time: 18:46
- */
 
-namespace Core;
+namespace Core\Kernel;
 
-class HandlersProvider extends AbstractCore {
+use Core\Interfaces\DIContainerInterface;
 
-    public function handlerList($params) {
-        return array(
-            'curl' => array('Core\Handlers\CurlDownloader', array()),
+class ComponentsProvider extends AbstractCore {
+
+    private $params;
+
+    public function __construct($params = array()){
+        parent::__construct();
+        $this->params = $params;
+    }
+
+    protected function componentList() : array {
+
+        $componentList = array(
+            // Только регистрируем
+            'curl'   => array('class'  => "\\Core\\Components\\CurlDownloader" ,  'params' => '' , 'init' => false),
+
+            // Сразу нициализируем
+            // 'jwt'  => array('class' => '\\Core\\Services\\JwtAuthController', 'params' => '',       'init' => true),
         );
+        return $componentList;
     }
 
-    public function servicesInit() {
+    public function componentsRegister(DIContainerInterface $di, array $params) {
 
-//        $di       = $args[0];
-//        $dbconfig = $args[1];
-//
-//        $services = $this->servicesList($dbconfig);
-//
-//        foreach ($services as $serviceClass => $values) {
-//            $serviceName  = $values['name'];
-//            $params = $values['params'];
-//            if(!empty($params))
-//                $service  = new $serviceClass($params);
-//            else
-//                $service  = new $serviceClass();
-//
-//            if(!$di->has($serviceName))
-//                $di->set($serviceName, $service);
-//        }
+        $components = $this->componentList(...$params);
+
+        foreach ($components as $componentName => $item) {
+
+            $itemClass  = $item['class'];
+            $params        = $item['params'];
+            $init          = $item['init'];
+
+            if($init) {
+                if(!empty($params))
+                    $component  = new $itemClass($params);
+                else
+                    $component  = new $itemClass();
+
+                $di->set($componentName, $component);
+            }
+            else {
+                $di->register($componentName, $itemClass, $params);
+            }
+        }
     }
+
 }

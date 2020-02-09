@@ -4,14 +4,14 @@ namespace Core\Kernel;
 
 use Core\Interfaces\ILogger;
 use Core\Services\FileLogger;
-use Core\Services\Logger;
 
 abstract class AbstractCore {
 
     protected $logger;
 
     public function __construct(){
-        $this->logger  = new FileLogger(LOG_PATH);
+        $logDir = ConstContainer::LOG_DIR;
+        $this->logger  = new FileLogger($logDir);
     }
 
     protected function setLogger(ILogger $logger){

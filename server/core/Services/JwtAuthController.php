@@ -3,7 +3,7 @@
 namespace Core\Services;
 
 use Core\Interfaces\JwtAuthInterface;
-use Core\AbstractCore;
+use Core\Kernel\AbstractCore;
 
 class JwtAuthController  extends AbstractCore implements  JwtAuthInterface {
 

@@ -2,14 +2,13 @@
 
 namespace Core\Services;
 
-use Core\AbstractCore;
+use Core\Kernel\AbstractCore;
 
 class ErrorHandler extends  AbstractCore {
 
     public function __construct(){
         parent::__construct();
     }
-
 
     public function exceptionProcess(\Exception $e, $fileName = '') {
 

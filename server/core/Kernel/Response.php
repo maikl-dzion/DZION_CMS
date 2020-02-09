@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Services;
+namespace Core\Kernel;
 
-use Core\AbstractCore;
+// use Core\AbstractCore;
 
 class Response extends AbstractCore {
 

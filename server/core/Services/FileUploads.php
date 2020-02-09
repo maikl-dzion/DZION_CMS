@@ -2,8 +2,8 @@
 
 namespace Core\Services;
 
-use Core\AbstractCore;
 use Core\Interfaces\FileUploadsInterface;
+use Core\Kernel\AbstractCore;
 
 class FileUploads extends AbstractCore implements FileUploadsInterface {
 
