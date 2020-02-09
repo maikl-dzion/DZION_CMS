@@ -1,34 +1,32 @@
 <?php
 
-namespace Core;
+namespace Core\Kernel;
 
-use Core\Services\Request;
+// use Core\Services\Request;
+use Core\Interfaces\IRequest;
+use Core\Interfaces\IRouter;
 
-class Router extends AbstractCore {
+class Router extends AbstractCore implements IRouter {
 
-    private $routes  = [];
+    private $routes = [];
     private $request;
     private $route;
     private $routeUrl;
     private $method;
 
-    public function __construct(array $routes){
+    public function __construct(IRequest $request, array $routes){
         parent::__construct();
         $this->routes = $routes;
+        $this->request = $request->getRequest();
+        // lg($this->request);
     }
 
-    public function init() {
-
-        $this->request = $this->getReguest();
+    public function init() : \stdClass {
+        // $this->request = $this->getReguest();
         $urlKey        = $this->request->url_key;
         $this->route   = $this->findRoute($this->routes, $urlKey);
-        $result = $this->routeProcessing($this->request, $this->route);
-
+        $result        = $this->routeProcessing($this->request, $this->route);
         return $result;
-    }
-
-    protected function getReguest() : \stdClass{
-        return Request::getUrlParam(REQUEST_URL_NAME);
     }
 
     public function findRoute(array $routes, string $requestUrlKey): array {

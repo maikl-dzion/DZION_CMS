@@ -9,9 +9,9 @@
     "require": {},
 	"autoload": {
 		"psr-4": {
-		  "Core\\": "core/",
-		  "App\\": "app/",
-          "Admin\\": "admin/"
+		  "Core\\": "server/core/",
+		  "App\\": "server/app/",
+          "Admin\\": "server/admin/"
 		}
 	},
     "require-dev": {
