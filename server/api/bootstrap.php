@@ -12,19 +12,21 @@ header('Content-Type: text/html; charset=utf-8');
 //ini_set('display_startup_errors', 1);
 
 session_start();  // Запускаем сессию
+
 $sessionId = session_id();
 
 define('CONFIG_DIR' , ROOT_DIR . '/config');
 define('APP_DIR'    , ROOT_DIR . '/app');
 define('CORE_DIR'   , ROOT_DIR . '/core');
 define('LOG_DIR'    , ROOT_DIR . '/log');
-define('UPLOADS_DIR', ROOT_DIR . '/uploads');
+define('UPLOADS_DIR', ROOT_DIR . '/../uploads');
 define('PUBLIC_DIR' , ROOT_DIR . '/public');
 define('ADMIN_DIR'  , ROOT_DIR . '/adnin');
 define('API_DIR'    , ROOT_DIR . '/api');
 
+// die(ROOT_DIR);
 
-require_once ROOT_DIR . '/vendor/autoload.php';
+require_once ROOT_DIR . '/../vendor/autoload.php';
 
 require_once 'constants.php';
 require_once 'functions.php';

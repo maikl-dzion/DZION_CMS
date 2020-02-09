@@ -1,7 +1,9 @@
 <?php
 
-namespace Core;
+namespace Core\Kernel;
 
+use Core\Interfaces\ILogger;
+use Core\Services\FileLogger;
 use Core\Services\Logger;
 
 abstract class AbstractCore {
@@ -9,18 +11,20 @@ abstract class AbstractCore {
     protected $logger;
 
     public function __construct(){
-        $this->logger  = new Logger(LOG_PATH);
+        $this->logger  = new FileLogger(LOG_PATH);
+    }
+
+    protected function setLogger(ILogger $logger){
+        $this->logger  = $logger;
     }
 
     protected function statusCodeList($code = '') {
-
         $status = array(
             200 => 'OK',
             404 => 'Not Found',
             405 => 'Method Not Allowed',
             500 => 'Internal Server Error',
         );
-
         return ($status[$code]) ? $status[$code] : $status;
     }
 

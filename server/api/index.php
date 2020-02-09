@@ -6,14 +6,32 @@ define('ROOT_DIR',  dirname(__DIR__));
 
 require_once 'bootstrap.php';
 
+use Core\Kernel\AppKernel;
+use \Core\Kernel\ConstContainer;
+
 try {
 
-    $visit = new Core\Services\PequestVisitsController();
-    $visitHtml = $visit->printVisits();
+//    $configPath = CONFIG_DIR;
+//    $configPath = ConstContainer::CONFIG_DIR;
+//    lg($configPath);
+//    $config = new \Core\Kernel\ConfigController($configPath);
+//    $routes = $config->getConfig('routes');
+//    // lg($config->getConfig('routes'));
+//
+//    $request = new \Core\Kernel\Request();
+//    //lg($request->getRequest());
+//
+//    $router = new \Core\Kernel\Router($request, $routes);
+//    lg($router->init());
 
-    $app = new Core\AppKernel();
-    $response = $app->run()->response();
-    die($response);
+
+//    $visit = new Core\Services\PequestVisitsController();
+//    $visitHtml = $visit->printVisits();
+//
+    $app = new AppKernel();
+    // $response = $app->run()->response();
+    // die($response);
+    lg($app);
 
 
 } catch(\Exception $e){
