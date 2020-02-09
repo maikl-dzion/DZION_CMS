@@ -2,4 +2,4 @@
 error.txt
 .idea
 FtpDataLoaderToServer.php
-
+server/config/*
