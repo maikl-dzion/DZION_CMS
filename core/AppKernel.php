@@ -5,7 +5,7 @@ namespace Core;
 use Core\Services\DI;
 use Core\Services\Response;
 use Core\Services\ConfigController;
-use Core\Tests\TestAppController;
+//use Core\Tests\TestAppController;
 
 
 class AppKernel {
@@ -19,15 +19,9 @@ class AppKernel {
     protected $controller;
     public    $response;
 
-    /**
-     * AppKernel constructor.
-     * @param array $routes
-     * @param array $dbconfig
-     * @throws \Exception
-     */
     public function __construct(){
 
-        $this->di = new DI(); // Создаем контейнер зависисимостей
+        $this->di = new DI(); // Создаем контейнер зависимостей
         $config   = new ConfigController(); // Получаем конфиги приложения (из папки config)
         $routes   = $config->get('routes');
         $this->dbconfig = $config->get('dbconfig');

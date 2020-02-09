@@ -29,7 +29,7 @@ class ConfigController extends AbstractCore
 
     protected function configLoader() {
         $configDirName = CONFIG_DIR;  // Директория где лежат все конфиги
-        $configFiles = scandir($configDirName);
+        $configFiles   = scandir($configDirName);
         foreach ($configFiles as $key => $fileName) {
             if($fileName == '.' || $fileName == '..') continue;
             $configFile = $configDirName . '/' .$fileName;
