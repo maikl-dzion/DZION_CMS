@@ -11,6 +11,15 @@ use \Core\Kernel\ConstContainer;
 
 try {
 
+    $jwt = new \Core\Services\JwtAuthController();
+    $configDir = ConstContainer::CONFIG_DIR;
+    $configs   = new \Core\Kernel\ConfigController($configDir);
+    $dbconfig  = $configs->getConfig('dbconfig');
+    $db        = new \Core\Services\DB($dbconfig);
+    $auth      = new \Core\Services\AuthController($db, $jwt,'users');
+    $r = $auth->auth('maikl', '1234');
+    lg($r);
+
     // $str = new \Core\Services\StringProcessingController();
 
     //$di = new \Core\Services\DI();

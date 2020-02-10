@@ -6,7 +6,10 @@
             "email": "dzion67@mail.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "monolog/monolog": "^1.25",
+        "phpmailer/phpmailer": "^6.1"
+    },
 	"autoload": {
 		"psr-4": {
 		  "Core\\": "server/core/",

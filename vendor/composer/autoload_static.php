@@ -30,7 +30,13 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Prophecy\\' => 9,
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
         ),
         'D' => 
         array (
@@ -67,9 +73,21 @@ class ComposerStaticInit0a9fbb600d7c8d4f3cc96f172ff2a8f3
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

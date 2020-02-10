@@ -5,6 +5,9 @@ namespace Core\Kernel;
 use Core\Services\DI;
 use Core\Services\ConfigController;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 class AppKernel {
 
     private   $di;
@@ -41,8 +44,30 @@ class AppKernel {
         // Загружаем компоненты
         $components = new ComponentsProvider();
         $components->componentsRegister($this->di, array());
-
         $this->response = new Response();
+
+//        $logger = new Logger('my_logger');
+//        $logger->pushHandler(new StreamHandler('logs/debug.log', Logger::DEBUG, false));
+//        $logger->pushHandler(new StreamHandler('logs/info.log', Logger::INFO, false));
+//        $logger->pushHandler(new StreamHandler('logs/error.log', Logger::WARNING, false));
+//
+//        $logger->debug(array('debug' => 'tryrtr'));
+//        $logger->info('info');
+//        $logger->err('warn');
+//        $logger->err('error');
+//        echo "----------------------ERROR:\n";
+//
+//        print_r(file_get_contents('logs/error.log'));
+//
+//        echo "---------------------INFO:\n";
+//
+//        print_r(file_get_contents('logs/info.log'));
+//
+//        echo "----------------------DEBUG:\n";
+//        print_r(file_get_contents('logs/debug.log'));
+//
+//        lg($logger);
+
 
         // lg($this->di->init('curl'));
 

@@ -47,7 +47,7 @@ class Controller extends App {
     }
 
     protected function sendMail($email, $message, $header) {
-        $mail = $this->di->get('mail');
+        $mail   = $this->di->get('mail');
         $result = $mail->send($email, $message, $header);
         return $result;
     }

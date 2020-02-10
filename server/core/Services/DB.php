@@ -184,7 +184,7 @@ class DB extends AbstractCore implements IDatabase
         return $this->pdo;
     }
 
-    public function fetch($query, $data = [], $statement = PDO::FETCH_ASSOC) {
+    public function fetch(string $query, $data = [], $statement = PDO::FETCH_ASSOC) {
         $stmt = $this->pdo->prepare($query);
         $stmt->execute($data);
         $result = $stmt->fetchAll($statement);

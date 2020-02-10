@@ -91,8 +91,8 @@ class UserController extends Controller{
     public function createUser() {
 
         $data  = $this->fetchPost();
-        //$this->db->truncateTable($this->tableName);
-        //$data = $this->getTestData(21);
+        // $this->db->truncateTable($this->tableName);
+        // $data = $this->getTestData(21);
 
         if( !empty($data['login'])    &&
             !empty($data['password']) &&
@@ -179,7 +179,7 @@ class UserController extends Controller{
 
     public function login() {
 
-        $data = $this->fetchPost();
+        $data   = $this->fetchPost();
         $result = $this->verifyPwd($data);
         $status = false;
         $sessionId = $jwt = $username = '';
@@ -238,8 +238,10 @@ class UserController extends Controller{
     }
 
     private function verifyPwd($data) {
+
         $login    = $data['login'];
         $password = $data['password'];
+
         $query = "SELECT * FROM {$this->tableName} WHERE login='{$login}' ";
         $user = $this->db->fetch($query);
         if(!empty($user[0]))
