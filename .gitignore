@@ -1,5 +1,5 @@
 *.log
 error.txt
-.idea
+*.idea
 server/config/dbconfig.php
 server/config/ftpconfig.php
