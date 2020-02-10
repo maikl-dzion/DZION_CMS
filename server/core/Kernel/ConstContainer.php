@@ -11,7 +11,6 @@ namespace Core\Kernel;
 
 class ConstContainer
 {
-
     const CONFIG_DIR  = ROOT_DIR . '/config';
     const APP_DIR     = ROOT_DIR . '/app';
     const CORE_DIR    = ROOT_DIR . '/core';
@@ -33,8 +32,8 @@ class ConstContainer
     const RESPONSE_RESULT_NAME = 'result';
     const RESPONSE_ERROR_NAME  = 'error';
 
-    const DEFAULT_FRONT_ROUTE   = 'default_url/index';
-    const DEFAULT_SERVER_ROUTE  = 'App\Controllers\DefaultController::index::GET';
+    const DEFAULT_FRONT_ROUTE   = 'default_url/404';
+    const DEFAULT_SERVER_ROUTE  = 'App\Controllers\DefaultController::page404::GET';
 
     const ROUTE_PARAM_DELIMITER  = '::';
 
@@ -43,5 +42,7 @@ class ConstContainer
     const SMTP_USER_NAME   = 'maikl_dzion@bolderfest.ru';
     const SMTP_USER_PASSWORD = 'Dzion1967';
 
+    const DEFAULT_CONROLLER_NAME = "App\Controllers\DefaultController";
+    const DEFAULT_ACTION_NAME    = 'page404';
 
 }

@@ -47,9 +47,12 @@ class Router extends AbstractCore implements IRouter {
         $warning = "Неопределенный маршрут - {$requestUrlKey}";
         $this->error($warning);
 
+        $DEFAULT_FRONT_ROUTE = ConstContainer::DEFAULT_FRONT_ROUTE;
+        $DEFAULT_SERVER_ROUTE = ConstContainer::DEFAULT_SERVER_ROUTE;
+
         return array(
-            'front'  => DEFAULT_FRONT_ROUTE,
-            'server' => DEFAULT_SERVER_ROUTE
+            'front'  => $DEFAULT_FRONT_ROUTE,
+            'server' => $DEFAULT_SERVER_ROUTE
         );
     }
 

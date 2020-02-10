@@ -27,4 +27,8 @@ class StringProcessingController extends AbstractCore {
         return true;
     }
 
+    public function len($str) {
+        return strlen($str);
+    }
+
 }

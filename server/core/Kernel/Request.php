@@ -2,7 +2,6 @@
 
 namespace Core\Kernel;
 
-// use Core\AbstractCore;
 use Core\Interfaces\IRequest;
 
 class Request extends AbstractCore implements IRequest
@@ -100,10 +99,11 @@ class Request extends AbstractCore implements IRequest
             }
         }
 
+
         if(!$class || !$action) {
             $warning = " Неопределенный маршрут - {$class} / {$action}";
-            $class  = DEFAULT_URL_NAME;
-            $action = DEFAULT_ACTION_NAME;
+            $class = ConstContainer::DEFAULT_CONROLLER_NAME;
+            $action = ConstContainer::DEFAULT_ACTION_NAME;
         }
 
         $this->requestResult->url    = $url;
