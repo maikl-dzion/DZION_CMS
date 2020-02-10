@@ -53,6 +53,9 @@ class Request extends AbstractCore implements IRequest
 
         if($state) {
             return $this->requestResult;
+        } else {
+            throw new \Exception('Ошибка в классе Request');
+            // exit;
         }
     }
 
@@ -99,11 +102,10 @@ class Request extends AbstractCore implements IRequest
             }
         }
 
-
         if(!$class || !$action) {
             $warning = " Неопределенный маршрут - {$class} / {$action}";
-            $class = ConstContainer::DEFAULT_CONROLLER_NAME;
-            $action = ConstContainer::DEFAULT_ACTION_NAME;
+            //$class = ConstContainer::DEFAULT_CONROLLER_NAME;
+            //$action = ConstContainer::DEFAULT_ACTION_NAME;
         }
 
         $this->requestResult->url    = $url;
@@ -120,14 +122,94 @@ class Request extends AbstractCore implements IRequest
 
     // -- /DZION_CMS/api/?class=user&method_name=get_user&p=103
     // -- class=user&method_name=get_user&p=103
-    protected function getQueryString(string $url, string $type = '') {
+    protected function getQueryString(string $url, string $type = '') : bool {
+
         $_result = true;
-        print_r($url . __FUNCTION__); die;
+        $r1 = $this->findText($url, '=');
+        $r2 = $this->findText($url, '&');
+
+        $url    = trim($url, '/');
+        $class  = $action = '';
+        $arguments   = array();
+        $error = $warning = '';
+
+        // -- тип url: class=user&method=get_user&user_id=12
+        if($r1 && $r2) {
+            $route  = explode('&', $url);
+            foreach ($route as $key => $value) {
+                switch ($key) {
+                    case 0 : $item  = explode('=', $value);
+                             $class = $item[1];
+                             break;
+
+                    case 1 : $item  = explode('=', $value);
+                             $action = $item[1];
+                             break;
+
+                    default :
+                            $item  = explode('=', $value);
+                            $fname = $item[0];
+                            $param = $item[1];
+                            $arguments[] = $param;
+                            break;
+                }
+            }
+        } else { // -- тип url: user/get_user/12
+
+            $route  = explode('/', $url);
+            foreach ($route as $key => $value) {
+                switch ($key) {
+                    case 0  : $class  = $value; break;
+                    case 1  : $action = $value; break;
+                    default : $arguments[] = $value; break;
+                }
+            }
+        }
+        //--------------------
+
+        $this->requestResult->url    = $url;
+        $this->requestResult->type   = $type;
+        $this->requestResult->class  = $class;
+        $this->requestResult->action = $action;
+        $this->requestResult->url_key   = $class . '/' . $action;
+        $this->requestResult->arguments = $arguments;
+        $this->requestResult->error     = $error;
+        $this->requestResult->warning   = $warning;
+
+        // print_r( $this->requestResult); die;
+
+        return $_result;
     }
 
-    protected function getRequestUri(string $url, string $type = '') {
+    protected function getRequestUri(string $url, string $type = '') : bool  {
+
+        //print_r($url . __FUNCTION__); die;
+
         $_result = true;
-        print_r($url . __FUNCTION__); die;
+        $url    = trim($url, '/');
+        $class  = $action = '';
+        $arguments   = array();
+        $error = $warning = '';
+
+        //--------------------
+
+        $this->requestResult->url    = $url;
+        $this->requestResult->type   = $type;
+        $this->requestResult->class  = $class;
+        $this->requestResult->action = $action;
+        $this->requestResult->url_key   = $class . '/' . $action;
+        $this->requestResult->arguments = $arguments;
+        $this->requestResult->error     = $error;
+        $this->requestResult->warning   = $warning;
+
+        return $_result;
+    }
+
+    protected function findText($source, $findValue) {
+        $pos = strrpos($source, $findValue);
+        if($pos === false)
+            return false;
+        return true;
     }
 
 }
