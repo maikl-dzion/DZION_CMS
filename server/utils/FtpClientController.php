@@ -1,35 +1,32 @@
 <?php
 
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+namespace Utils;
 
-$config = [
-    'host' => 'bolderp5.beget.tech',
+/* Пример реализации -----
+
+  $config = array(
+    'host' => 'bolderp5.beget.tech_rty_',
     'user' => 'as_bolderp5_vlad_c',
     'password' => 'as_1985list_n',
-];
+  );
 
-$remoteDir = 'DZION_CMS';
-$localDir = __DIR__;
+  $localDir = __DIR__;
+  $remoteDir = 'DZION_CMS';
 
-if(!empty($argv[1]))
-    $remoteDir = $argv[1];
+  // Получение из командной строки
+  if(!empty($argv[1]))
+        $remoteDir = $argv[1];
 
-$ignore = array(
-    'public',
-    '.',
-    '.git'
-);
+  $ignore = array('.', 'public', '.git');
+  $ftp = new FtpClientController($config,
+                                 $remoteDir,
+                                 $localDir,
+                                 $ignore);
+  $ftp->moveFilesToRemote();
+*/
 
-$ftp = new FtpClientController($config, $remoteDir, $localDir, $ignore);
-
-$ftp->moveFilesToRemote();
-
-die('ok');
-
-
-class FtpClientController {
+class FtpClientController
+{
 
     private   $connect;
     private   $status;
@@ -41,7 +38,10 @@ class FtpClientController {
     public    $level  = 0;
     protected $ignore = array();
 
-    public function __construct($config, $remoteDir, $localDir = __DIR__, $ignore = array()) {
+    public function __construct($config,
+                                $remoteDir,
+                                $localDir = __DIR__,
+                                $ignore = array()) {
 
         $this->config = $config;
         $this->remoteDir = $remoteDir;
@@ -249,46 +249,5 @@ class FtpClientController {
             return false;
         return true;
     }
+
 }
-
-
-function _lg()
-{
-    $debugTrace = debug_backtrace();
-    $args = func_get_args();
-    $get = false;
-    $output = $traceStr = '';
-    $style = 'margin:10px; padding:10px; border:3px red solid;';
-
-    foreach ($args as $key => $value) {
-        $itemArr = array();
-        $itemStr = '';
-        is_array($value) ? $itemArr = $value : $itemStr = $value;
-        if ($itemStr == 'get') {
-            $get = true;
-        }
-        $line = print_r($value, true);
-        $output .= '<div style="' . $style . '" ><pre>' . $line . '</pre></div>';
-    }
-
-    foreach ($debugTrace as $key => $value) {
-        // if($key == 'args') continue;
-        $itemArr = array();
-        $itemStr = '';
-        is_array($value) ? $itemArr = $value : $itemStr = $value;
-        if ($itemStr == 'get') {
-            $get = true;
-        }
-        $line = print_r($value, true);
-        $output .= '<div style="' . $style . '" ><pre>' . $line . '</pre></div>';
-    }
-
-    if ($get) {
-        return $output;
-    }
-    print $output;
-    //print '<pre>' . print_r($debug) . '</pre>';
-    die;
-}
-
-?>

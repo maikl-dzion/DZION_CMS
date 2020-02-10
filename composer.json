@@ -11,6 +11,7 @@
 		"psr-4": {
 		  "Core\\": "server/core/",
 		  "App\\": "server/app/",
+          "Utils\\": "server/utils/",
           "Admin\\": "server/admin/"
 		}
 	},
