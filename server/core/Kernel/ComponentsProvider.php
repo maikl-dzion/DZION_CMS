@@ -4,49 +4,24 @@ namespace Core\Kernel;
 
 use Core\Interfaces\DIContainerInterface;
 
-class ComponentsProvider extends AbstractCore {
+class ComponentsProvider extends AbstractProvider {
 
-    private $params;
-
-    public function __construct($params = array()){
+    public function __construct(DIContainerInterface $di, $params = array()){
         parent::__construct();
-        $this->params = $params;
+        // $this->params = $params;
+        $itemsList = $this->getItemsList($params);
+        $this->dependencesRegister($di, $itemsList);
     }
 
-    protected function componentList() : array {
+    public function getItemsList($params = array()) : array {
 
-        $componentList = array(
+        return array(
             // Только регистрируем
             'curl'   => array('class'  => "\\Core\\Components\\CurlDownloader" ,  'params' => '' , 'init' => false),
 
             // Сразу нициализируем
-            // 'jwt'  => array('class' => '\\Core\\Services\\JwtAuthController', 'params' => '',       'init' => true),
+            // 'jwt'  => array('class' => \Core\Services\JwtAuthController::class, 'params' => '',       'init' => true),
         );
-        return $componentList;
-    }
-
-    public function componentsRegister(DIContainerInterface $di, array $params) {
-
-        $components = $this->componentList(...$params);
-
-        foreach ($components as $componentName => $item) {
-
-            $itemClass  = $item['class'];
-            $params        = $item['params'];
-            $init          = $item['init'];
-
-            if($init) {
-                if(!empty($params))
-                    $component  = new $itemClass($params);
-                else
-                    $component  = new $itemClass();
-
-                $di->set($componentName, $component);
-            }
-            else {
-                $di->register($componentName, $itemClass, $params);
-            }
-        }
     }
 
 }

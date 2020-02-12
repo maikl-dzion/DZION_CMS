@@ -4,25 +4,28 @@ namespace Core\Kernel;
 
 use Core\Interfaces\DIContainerInterface;
 
-class ServicesProvider extends AbstractCore {
+class ServicesProvider extends AbstractProvider {
 
-    private $params;
-
-    public function __construct($params = array()){
+    public function __construct(DIContainerInterface $di, $params = array()){
         parent::__construct();
-        $this->params = $params;
+        // $this->params = $params;
+        $itemsList = $this->getItemsList($params);
+        $this->dependencesRegister($di, $itemsList);
     }
 
-    protected function servicesList(array $dbconfig) : array {
+    public function getItemsList($params = array()) : array {
 
-        $servicesList = array(
+        $dbconfig = $params['dbconfig'];
+
+        return array(
             // Только регистрируем
             'db'   => array('class'  => "\\Core\\Services\\DB" ,             'params' => $dbconfig, 'init' => false),
             'mail' => array('class' => '\\Core\\Services\\SendMailer',       'params' => '',        'init' => false),
 
             // Сразу нициализируем
-            'jwt'  => array('class' => '\\Core\\Services\\JwtAuthController', 'params' => '',       'init' => true),
+            'jwt'  => array('class' => \Core\Services\JwtAuthController::class, 'params' => '',       'init' => true),
         );
+
 
 //        $servicesList = array(
 //            Services\Logger::class            => array('name' => 'logger'       , 'params' => LOG_PATH),
@@ -36,31 +39,7 @@ class ServicesProvider extends AbstractCore {
 //            HandlersProvider::class           => array('name' => 'handl', 'params' => '')
 //        );
 
-        return $servicesList;
-    }
-
-    public function servicesRegister(DIContainerInterface $di, array $params) {
-
-        $services = $this->servicesList(...$params);
-
-        foreach ($services as $serviceName => $service) {
-
-            $serviceClass  = $service['class'];
-            $params        = $service['params'];
-            $init          = $service['init'];
-
-            if($init) {
-                if(!empty($params))
-                  $serviceObject  = new $serviceClass($params);
-                else
-                  $serviceObject  = new $serviceClass();
-
-                $di->set($serviceName, $serviceObject);
-            }
-            else {
-                $di->register($serviceName, $serviceClass, $params);
-            }
-        }
+        // return $servicesList;
     }
 
 }

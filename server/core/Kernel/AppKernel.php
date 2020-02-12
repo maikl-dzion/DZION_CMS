@@ -34,17 +34,18 @@ class AppKernel {
         // Запускаем router
         $this->routerStart($routes);
 
-        // Загружаем сервисы
-        $this->di = new DI();  // Создаем DI container
-        $this->services = new ServicesProvider();
-        $this->services->servicesRegister($this->di, array($dbconfig));
+        // Создаем DI container
+        $this->di = new DI(); // container = инициализированные объекты , instances = только регистрация
 
-        // lg($this->di->init('db'));
+        // Загружаем сервисы
+        new ServicesProvider($this->di, array('dbconfig' =>$dbconfig));
 
         // Загружаем компоненты
-        $components = new ComponentsProvider();
-        $components->componentsRegister($this->di, array());
+        new ComponentsProvider($this->di, array());
+
         $this->response = new Response();
+
+        // lg($this->di);
 
 //        $logger = new Logger('my_logger');
 //        $logger->pushHandler(new StreamHandler('logs/debug.log', Logger::DEBUG, false));

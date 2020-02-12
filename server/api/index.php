@@ -18,7 +18,7 @@ try {
     $db        = new \Core\Services\DB($dbconfig);
     $auth      = new \Core\Services\AuthController($db, $jwt,'users');
     $r = $auth->auth('maikl', '1234');
-    lg($r);
+    // lg($r);
 
     // $str = new \Core\Services\StringProcessingController();
 
