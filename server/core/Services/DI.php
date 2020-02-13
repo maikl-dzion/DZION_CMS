@@ -14,8 +14,15 @@ class DI implements DIContainerInterface
         return $this;
     }
 
-    public function get(string $key) {
-        return $this->has($key);
+    public function get(string $key, array $params = array(), $save = false) {
+        $object = $this->has($key);
+        if(empty($object)) {
+            $object = $this->init($key, $params);
+            if(!empty($object)) {
+                $this->set($key, $object);
+            }
+        }
+        return $object;
     }
 
     public function has(string $key) {

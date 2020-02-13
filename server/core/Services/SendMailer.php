@@ -2,18 +2,32 @@
 
 namespace Core\Services;
 
+use Core\Kernel\AbstractCore;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-use Core\AbstractCore;
+
 
 class SendMailer extends AbstractCore {
 
+    protected $mail;
+    protected $fromAddress;
+    protected $fromPassword;
+
+    public function __construct(){
+        parent::__construct();
+
+        $this->mail = new PHPMailer(true);
+        $this->fromAddress  = \Core\Kernel\ConstContainer::SMTP_SERVER_NAME;
+        $this->fromPassword = \Core\Kernel\ConstContainer::SMTP_USER_PASSWORD;
+    }
+
     public function send($email, $body, $header = '') {
 
-        $mail = new PHPMailer(true);
-        $fromAddress  = SMTP_USER_NAME;
-        $fromPassword = SMTP_USER_PASSWORD;
+        $mail = $this->mail;
+
+        $fromAddress  = $this->fromAddress;
+        $fromPassword = $this->fromPassword;
 
 //        ini_set('error_reporting', E_ALL);
 //        ini_set('display_errors', 1);

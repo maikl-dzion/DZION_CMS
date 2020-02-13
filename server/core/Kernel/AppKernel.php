@@ -45,6 +45,7 @@ class AppKernel {
 
         $this->response = new Response();
 
+        // $this->di->get('db', array(), 'save');
         // lg($this->di);
 
 //        $logger = new Logger('my_logger');
