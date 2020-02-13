@@ -88,9 +88,9 @@ class Request extends AbstractCore implements IRequest
     // -- /user/get_user/103/rev
     protected function getPathInfo(string $url, string $type = '') : bool {
         $_result = true;
-        $url    = trim($url, '/');
-        $route  = explode('/', $url);
-        $class  = $action = '';
+        $url     = trim($url, '/');
+        $route   = explode('/', $url);
+        $class   = $action = '';
         $arguments   = array();
         $error = $warning = '';
 

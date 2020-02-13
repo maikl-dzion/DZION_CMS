@@ -35,7 +35,8 @@ class AppKernel {
         $this->routerStart($routes);
 
         // Создаем DI container
-        $this->di = new DI(); // container = инициализированные объекты , instances = только регистрация
+        $this->di = new DI(); // container = инициализированные объекты
+                              // instances = только регистрация
 
         // Загружаем сервисы
         new ServicesProvider($this->di, array('dbconfig' =>$dbconfig));
@@ -45,7 +46,8 @@ class AppKernel {
 
         $this->response = new Response();
 
-        // $this->di->get('db', array(), 'save');
+        // $this->di->get('db', array(), true);
+
         // lg($this->di);
 
 //        $logger = new Logger('my_logger');

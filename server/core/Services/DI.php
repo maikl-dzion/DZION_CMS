@@ -14,11 +14,11 @@ class DI implements DIContainerInterface
         return $this;
     }
 
-    public function get(string $key, array $params = array(), $save = false) {
+    public function get(string $key, array $params = array(), $set = false) {
         $object = $this->has($key);
         if(empty($object)) {
             $object = $this->init($key, $params);
-            if(!empty($object)) {
+            if($set && !empty($object)) {
                 $this->set($key, $object);
             }
         }
