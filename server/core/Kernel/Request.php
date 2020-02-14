@@ -38,7 +38,7 @@ class Request extends AbstractCore implements IRequest
         $urlString = $this->getUrlInfoString();
 
         switch ($this->urlType) {
-            case 'PATH_INFO'  :
+            case 'PATH_INFO'    :
                   $state = $this->getPathInfo($urlString, $this->urlType);
                   break;
 
