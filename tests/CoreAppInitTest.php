@@ -6,8 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 use Core\Services\StringProcessingController;
 
-// vendor/bin/phpunit tests
-
+// ./vendor/bin/phpunit tests
 
 class CoreAppKernelInitTest extends TestCase {
 
@@ -27,7 +26,7 @@ class CoreAppKernelInitTest extends TestCase {
 
         $request = new \Core\Kernel\Request();
         $_result = $request->getRequest();
-        $this->assertSame($requestResult, $_result);
+        $this->assertSame($requestResult->action, $_result->action);
 
     }
 
