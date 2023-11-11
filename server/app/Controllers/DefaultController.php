@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Core\Services\ConfigController;
 
 class DefaultController {
+
     public function index() {
         $message = 'Default controller (404 not found)';
         return $message;
@@ -17,7 +18,8 @@ class DefaultController {
     }
 
     public function page404() {
-        $message = '(404 not found)';
+        $message = '(404 notyyyy found)';
         return $message;
     }
+
 }
