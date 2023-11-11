@@ -16,7 +16,7 @@ class CoreAppKernelInitTest extends TestCase {
 
         $requestResult = new \stdClass();
         $requestResult->url    = 'user/get_users';
-        $requestResult->type   = 'PATH_INFO';
+        $requestResult->type   = 'PATH_INFO 11';
         $requestResult->class  = 'user';
         $requestResult->action = 'get_users';
         $requestResult->url_key   = 'user/get_users';
