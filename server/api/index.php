@@ -18,9 +18,8 @@ try {
     $db        = new \Core\Services\DB($dbconfig);
     $auth      = new \Core\Services\AuthController($db, $jwt,'users');
     $r = $auth->auth('maikl', '1234');
-    // lg($r);
 
-    // $str = new \Core\Services\StringProcessingController();
+    $str = new \Core\Services\StringProcessingController();
 
     //$di = new \Core\Services\DI();
     // $di->register('string_class', "\\Core\\Services\\StringProcessingController");
